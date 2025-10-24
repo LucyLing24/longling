@@ -1,0 +1,33 @@
+# 依赖项 (Dependencies)
+/node_modules
+
+# 打包输出 (Build outputs)
+/dist
+/build
+
+# 日志文件 (Logs)
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 缓存 (Cache)
+.npm
+.yarn-cache
+.pnpm-store
+.vite/cache
+.eslintcache
+.cache
+*.cache
+.idea
+
+# 环境变量 (Environment)
+.env
+.env.local
+.env.*.local
+
+# 操作系统文件 (OS)
+.DS_Store
+Thumbs.db
