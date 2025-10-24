@@ -1,0 +1,144 @@
+/* ======== 全局 ======== */
+body {
+  margin: 0;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #242424;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  font-size: 0.9rem;
+}
+html, body {
+  overflow-x: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+a {
+  color: #ff9cb7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #F42E7A;
+}
+
+/* ======== 布局 ======== */
+.App {
+  min-height: 100vh;
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+  margin-top: 56px;   /* header 高度 */
+  margin-bottom: 44px; /* footer 高度 */
+}
+
+/* ======== Header / Footer 固定 ======== */
+header{
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  text-align: center;
+  z-index: 10;
+}
+
+footer {
+  border-top: 1px solid #e6e6e6;
+  border-bottom: none;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* ======== 左侧 Hero ======== */
+/*.left-hero {*/
+/*  width: 320px;*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+
+/*  background-color: #fff;*/
+/*  position: sticky;*/
+/*  top: 0; !* 让它粘在页面顶部 *!*/
+/*}*/
+.left-hero {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%); /* 垂直居中 */
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    padding: 2rem 0rem 2rem 8rem;
+  background-color: #fff;
+  height: auto;
+  z-index: 5; /* 保证在内容上方 */
+}
+
+
+/* ======== 右侧内容 ======== */
+.right-content {
+  flex: 1;
+  padding: 2rem 8rem 2rem 10rem;
+  background: #fff;
+  margin-left: 320px;
+}
+
+
+/* ======== Header 导航 ======== */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #444;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #f42e7a;
+}
+
+/* ======== 响应式布局 ======== */
+@media (max-width: 1000px) {
+  .main-layout {
+    flex-direction: column;
+    margin-top: 56px;
+    margin-bottom: 44px;
+    width: 100%;
+  }
+
+  header, footer {
+    position: relative;
+  }
+
+  .left-hero {
+    position: relative;
+    transform: none;
+    top: 0;
+    left: 0;
+    margin-left: 0;
+    width: 100vw;
+    padding: 0;
+    text-align: center;
+  }
+
+  .right-content {
+    margin-left: 0;
+    width: 100vw;
+    padding: 0;
+  }
+  section {
+    margin-bottom: 2rem;
+  }
+}
+
+
+div {
+  scroll-margin-top: 4rem; /* header 高度 */
+}

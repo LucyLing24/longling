@@ -1,0 +1,418 @@
+
+.publications-select{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+.publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #acacac;
+}
+
+.publication-card {
+    display: flex;
+    box-shadow: none;
+    align-items: center;
+    padding-top: 0.5rem;
+    border-top: 1px dashed #acacac;
+}
+
+
+.publication-image {
+    height: 160px;
+    width: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1.6rem;
+    border: 1px solid #f2f2f2;
+}
+
+.publication-content {
+    flex: 1;
+    display: flex;
+    min-height: 160px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.publication-title {
+    margin-top: 4px;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.publication-title:hover {
+    font-weight: 800;
+    /*text-decoration:underline wavy #F42E7A;*/
+    color: #ff9cb7;
+    cursor: pointer;
+}
+
+
+@media (max-width: 1000px) {
+    .publication-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .publication-image {
+        width: calc(100vw - 4rem); /* ✅ 横向占满整个屏幕宽度 */
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+        margin: 0.5rem;
+        border: 1px solid #f2f2f2;
+    }
+
+    .publication-content {
+        /*margin: 0rem 2rem;*/
+    }
+}
+.publication-authors {
+    margin: 4px 0 0 0;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.author-link {
+    color: #242424;
+    text-decoration: none;
+}
+
+.author-link:hover {
+    color: #242424;
+    text-decoration: underline #ff9cb7;
+}
+
+.publication-venue {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-left: -1px;
+}
+
+.venue-tag {
+    display: inline-block;
+    padding: 2px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 9999px;
+    color: #fff;
+}
+
+.venue-tag.conference {
+    background-color: #FFBED2;
+}
+
+.venue-tag.journal {
+    background-color: #bec9ff;
+}
+
+.venue-tag.workshop {
+    background-color: #ddbeff;
+}
+.venue-tag.submission {
+    background-color: #acacac;
+}
+
+.venue-tag.exhibition {
+    background-color: #bee8ff;
+}
+
+.publication-links {
+    margin-top: 4px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.publication-links a {
+    color: #F42E7A;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.publication-links a:hover {
+    text-decoration: underline;
+}
+
+/* 给相邻链接加上竖线分隔符 */
+.publication-links a + a::before {
+    content: "|";
+    margin: 0 8px;
+    font-weight: bold;
+    color: #FFDEE8; /* 灰色竖线，可调整颜色 */
+}
+
+.publication-links a + .publications-msg::before {
+    content: "|";
+    margin: 0 8px;
+    font-weight: bold;
+    color: #FFDEE8; /* 灰色竖线，可调整颜色 */
+}
+
+.publications-msg{
+    color: #acacac;
+    font-size: 0.8rem;
+}
+
+
+/* ===== Tag Filter 区域 ===== */
+.tag-filter {
+    margin-bottom: 4px;
+}
+
+.filter-tag {
+    margin-right: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.filter-tag:hover {
+}
+
+.filter-tag.active {
+    border-bottom: 2px solid currentColor;
+}
+
+/* ===== 每篇论文的 Tag ===== */
+.publication-tags {
+    margin: 4px 0 0 0;
+}
+
+.tag-item {
+    margin-right: 8px;
+    font-size: 0.7rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+.tag-item-show {
+    margin-right: 4px;
+    white-space: nowrap;
+    display: inline-block;
+    background-color: #FFF6F8;
+    border-radius: 99px;
+    padding: 0px 8px;
+    font-size: 0.7rem;
+    color: #888;
+}
+
+
+.tag-item:hover {
+    text-decoration: underline;
+}
+
+/* ===== Hover 显示 abstract ===== */
+.publication-title-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.abstract-popup {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: calc(100% - 24px);
+    background: #FFF6F8;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    font-size: 0.8rem;
+    z-index: 10;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.publication-title-wrapper:hover .abstract-popup {
+    display: block;
+}
+
+
+.rainbow-tag-all {
+    background: linear-gradient(270deg, #ff7f96, #ffb07f, #ffcd49, #f3dc12, #b8cc7d,#7dcd6f,#6fcda6,#87dcdc,#7fcaff,#7f9dff,#9b7fff,#c57fff,#ff7fb9);
+    background-size: 400% 400%;
+    color: white;
+    border-radius: 99px;
+    padding: 0px 8px;
+    white-space: nowrap;
+    display: inline-block;
+    font-weight: bold;
+    animation: rainbowFlow 4s ease infinite;
+    margin-right: 4px;
+}
+.rainbow-tag {
+    margin-right: 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-block;
+    background: linear-gradient(
+            270deg,
+            #ff7f96,
+            #ffb07f,
+            #ffcd49,
+            #f3dc12,
+            #b8cc7d,
+            #7dcd6f,
+            #6fcda6,
+            #87dcdc,
+            #7fcaff,
+            #7f9dff,
+            #9b7fff,
+            #c57fff,
+            #ff7fb9
+    );
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowFlow 6s linear infinite;
+
+}
+
+.rainbow-tag.active {
+    background: linear-gradient(
+            270deg,
+            #ff7f96,
+            #ffb07f,
+            #ffcd49,
+            #f3dc12,
+            #b8cc7d,
+            #7dcd6f,
+            #6fcda6,
+            #87dcdc,
+            #7fcaff,
+            #7f9dff,
+            #9b7fff,
+            #c57fff,
+            #ff7fb9
+    );
+    background-size: 400% 400%;
+    color: white;
+    -webkit-text-fill-color: white;
+    -webkit-background-clip: border-box;
+    border-radius: 99px;
+    padding: 0px 8px;
+    font-weight: bold;
+    animation: rainbowFlow 4s ease infinite;
+}
+
+@keyframes rainbowFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.submission-tag{
+    margin-right: 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #acacac;
+}
+.submission-tag.active{
+    margin-right: 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: #cccccc;
+    color: white;
+    border-radius: 99px;
+    padding: 0px 8px;
+}
+.submission-tag-all{
+    white-space: nowrap;
+    display: inline-block;
+    font-weight: bold;
+    background: #cccccc;
+    color: white;
+    border-radius: 99px;
+    padding: 0px 8px;
+}
+
+/*.rainbow-tag{*/
+/*    margin-right: 8px;*/
+/*    font-size: 0.7rem;*/
+/*    font-weight: 400;*/
+/*    cursor: pointer;*/
+/*    !*color: linear-gradient(270deg, #ff7f96, #ffb07f, #ffcd49, #f3dc12, #b8cc7d,#7dcd6f,#6fcda6,#87dcdc,#7fcaff,#7f9dff,#9b7fff,#c57fff,#ff7fb9);*!*/
+/*}*/
+/*.rainbow-tag.active {*/
+/*    background: linear-gradient(270deg, #ff7f96, #ffb07f, #ffcd49, #f3dc12, #b8cc7d,#7dcd6f,#6fcda6,#87dcdc,#7fcaff,#7f9dff,#9b7fff,#c57fff,#ff7fb9);*/
+/*    background-size: 400% 400%;*/
+/*    color: white !important;*/
+/*    border-radius: 4px;*/
+/*    padding: 2px 8px;*/
+/*    font-weight: bold;*/
+/*    animation: rainbowFlow 4s ease infinite;*/
+/*}*/
+
+/*.rainbow-tag {*/
+/*    margin-right: 8px;*/
+/*    font-size: 0.7rem;*/
+/*    cursor: pointer;*/
+/*    background: linear-gradient(270deg, #ff7f96, #ffb07f, #ffcd49, #f3dc12, #b8cc7d,#7dcd6f,#6fcda6,#87dcdc,#7fcaff,#7f9dff,#9b7fff,#c57fff,#ff7fb9);*/
+/*    background-size: 400% 400%;*/
+/*    color: white !important;*/
+/*    border-radius: 4px;*/
+/*    padding: 2px 8px;*/
+/*    font-weight: bold;*/
+/*    animation: rainbowFlow 4s ease infinite;*/
+/*}*/
+
+/*.rainbow-tag.active {*/
+/*    border-bottom: 2px solid #F42E7A;*/
+/*}*/
+
+@keyframes rainbowFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.publications-info-small{
+    color: #acacac;
+    font-size: 0.7rem;
+    font-style: italic;
+    margin-bottom: 0.4rem;
+}
+
+
+.tag-select-filter {
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    border-radius: 99px; /* 圆角 */
+    /*border: 1px solid #eee;*/
+    border: none;
+    background-color: #FFF6F8;
+    /*font-weight: bold;*/
+    color: #888;
+    cursor: pointer;
+    max-width: 240px;
+    height: 1.3rem;
+    margin-top: 2px;
+
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23acacac%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 10px 10px;
+    padding-right: 24px;
+}
+
+.tag-select-filter:focus {
+    outline: none;
+    /*border-color: #F42E7A; !* 举例：选中时的焦点颜色 *!*/
+    /*box-shadow: 0 0 5px rgba(244, 46, 122, 0.3);*/
+}
