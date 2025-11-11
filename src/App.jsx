@@ -12,8 +12,15 @@ import SelectedAwards from "./components/SelectedAwards.jsx";
 import Visitor from "./components/Visitor.jsx";
 import Education from "./components/Education.jsx";
 import More from "./components/More.jsx";
+import { useEffect } from "react";
 
 function App() {
+
+    useEffect(() => {
+        window.gtag && window.gtag("config", "G-F053REKZP6", {
+        });
+    }, []);
+
     return (
         <div className="App">
             <Header />

@@ -4,6 +4,14 @@ import "../css/All.css"
 function News() {
     const news =[
         {
+            time:"2025.11",
+            content:"I served as a reviewer for TEI '26.",
+        },
+        {
+            time:"2025.11",
+            content:"Glad that 2 papers for CHI '26 have received R&R and entered the next round.",
+        },
+        {
             time:"2025.10",
             content:"A co-authored poster will be published in ICCV '25! Welcome to take a look.",
         },

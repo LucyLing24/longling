@@ -40,33 +40,7 @@ import carbon_img from "../assets/paper_image/carbon.png";
 const MY_NAME = "Long Ling";
 
 const publications = [
-    {
-        title:
-            "TunTun Diary: Exploring AI-Generated Storytelling and Virtual Companionship for Nightmare Relief",
-        abstract: "Nightmares disrupt sleep and heighten daytime anxiety, yet therapeutic support is often hard to access due to limited clinician availability, cost, and clinical framing. We propose TunTun Diary, a mobile game in which an alien puppy named TunTun “eats” players’ nightmares and returns gentle, comic-style retellings. The system uses generative AI to reinterpret users' nightmare descriptions into positive narratives. Through simple text-based dream input and playful pet interactions, players form an emotional bond with TunTun as a safe and supportive companion for coping with negative dreams. In a preliminary deployment with 20 young adults, participants reported emotional relief and increased comfort after engaging with TunTun’s transformed dream comics, often describing the experience as both soothing and playful. These findings highlight how integrating therapy-inspired reframing with interactive storytelling and virtual companionship can lower barriers to everyday emotional support. By illustrating a novel application of AI-based visual storytelling in game contexts, TunTun Diary opens opportunities for future research at the intersection of visual computing, affective interaction, and game design.",
-        authors: [
-            {name:"Zixin Wang",link: "https://zixin-wang.netlify.app/"},
-            {name:"Shan Luo",link: "https://luoshan-home.vercel.app/index.html"},
-            {name:"Siyu Tian"},
-            {name: "Yunxi Cai"},
-            {name: "Long Ling", link: "https://lucy-ling.com"},
-            {name: "Muhan Xu"},
-            {name: "Jiaxing Yu"},
-            {name: "Guanting Lu"},
-            {name:"Jiajing Zhu"},
-            {name: "Liping Luo"}
-        ],
-        venues: [
-            {name: "Siggraph Asia '25 Poster", type: "conference"}
-        ],
-        links: {
-            acm: "https://dl.acm.org/doi/abs/10.1145/3757374.3771484",
-            pdf: tuntun,
-            poster:tuntun_poster
-        },
-        image:tuntun_img,
-        tags: ["Human-AI Collaboration","Affective Computing","System"]
-    },
+
     {
         title:
             "\"The answer is already in my mind\": How People Tell Their Own Fortunes Using GenAI for Personal Confirmation and Expression",
@@ -120,79 +94,30 @@ const publications = [
     },
     {
         title:
-            "Somewhere in between the Latent Space: Theoretical and Technological Perspectives on the Status of AI Art",
-        abstract: "Situated at the convergence of computational creativity, machine learning, and art, AI Art has experienced significant growth in popularity and is now widely regarded as a leading medium among artists. Despite growing attention to its potentialities, it has also raised philosophical, ethical, and legal issues. However, a systematic review of how and to what extent AI shapes artistic creation is lacking, as is an in-depth analysis of the technologies being used. To address these gaps, we surveyed 143 papers and artworks, presenting a multi-perspective survey considering both theoretical and technological issues. On the theoretical side, we identified 5 research threads frequently debated in the literature. On the technological side, we constructed a design taxonomy to explore how AI techniques are used in current practices. We correlate theoretical and technological analyses, providing a comprehensive understanding of how AI contributes to art making and suggesting new research opportunities.",
+            "TunTun Diary: Exploring AI-Generated Storytelling and Virtual Companionship for Nightmare Relief",
+        abstract: "Nightmares disrupt sleep and heighten daytime anxiety, yet therapeutic support is often hard to access due to limited clinician availability, cost, and clinical framing. We propose TunTun Diary, a mobile game in which an alien puppy named TunTun “eats” players’ nightmares and returns gentle, comic-style retellings. The system uses generative AI to reinterpret users' nightmare descriptions into positive narratives. Through simple text-based dream input and playful pet interactions, players form an emotional bond with TunTun as a safe and supportive companion for coping with negative dreams. In a preliminary deployment with 20 young adults, participants reported emotional relief and increased comfort after engaging with TunTun’s transformed dream comics, often describing the experience as both soothing and playful. These findings highlight how integrating therapy-inspired reframing with interactive storytelling and virtual companionship can lower barriers to everyday emotional support. By illustrating a novel application of AI-based visual storytelling in game contexts, TunTun Diary opens opportunities for future research at the intersection of visual computing, affective interaction, and game design.",
         authors: [
-            {name: "Yi He",link: "https://scholar.google.com/citations?user=NC_b_pUAAAAJ&hl=zh-CN" },
-            {name: "Filippo Fabrocini", link: "https://tjsic.tongji.edu.cn/tjsicen/info/1057/1253.htm"},
+            {name:"Zixin Wang",link: "https://zixin-wang.netlify.app/"},
+            {name:"Shan Luo",link: "https://luoshan-home.vercel.app/index.html"},
+            {name:"Siyu Tian"},
+            {name: "Yunxi Cai"},
             {name: "Long Ling", link: "https://lucy-ling.com"},
-            {name: "De'en Chen"},
-            {name: "Kostas Terzidis",link: "https://scholar.google.com/citations?user=xmltKRwAAAAJ&hl=en"},
-            {name: "Nan Cao", link: "https://www.nancao.org/", role: "advisor"},
+            {name: "Muhan Xu"},
+            {name: "Jiaxing Yu"},
+            {name: "Guanting Lu"},
+            {name:"Jiajing Zhu"},
+            {name: "Liping Luo"}
         ],
         venues: [
-            {name: "CHI '26", type: "conference"},
+            {name: "Siggraph Asia '25 Poster", type: "conference"}
         ],
         links: {
-            // acm: "https://dl.acm.org/doi/abs/10.1145/3677102",
-            pdf: art,
-            // arxiv: "https://arxiv.org/abs/2508.12333",
-            // video: "https://dl.acm.org/doi/suppl/10.1145/3677102/suppl_file/v8chip337.mp4",
-            // msg: "🚧 Public demo coming soon...",
+            acm: "https://dl.acm.org/doi/abs/10.1145/3757374.3771484",
+            pdf: tuntun,
+            poster:tuntun_poster
         },
-        image: art_img,
-        tags: ["In Submission","Human-AI Collaboration","Creativity Support", "Survey"]
-    },
-    {
-        title:
-            "Capace: A Head-Mounted Haptic System for Attention Regulation in Adults with Deficit/Hyperactivity Disorder (ADHD)",
-        abstract: "Regulating attention is a primary challenge for adults with Attention-Deficit/Hyperactivity Disorder (ADHD). Current technological aids, such as smartphone apps or wrist-worn wearables, often introduce visual distractions that undermine their intended purpose. Thus, we conducted formative studies involving 124 survey participants, 12 adults with ADHD, and 4 clinicians, which confirmed the need for non-visual, embodied, and in-situ interventions. Building on these insights, we present CaPace, a novel head-mounted wearable system that provides real-time, context-aware vibrotactile biofeedback cues to support focus. We evaluated CaPace in 2 within-group experiments with 10 adults with ADHD, assessing the comprehensibility of its haptic cues and the user experience. Our work contributes to an understanding of the design space and feasibility of using on-head haptics for attention, inspiring future explorations of embodied interfaces for cognitive support.",
-        authors: [
-            {name: "Long Ling", link: "https://lucy-ling.com",role: "first"},
-            {name: "Yike Wang", link: "https://yikewanguk.github.io/",role: "first"},
-            {name: "Jiaying Lei"},
-            {name: "Nan Cao", link: "https://www.nancao.org/", role: "advisor"},
-        ],
-        venues: [
-            {name: "CHI '26", type: "conference"},
-        ],
-        links: {
-            // acm: "https://dl.acm.org/doi/abs/10.1145/3677102",
-            pdf: capace,
-            // arxiv: "https://arxiv.org/abs/2508.12333",
-            // video: "https://dl.acm.org/doi/suppl/10.1145/3677102/suppl_file/v8chip337.mp4",
-            msg: "🚧 Video coming soon...",
-        },
-        image: capace_img,
-        tags: ["In Submission","Cognitive Augmentation","Machine Learning", "Embodied Interaction","System"]
-    },
-    {
-        title:
-            "Future Calling: Exploring and Prototyping Career Choices Through Generative AI-supported Evaluation and Visualization",
-        abstract: "Choosing future career paths involves an exhaustive search over complex variables like motivation, financial considerations, and the possibility of failure. Current career planning tools are not adaptable to individual priorities and fail to provide users with concrete visualization of a long-term future career. We created Future Calling, a GenAI(Generative AI)-based application which provides a customized chatbot on career choice issues, and applies individual data to envision different potential future careers. We compared the use of Future Calling against text-to-image GenAI tool alone for career choice exploration in a between-group study. We found that Future Calling allowed participants to gain greater confidence and reflection than control. Participants used the application by repeatedly iterating, questioning, and conversing to compare their career futures, exploring detailed aspects and preferences of different career paths. This work highlights the way GenAI can support human decision-making by fostering imagination and reflection about potential futures.",
-        authors: [
-            {name: "XiaoKe Zeng", link: "https://zx-ke.com/",role: "first"},
-            {name: "Xinyi Chen", link: "https://scholar.google.ch/citations?user=OP8pYSEAAAAJ&hl=en", role: "first"},
-            {name: "Ruoyu Wen", link: "https://playerinmetaverse.tech/", role: "second"},
-            {name: "Long Ling", link: "https://lucy-ling.com", role: "second"},
-            {name: "Xiaoyu Chang"},
-            {name: "Sijia Liu",link: "https://starliusijia.com/"},
-            {name: "Kexue Fu",link:"https://fukexuexue.github.io/"},
-            {name: "Richard William Allen"},
-            {name: "Ray LC", link: "https://raylc.org/", role: "advisor"},
-        ],
-        venues: [
-            {name: "CHI '26", type: "conference"},
-        ],
-        links: {
-            // acm: "https://dl.acm.org/doi/abs/10.1145/3677102",
-            pdf: future,
-            // arxiv: "https://arxiv.org/abs/2508.12333",
-            // video: "https://dl.acm.org/doi/suppl/10.1145/3677102/suppl_file/v8chip337.mp4",
-            msg: "🚧 Public demo coming soon...",
-        },
-        image: future_img,
-        tags: ["In Submission","Human-AI Collaboration", "Creativity Support", "System"]
+        image:tuntun_img,
+        tags: ["Human-AI Collaboration","Affective Computing","System"]
     },
     {
         title:
@@ -206,7 +131,7 @@ const publications = [
             {name: "Ray LC", link: "https://raylc.org/", role: "advisor"},
         ],
         venues: [
-            {name: "CHI '26", type: "conference"},
+            {name: "DIS '26", type: "conference"},
         ],
         links: {
             // acm: "https://dl.acm.org/doi/abs/10.1145/3677102",
@@ -241,6 +166,7 @@ const publications = [
         image: chinese_img,
         tags: ["In Submission","Human-AI Collaboration", "Cultural & Philosophical","Understanding People"]
     },
+
     {
         title:
             "Emoticrafter: Text-to-emotional-image generation based on valence-arousal model",
@@ -266,6 +192,7 @@ const publications = [
         image: emo_img,
         tags: ["Selected","Computer Vision","Affective Computing","Machine Learning"]
     },
+
     {
         title:
             "\"An Image of Ourselves in Our Minds\": How College-educated Online Dating Users Construct Profiles for Effective Self Presentation",
@@ -403,6 +330,87 @@ const publications = [
         image:flow_img,
         tags: ["Multimodal Interaction"]
     },
+
+    {
+        title:
+            "Somewhere in between the Latent Space: Theoretical and Technological Perspectives on the Status of AI Art",
+        abstract: "Situated at the convergence of computational creativity, machine learning, and art, AI Art has experienced significant growth in popularity and is now widely regarded as a leading medium among artists. Despite growing attention to its potentialities, it has also raised philosophical, ethical, and legal issues. However, a systematic review of how and to what extent AI shapes artistic creation is lacking, as is an in-depth analysis of the technologies being used. To address these gaps, we surveyed 143 papers and artworks, presenting a multi-perspective survey considering both theoretical and technological issues. On the theoretical side, we identified 5 research threads frequently debated in the literature. On the technological side, we constructed a design taxonomy to explore how AI techniques are used in current practices. We correlate theoretical and technological analyses, providing a comprehensive understanding of how AI contributes to art making and suggesting new research opportunities.",
+        authors: [
+            {name: "Yi He",link: "https://scholar.google.com/citations?user=NC_b_pUAAAAJ&hl=zh-CN" },
+            {name: "Filippo Fabrocini", link: "https://tjsic.tongji.edu.cn/tjsicen/info/1057/1253.htm"},
+            {name: "Long Ling", link: "https://lucy-ling.com"},
+            {name: "De'en Chen"},
+            {name: "Kostas Terzidis",link: "https://scholar.google.com/citations?user=xmltKRwAAAAJ&hl=en"},
+            {name: "Nan Cao", link: "https://www.nancao.org/", role: "advisor"},
+        ],
+        venues: [
+            {name: "Work In Progress", type: "wip"},
+        ],
+        links: {
+            // acm: "https://dl.acm.org/doi/abs/10.1145/3677102",
+            pdf: art,
+            // arxiv: "https://arxiv.org/abs/2508.12333",
+            // video: "https://dl.acm.org/doi/suppl/10.1145/3677102/suppl_file/v8chip337.mp4",
+            // msg: "🚧 Public demo coming soon...",
+        },
+        image: art_img,
+        tags: ["Human-AI Collaboration","Creativity Support", "Survey"]
+    },
+
+    {
+        title:
+            "Capace: A Head-Mounted Haptic System for Attention Regulation in Adults with Deficit/Hyperactivity Disorder (ADHD)",
+        abstract: "Regulating attention is a primary challenge for adults with Attention-Deficit/Hyperactivity Disorder (ADHD). Current technological aids, such as smartphone apps or wrist-worn wearables, often introduce visual distractions that undermine their intended purpose. Thus, we conducted formative studies involving 124 survey participants, 12 adults with ADHD, and 4 clinicians, which confirmed the need for non-visual, embodied, and in-situ interventions. Building on these insights, we present CaPace, a novel head-mounted wearable system that provides real-time, context-aware vibrotactile biofeedback cues to support focus. We evaluated CaPace in 2 within-group experiments with 10 adults with ADHD, assessing the comprehensibility of its haptic cues and the user experience. Our work contributes to an understanding of the design space and feasibility of using on-head haptics for attention, inspiring future explorations of embodied interfaces for cognitive support.",
+        authors: [
+            {name: "Long Ling", link: "https://lucy-ling.com",role: "first"},
+            {name: "Yike Wang", link: "https://yikewanguk.github.io/",role: "first"},
+            {name: "Jiaying Lei"},
+            {name: "Nan Cao", link: "https://www.nancao.org/", role: "advisor"},
+        ],
+        venues: [
+            {name: "Work In Progress", type: "wip"},
+        ],
+        links: {
+            // acm: "https://dl.acm.org/doi/abs/10.1145/3677102",
+            pdf: capace,
+            // arxiv: "https://arxiv.org/abs/2508.12333",
+            // video: "https://dl.acm.org/doi/suppl/10.1145/3677102/suppl_file/v8chip337.mp4",
+            msg: "🚧 Video coming soon...",
+        },
+        image: capace_img,
+        tags: ["Cognitive Augmentation","Machine Learning", "Embodied Interaction","System"]
+    },
+
+    {
+        title:
+            "Future Calling: Exploring and Prototyping Career Choices Through Generative AI-supported Evaluation and Visualization",
+        abstract: "Choosing future career paths involves an exhaustive search over complex variables like motivation, financial considerations, and the possibility of failure. Current career planning tools are not adaptable to individual priorities and fail to provide users with concrete visualization of a long-term future career. We created Future Calling, a GenAI(Generative AI)-based application which provides a customized chatbot on career choice issues, and applies individual data to envision different potential future careers. We compared the use of Future Calling against text-to-image GenAI tool alone for career choice exploration in a between-group study. We found that Future Calling allowed participants to gain greater confidence and reflection than control. Participants used the application by repeatedly iterating, questioning, and conversing to compare their career futures, exploring detailed aspects and preferences of different career paths. This work highlights the way GenAI can support human decision-making by fostering imagination and reflection about potential futures.",
+        authors: [
+            {name: "XiaoKe Zeng", link: "https://zx-ke.com/",role: "first"},
+            {name: "Xinyi Chen", link: "https://scholar.google.ch/citations?user=OP8pYSEAAAAJ&hl=en", role: "first"},
+            {name: "Ruoyu Wen", link: "https://playerinmetaverse.tech/", role: "second"},
+            {name: "Long Ling", link: "https://lucy-ling.com", role: "second"},
+            {name: "Xiaoyu Chang"},
+            {name: "Sijia Liu",link: "https://starliusijia.com/"},
+            {name: "Kexue Fu",link:"https://fukexuexue.github.io/"},
+            {name: "Richard William Allen"},
+            {name: "Ray LC", link: "https://raylc.org/", role: "advisor"},
+        ],
+        venues: [
+            {name: "Work In Progress", type: "wip"},
+        ],
+        links: {
+            // acm: "https://dl.acm.org/doi/abs/10.1145/3677102",
+            pdf: future,
+            // arxiv: "https://arxiv.org/abs/2508.12333",
+            // video: "https://dl.acm.org/doi/suppl/10.1145/3677102/suppl_file/v8chip337.mp4",
+            msg: "🚧 Public demo coming soon...",
+        },
+        image: future_img,
+        tags: ["Human-AI Collaboration", "Creativity Support", "System"]
+    },
+
+
 ];
 
 
@@ -411,6 +419,7 @@ const tagColors = {
     journal: "journal",
     workshop: "workshop",
     // submission: "submission",
+    wip:"wip",
     exhibition: "exhibition",
 };
 

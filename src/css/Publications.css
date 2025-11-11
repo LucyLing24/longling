@@ -116,6 +116,9 @@
 .venue-tag.workshop {
     background-color: #ddbeff;
 }
+.venue-tag.wip {
+    background-color: #ccc;
+}
 .venue-tag.submission {
     background-color: #acacac;
 }
