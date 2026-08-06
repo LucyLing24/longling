@@ -20,7 +20,8 @@ import chinese from "../assets/paper/chinese.pdf";
 import tuntun from "../assets/paper/tuntun.pdf";
 import tuntun_poster from "../assets/paper/tuntun_poster.pdf";
 import carbon_poster from "../assets/paper/carbon_poster.pdf";
-import capace_thesis from "../assets/paper/capace_thesis.pdf";
+// import capace_slide from "../assets/paper/capace_slide.pdf";
+import cradle from "../assets/paper/cradle.pdf";
 
 import sketchar_img from "../assets/paper_image/sketchar.png";
 import future_img from "../assets/paper_image/future.png";
@@ -37,6 +38,8 @@ import brain_img from "../assets/paper_image/brain.png";
 import vistoria_img from "../assets/paper_image/vistoria1.png";
 import lifeeling_img from "../assets/paper_image/lifeeling.png";
 import carbon_img from "../assets/paper_image/carbon.png";
+import huabu_img from "../assets/paper_image/huabu.png";
+import cradle_img from "../assets/paper_image/cradle1.png";
 
 
 import clay_video from "../assets/video/clay.mp4";
@@ -44,7 +47,86 @@ import clay_video from "../assets/video/clay.mp4";
 const MY_NAME = "Long Ling";
 
 const publications = [
-        {
+    {
+        id: "huabu",
+        title:
+            "Huabu: An AI-Native Canvas Workspace for Human-Agent Collaboration",
+        abstract:
+            "Huabu is an AI-native canvas workspace designed to support collaboration between humans and AI agents. Developed during my internship at Microsoft Research Asia, I contributed to building the system from 0 to 1, exploring new interaction paradigms for organizing knowledge, maintaining shared context, and enabling agents to take collaborative actions. Huabu aims to provide a shared workspace where humans and agents can collect what matters, organize it together, and act upon shared knowledge.",
+        authors: [
+            {
+                name: "Long Ling",
+                link: "https://lucy-ling.com",
+            },
+            {
+                name: "Microsoft Research Asia Staffs",
+                link: "https://github.com/microsoft/Huabu",
+            },
+        ],
+        venues: [
+            {
+                name: "Open-source Project",
+                type: "project",
+            },
+        ],
+        links: {
+            github: "https://github.com/microsoft/Huabu",
+            page: "https://microsoft.github.io/Huabu/",
+        },
+        image: huabu_img,
+        tags: [
+            "Selected",
+            "Agent Harness",
+            "Human-AI Collaboration",
+            "Cognitive Augmentation",
+            "System",
+            "Multimodal Interaction",
+        ]
+    },
+    {
+        id: "cradle",
+        title:
+            "Cradle of Success: Fortune-Telling Stereotypes and Wishful Futures in the Age of Generative AI",
+        abstract:
+            "Cradle of Success is an interactive artwork that examines how human tendencies toward wishful thinking and stereotyping are transformed and amplified through interactions with Generative AI. Inspired by fortune-telling practices, the work explores how AI-generated predictions can reproduce and normalize societal stereotypes while shaping people's perceptions of possible futures. Through an interactive installation combining baby photographs, career symbols, AI-generated life trajectories, and fortune-inspired artifacts, this work invites reflection on the social implications of GenAI in personal and cultural contexts.",
+        authors: [
+            {
+                name: "Ray LC",
+                link: "https://raylc.org/",
+                role: "advisor",
+            },
+            {
+                name: "Bowen Liu",
+                link: "",
+            },
+            {
+                name: "Long Ling",
+                link: "https://lucy-ling.com",
+            },
+            {
+                name: "Sijia Liu",
+                link: "https://starliusijia.com/",
+            },
+        ],
+        venues: [
+            {
+                name: "C&C '26",
+                type: "conference",
+            },
+        ],
+        links: {
+            pdf: cradle,
+            acm: "https://dl.acm.org/doi/abs/10.1145/3803784.3809265",
+        },
+        image: cradle_img,
+        tags: [
+            "Human-AI Collaboration",
+            "Affective Computing",
+            "Cultural & Philosophical",
+            "Understanding People",
+        ],
+    },
+    {
         id: "clayscape",
         title:
             "ClayScape: GenAI-Supported Design to Clay 3D Printing in Fabricating Chinese Textured Ceramics",
@@ -101,20 +183,21 @@ const publications = [
         abstract: "Regulating attention is a primary challenge for adults with Attention-Deficit/Hyperactivity Disorder (ADHD). Current technological aids, such as smartphone apps or wrist-worn wearables, often introduce visual distractions that undermine their intended purpose. Thus, we conducted formative studies involving 124 survey participants, 12 adults with ADHD, and 4 clinicians, which confirmed the need for non-visual, embodied, and in-situ interventions. Building on these insights, we present CaPace, a novel head-mounted wearable system that provides real-time, context-aware vibrotactile biofeedback cues to support focus. We evaluated CaPace in 2 within-group experiments with 10 adults with ADHD, assessing the comprehensibility of its haptic cues and the user experience. Our work contributes to an understanding of the design space and feasibility of using on-head haptics for attention, inspiring future explorations of embodied interfaces for cognitive support.",
         authors: [
             {name: "Long Ling", link: "https://lucy-ling.com",role: "first"},
-            {name: "Yike Wang", link: "https://yikewanguk.github.io/",role: "first"},
-            {name: "Jiaying Lei"},
+            // {name: "Yike Wang", link: "https://yikewanguk.github.io/",role: "first"},
+            // {name: "Jiaying Lei"},
             {name: "Nan Cao", link: "https://www.nancao.org/", role: "advisor"},
         ],
         venues: [
-            {name: "Master Thesis", type: "thesis"},
+            {name: "Master Thesis", type: "project"},
         ],
         links: {
             // acm: "https://dl.acm.org/doi/abs/10.1145/3677102",
-            pdf: capace,
-            thesis: capace_thesis,
+            // pdf: capace,
+            thesis: capace,
+            // slide:capace_slide,
             // arxiv: "https://arxiv.org/abs/2508.12333",
             // video: "https://dl.acm.org/doi/suppl/10.1145/3677102/suppl_file/v8chip337.mp4",
-            msg: "🚧 Video coming soon...",
+            // msg: "🚧 Video coming soon...",
         },
         image: capace_img,
         tags: ["Cognitive Augmentation","Machine Learning", "Embodied Interaction","System"]
@@ -440,7 +523,7 @@ const tagColors = {
     workshop: "workshop",
     // submission: "submission",
     wip:"wip",
-    thesis:"thesis",
+    project:"project",
     exhibition: "exhibition",
 };
 

@@ -5,6 +5,7 @@ import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaGoogleScholar,FaSquareXTwitter } from "react-icons/fa6";
 import cv from "../assets/longling_cv.pdf"
+import { BiSolidNote } from "react-icons/bi";
 
 function Hero() {
     const links = [
@@ -13,6 +14,7 @@ function Hero() {
         { icon: <FaGoogleScholar />, url: "https://scholar.google.com/citations?user=YOUR_ID&user=wsRlBO4AAAAJ" },
         { icon: <FaSquareXTwitter />, url: "https://x.com/LucyLing24" },
         { icon: <FaLinkedin />, url: "https://linkedin.com/in/lucyling24" },
+        { icon: <BiSolidNote />, url: "https://www.xiaohongshu.com/user/profile/5d993e4f0000000001007c11" },
     ];
 
     return (
@@ -27,13 +29,13 @@ function Hero() {
                     <div className="meta-name">Long Ling 凌珑</div>
                     Master of Interaction Design
                     <div className="meta-description">
-                        <div>🔮 HAI Researcher</div>
+                        <div>🔮 AI & HCI Researcher</div>
                         <div>👩🏻‍💻 Full-stack Developer</div>
-                        <div>🧚🏻‍♀️ UX Designer</div>
+                        <div>🧚🏻‍♀️ UI & UX Designer</div>
                     </div>
                     <div className="meta-link">
                         <a className="meta-linkitem"
-                           href="https://lucy-ling.com"
+                           href="https://lucy-ling.com/"
                            target="_blank"
                            rel="noopener noreferrer"
                         >Portfolio</a>
@@ -59,7 +61,7 @@ function Hero() {
                             </a>
                         ))}
                     </div>
-                    <div className="small-text">Last Updated Date: 2026/03/20</div>
+                    <div className="small-text">Last Updated Date: 2026/08/06</div>
                 </div>
             </div>
         </div>

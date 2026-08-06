@@ -8,6 +8,7 @@ import future from "../assets/logo/future.png"
 import cdi from "../assets/logo/cdi.png"
 import spot from "../assets/logo/spot.png"
 import ant from "../assets/logo/ant.png"
+import tencent from "../assets/logo/tencent.png"
 import {FaGithub} from "react-icons/fa";
 
 export default function Internship() {
@@ -15,15 +16,29 @@ export default function Internship() {
         {
             type: "Work",
             organization: {
-                name: "MSRA",
+                name: "Tencent Hunyuan",
                 link: "https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/",
-                logo: micro
+                logo: tencent
             },
-            period: "2026.02 - present",
+            period: "2026.06 - present",
             role: "Research intern.",
             location: "Shanghai, China",
             projects: [
-                { name: <span><div style={{color:"#acacac",fontStyle:"italic"}}>Focus on Human-AI interaction now...</div></span>, roles: [] },
+                { name: <span><div style={{color:"#acacac",fontStyle:"italic"}}>Focus on post-training for full-stack coding agent for LLM Hy3 & Hy4.</div></span>, roles: [] },
+            ]
+        },
+        {
+            type: "Work",
+            organization: {
+                name: "Microsoft Research Asia (MSRA)",
+                link: "https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/",
+                logo: micro
+            },
+            period: "2026.02 - 2026.06",
+            role: "Research intern.",
+            location: "Shanghai, China",
+            projects: [
+                { name: <span><div style={{color:"#acacac",fontStyle:"italic"}}>Focus on Human-AI interaction and agent harness. Project Huabu is open-sourced now.</div></span>, roles: [] },
             ]
         },
         {

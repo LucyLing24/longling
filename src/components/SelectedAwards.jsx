@@ -4,7 +4,11 @@ import "../css/All.css"
 export default function SelectedAwards() {
     const awards = [
         {
-            text: "[2025] Excellent Master Scholarship in Tongji University ",
+            text: "[2026] Outstanding Graduate Award in Tongji University ",
+            highlight: "(Top 5%)"
+        },
+        {
+            text: "[2025] Excellent Master's Scholarship in Tongji University ",
             highlight: "(Top 2%)",
         },
         {

@@ -7,8 +7,8 @@ export default function Education() {
             university: "Tongji University",
             degree: "Master of Interaction Design",
             college: "College of Design and Innovation",
-            gpa: "3.91/4, 93/100",
-            period: "2023.09 - Present",
+            gpa: "3.91/4, 93/100, top5%. Graduated with honor",
+            period: "2023.09 - 2026.06",
             location: "Shanghai, China",
             courses: [
                 { name: "Interaction Design", grade: 95 },

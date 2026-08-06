@@ -4,6 +4,22 @@ import "../css/All.css"
 function News() {
     const news =[
         {
+            time: "2026.07",
+            content: <>Started an internship at <strong className="news-ref">Tencent Hunyuan Foundation Model Team</strong>, working on post-training for coding agents and exploring aesthetic intelligence in AI-generated frontend and backend development. Excited to contribute to <strong className="news-ref">Hy3 & Hy4</strong> model～</>
+        },
+        {
+            time: "2026.07",
+            content: <>Co-authored <a href="#cradle" className="news-ref">Cradle of Success</a> was published at C&C '26! Excited to explore how Generative AI transforms human aspirations, stereotypes, and beliefs about the future.</>
+        },
+        {
+            time: "2026.06",
+            content: <>Released <a href="#huabu" className="news-ref">Huabu</a>, an AI-native canvas workspace developed during my internship at Microsoft Research Asia!!!</>
+        },
+        {
+            time: "2026.06",
+            content: <><strong className="news-ref">Graduated with honors</strong> from the Master's program at Tongji University! Grateful for the experiences and people that shaped my journey in research and design.</>
+        },
+        {
             time: "2026.03",
             content: <>Co-authored <a href="#clayscape" className="news-ref">ClayScape</a> was accepted to DIS '26! Excited about our exploration in GenAI-supported ceramic fabrication.</>
         },
@@ -17,7 +33,7 @@ function News() {
         },
         {
             time: "2026.01",
-            content: <>I started an internship at Microsoft Research Asia (MSRA).</>
+            content: <>I started an internship at <strong className="news-ref">Microsoft Research Asia</strong> (MSRA).</>
         },
         {
             time: "2026.01",

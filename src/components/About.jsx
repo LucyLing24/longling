@@ -28,9 +28,11 @@ function About() {
                 University of Notre Dame.
             </a>
                 <br/><br/>
-                My research interests focus on <strong>human–AI interaction for supporting human creativity</strong> to
+                {/* My research interests focus on <strong>human–AI interaction for supporting human creativity</strong> to
                 achieve better cognitive support and creative collaboration, by designing interaction forms and
-                generating contents that align with human intention, emotion, and cognition.
+                generating contents that align with human intention, emotion, and cognition. */}
+
+                My research focuses on <strong>human–AI alignment</strong>, exploring how AI systems can acquire and represent <strong>human expertise</strong> to better support creative work. Specifically, I study how tacit and subjective forms of human knowledge, such as aesthetic judgment, design principles, and creative reasoning, can be incorporated into <strong>large language models and agentic systems</strong>.
 
 
                 <div className="callout">I am applying to PhD programs and remain open to any research assistant (RA) or collaboration opportunities. Please feel free to contact me about any potential openings <strong>: )</strong></div>
