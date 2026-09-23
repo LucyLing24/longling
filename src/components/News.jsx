@@ -5,11 +5,11 @@ function News() {
     const news =[
         {
             time: "2026.09",
-            content: <>My first-authored paper <a href="#chinese" className="news-ref">"Re-Tell the Fortune so I Can Believe It"</a> received an <strong className="news-ref">Honorable Mention Award</strong> 🏆 at CSCW '26 (top 3% of submissions)!</>
+            content: <>Started my Ph.D. as a joint student of <strong className="news-ref">Tongji University</strong> and <strong className="news-ref">Shanghai Innovation Institute</strong>, advised by Prof. Tao Gui at the Fudan NLP Group!</>
         },
         {
             time: "2026.09",
-            content: <>Started my Ph.D. as a joint student of <strong className="news-ref">Tongji University</strong> and <strong className="news-ref">Shanghai Innovation Institute</strong>, advised by Prof. Tao Gui at the Fudan NLP Group!</>
+            content: <>My first-authored paper <a href="#chinese" className="news-ref">"Re-Tell the Fortune so I Can Believe It"</a> received an <strong className="news-ref">Honorable Mention Award</strong> 🏆 at CSCW '26 (top 3% of submissions)!</>
         },
         {
             time: "2026.07",
