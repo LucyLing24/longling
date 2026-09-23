@@ -9,7 +9,7 @@ import cdi from "../assets/logo/cdi.png"
 import spot from "../assets/logo/spot.png"
 import ant from "../assets/logo/ant.png"
 import tencent from "../assets/logo/tencent.png"
-import {FaGithub} from "react-icons/fa";
+import {FaGithub, FaGlobe} from "react-icons/fa";
 
 export default function Internship() {
     const experiences = [
@@ -17,14 +17,14 @@ export default function Internship() {
             type: "Work",
             organization: {
                 name: "Tencent Hunyuan",
-                link: "https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/",
+                link: "https://hunyuan.tencent.com/",
                 logo: tencent
             },
             period: "2026.06 - present",
-            role: "Research intern.",
+            role: "Research Intern, Foundation Model Team",
             location: "Shanghai, China",
-            projects: [
-                { name: <span><div style={{color:"#acacac",fontStyle:"italic"}}>Focus on post-training for full-stack coding agent for LLM Hy3 & Hy4.</div></span>, roles: [] },
+            details: [
+                <span>Post-training <strong>Hy3 & Hy4</strong> as <strong>coding agents</strong> for frontend and backend development and <strong>design tasks</strong>, and contributing to <strong>computer-use agent (CUA)</strong> post-training.</span>,
             ]
         },
         {
@@ -35,10 +35,23 @@ export default function Internship() {
                 logo: micro
             },
             period: "2026.02 - 2026.06",
-            role: "Research intern.",
+            role: "Research Intern",
             location: "Shanghai, China",
             projects: [
-                { name: <span><div style={{color:"#acacac",fontStyle:"italic"}}>Focus on Human-AI interaction and agent harness. Project Huabu is open-sourced now.</div></span>, roles: [] },
+                {
+                    name: <span><name>Huabu:</name> Microsoft's open-source AI-native canvas for human–agent collaboration</span>,
+                    roles: ["#Core Builder (0→1)", "#Agent Harness", "#Interaction Design"],
+                    link: [
+                        <a
+                            href="https://github.com/microsoft/Huabu"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="github-icon-link"
+                        >
+                            <FaGithub/>
+                        </a>
+                    ]
+                },
             ]
         },
         {
@@ -49,11 +62,11 @@ export default function Internship() {
                 logo: ant
             },
             period: "2023.09 - 2023.12",
-            role: "toC Product Strategy & Interaction Designer",
+            role: "Consumer Product Strategy & Interaction Designer",
             location: "Shanghai, China",
-            projects: [
-                { name: <span>AIGC in financial service and investor education</span>, roles: ["#User Research", "#UI/UX Design","#Prototyping"] },
-                { name: <span><name>Raspberry Music Festival:</name>Design for Gen Z onsite musical experience</span>, roles: ["#User Research", "#UI/UX Design"] },
+            details: [
+                <span>Shaped AIGC-driven consumer experiences for fintech and Gen Z lifestyle scenarios, from user research to product strategy and interaction design.</span>,
+                <span>Won the <strong>Technical Innovation Award</strong> and <strong>Commercial Potential Award</strong> at both Ant Group and Tongji's College of Design and Innovation.</span>,
             ]
         },
         {
@@ -64,12 +77,10 @@ export default function Internship() {
                 logo: bd
             },
             period: "2022.10 - 2023.04",
-            role: "FE Engineer Intern, serving as a developer for multiple platforms.",
+            role: "Software Engineer Intern",
             location: "Hangzhou, China",
             details: [
-                <span><name>Highlight:</name> Developed platforms to support advertising materials management, data mining, sample modeling, feature engineering, etc. Collaborated <strong>across 5 teams</strong>, maintained a total of <strong>8 advertising platforms</strong>, of which 3 were independently developed from scratch. These platforms provide advertising services for all the ByteDance’s products to help <strong>achieve
-                    tens of billions of dollars</strong> in revenue.</span>,
-                <span><name>Tools:</name> Used <strong>Figma</strong> for website design, and used <strong>React + TypeScript</strong> for development.</span>,
+                <span><name>Highlight:</name> Developed and maintained <strong>8 ML-infra platforms</strong> across <strong>5 teams</strong>, covering ad-creative management, data mining, sample modeling, and feature engineering. These platforms power ads across <strong>all ByteDance products</strong>, a business generating <strong>tens of billions of dollars</strong> in revenue.</span>,
             ]
         },
         {
@@ -80,12 +91,11 @@ export default function Internship() {
                 logo: micro
             },
             period: "2022.07 - 2022.10",
-            role: "Software Engineer Intern, optimizing the monitoring platform",
+            role: "Software Engineer Intern, Service Reliability",
             location: "Suzhou, China",
             details: [
-                <span><name>Highlight:</name> Embedded time logger tool to monitor web latency and success rate of APIs. Utilized visualization panel to identify solutions for reducing latency. By optimizing component lifecycles, <strong>reduced latency by 20%.</strong></span>,
-                <span><name>Tools:</name> The front-end used <strong>React</strong> class components, the back-end used <strong>.NET
-                    + C#</strong>, and the database was <strong>Microsoft SQL Server</strong>.</span>,
+                <span><name>Highlight:</name> Built latency and API-health telemetry into an internal monitoring platform for M365 services, traced bottlenecks through live dashboards, and <strong>cut latency by 20%</strong> by optimizing component lifecycles.</span>,
+                <span><name>Stack:</name> React, .NET / C#, SQL Server.</span>,
             ]
         },
         {
@@ -96,28 +106,11 @@ export default function Internship() {
                 logo: micro
             },
             period: "2021.07 - 2021.10",
-            role: "Software Engineer Intern, assisting in the construction of various basic services.",
+            role: "Software Engineer Intern, Cloud Infrastructure",
             location: "Suzhou, China",
             details: [
-                <span>Improved XAM ARM deployment template diagnostic process. A script was written based on the JSON tree comparison algorithm for determining consistency, displaying the differences between various templates.</span>,
-                <span>Adopted the <strong>Bot Framework SDK</strong>, added custom components to the chat robot. Embed the bot in Teams, allowing <strong>whole team developers</strong> to quickly obtain the required monitoring information.</span>
-            ]
-        },
-        {
-            type: "Research",
-            organization: {
-                name: "Intelligent Big Data Visualization Lab",
-                link: "https://idvxlab.com/",
-                logo: idvx
-            },
-            period: "2024.03 - Present",
-            role: <span>Advisor: <a href={"https://nancao.org/"}>Nan Cao</a>, Tongji University</span>,
-            location: "Shanghai, China",
-            projects: [
-                {   name: <span><name>Capace: </name> Attention Reminder Hat for ADHD</span>,
-                    roles: ["#Research Lead", "#Hardware Prototyping","#System Development"] },
-                { name: "Survey for Generative AI Tools", roles: ["#Research Lead","#Data Collection", "#Analysis"] },
-                { name: <span><name>Emoticrafter: </name> Algorithm for Generating Emotional Images</span>, roles: ["#Data Collection","#Algorithm Design"] }
+                <span><name>Highlight:</name> Automated consistency checks for <strong>Azure ARM deployment templates</strong> with a JSON-tree diffing tool that surfaces drift across templates.</span>,
+                <span>Shipped a <strong>Microsoft Teams</strong> bot on the Bot Framework SDK, giving the <strong>whole engineering team</strong> instant access to service-monitoring data.</span>
             ]
         },
         {
@@ -131,8 +124,38 @@ export default function Internship() {
             role: <>Advisor: <a href={"https://raylc.org/"}>Ray LC</a>, City University of Hong Kong</>,
             location: "Hong Kong, China",
             projects: [
-                { name: <span><name>Sketchar:</name> Generative Tool for Character Design</span>, roles: ["#Research Lead","#Full-stack Development", "#UI/UX Design"] },
-                { name: <span><name>Carbon Copy:</name>  Dating Platform</span>, roles: ["#Concept Design","#Full-stack Development"] }
+                {
+                    name: <span><name>GenAI Fortune Telling:</name> CSCW '26 Honorable Mention paper and the <em>Cradle of Success</em> installation (C&C '26)</span>,
+                    roles: ["#Research Lead", "#Qualitative Research", "#Art Installation"],
+                    link: [
+                        <a
+                            href="https://recfro.github.io/fortune-telling/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="github-icon-link"
+                        >
+                            <FaGlobe/>
+                        </a>
+                    ]
+                },
+                { name: <span><name>Sketchar:</name> Generative AI for character design</span>, roles: ["#Research Lead","#Full-stack Development", "#UI/UX Design"] },
+                { name: <span><name>Carbon Copy:</name> Dating platform</span>, roles: ["#Concept Design","#Full-stack Development"] }
+            ]
+        },
+        {
+            type: "Research",
+            organization: {
+                name: "iDVX Lab",
+                link: "https://idvxlab.com/",
+                logo: idvx
+            },
+            period: "2024.03 - 2026.09",
+            role: <span>Advisor: <a href={"https://nancao.org/"}>Nan Cao</a>, Tongji University</span>,
+            location: "Shanghai, China",
+            projects: [
+                {   name: <span><name>Capace:</name> Head-mounted haptic system for ADHD attention regulation</span>,
+                    roles: ["#Research Lead", "#Hardware Prototyping","#System Development"] },
+                { name: <span><name>Emoticrafter:</name> Emotion-controllable image generation (ICCV '25)</span>, roles: ["#Data Collection","#Algorithm Design"] }
             ]
         },
         {
@@ -146,7 +169,7 @@ export default function Internship() {
             role: <span>Advisor: <a href={"https://www.milab.design/"}>Haipeng Mi</a>, Tsinghua University</span>,
             location: "Beijing, China",
             projects: [
-                { name: <span><name>OZ Bot:</name> Agent Workflow Platform</span>, roles: ["#Front-end Development", "#System Architecture"] }
+                { name: <span><name>OZ Bot:</name> Agent workflow platform</span>, roles: ["#System Architecture", "#Development"] }
             ]
         },
         {
@@ -162,8 +185,8 @@ export default function Internship() {
             projects: [
                 { name: <span>
                         <name>Gamma:</name>
-                        AI-assisted Programming Plugin
-                    </span>, roles: ["#Development", "#Tool Design",],
+                        AI-assisted programming plugin
+                    </span>, roles: ["#Tool Design", "#Development"],
                     link: [
                         <a
                             href="https://github.com/soney/gamma"
@@ -190,8 +213,8 @@ export default function Internship() {
             projects: [
                 { name: <span>
                         <name>DBS:</name>
-                        Deep Brain Stimulation Surgeries Digital-twin System
-                    </span>, roles: ["#Frontend Development", "#3D Visualization"],
+                        Digital-twin system for deep brain stimulation surgery
+                    </span>, roles: ["#3D Visualization", "#Development"],
                     link: [<a
                         href="https://github.com/LucyLing24/deep-brain-stimulation-surgeries-digital-twin-system"
                         target="_blank"
@@ -205,7 +228,7 @@ export default function Internship() {
                 {
                     name: <span>
                         <name>Digital Human:</name>
-                        Doctor Digital Human Remote Diagnosis System
+                        Remote diagnosis with doctor digital humans
                     </span>, roles: ["#UI/UX Design", "#Prototyping"] ,
                 link: [<a
                     href="https://github.com/LucyLing24/digital-human-face-and-body-management-system"
