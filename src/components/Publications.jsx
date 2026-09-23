@@ -174,7 +174,7 @@ const publications = [
             // msg: "🚧 Video coming soon...",
         },
         image: chinese_img,
-        tags: ["Selected", "Human-AI Collaboration", "Cultural & Philosophical","Understanding People"]
+        tags: ["Selected", "Honorable Mention", "Human-AI Collaboration", "Cultural & Philosophical","Understanding People"]
     },
     {
         id: "capace",
@@ -530,6 +530,7 @@ const tagColors = {
 // 给不同tag分配不同颜色
 const tagStyleMap = {
     "Selected": "#242424",
+    "Honorable Mention": "#C98A00",
     "In Submission":"#cccccc",
     "Human-AI Collaboration": "#ff7f96",
     "Creativity Support": "#ffb07f",
@@ -714,6 +715,15 @@ export default function Publications() {
                                                     // onClick={() => handleTagClick(tag)}
                                                 >
                                             #{tag}
+                                        </span>
+                                            )
+                                        } else if (tag === "Honorable Mention") {
+                                            return (
+                                                <span
+                                                    key={i}
+                                                    className="tag-item-show award-tag-all"
+                                                >
+                                            🏆 {tag}
                                         </span>
                                             )
                                         } else if (tag === "In Submission") {

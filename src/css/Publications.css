@@ -332,6 +332,11 @@
     border-radius: 99px;
     padding: 0px 8px;
 }
+.award-tag-all{
+    background: #FFF4D6;
+    color: #C98A00;
+    font-weight: bold;
+}
 .submission-tag-all{
     white-space: nowrap;
     display: inline-block;
