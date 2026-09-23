@@ -91,7 +91,7 @@ export default function Internship() {
                 logo: micro
             },
             period: "2022.07 - 2022.10",
-            role: "Software Engineer Intern, Service Reliability",
+            role: "Software Engineer Intern",
             location: "Suzhou, China",
             details: [
                 <span><name>Highlight:</name> Built latency and API-health telemetry into an internal monitoring platform for M365 services, traced bottlenecks through live dashboards, and <strong>cut latency by 20%</strong> by optimizing component lifecycles.</span>,
@@ -106,7 +106,7 @@ export default function Internship() {
                 logo: micro
             },
             period: "2021.07 - 2021.10",
-            role: "Software Engineer Intern, Cloud Infrastructure",
+            role: "Software Engineer Intern",
             location: "Suzhou, China",
             details: [
                 <span><name>Highlight:</name> Automated consistency checks for <strong>Azure ARM deployment templates</strong> with a JSON-tree diffing tool that surfaces drift across templates.</span>,
@@ -125,7 +125,7 @@ export default function Internship() {
             location: "Hong Kong, China",
             projects: [
                 {
-                    name: <span><name>GenAI Fortune Telling:</name> CSCW '26 Honorable Mention paper and the <em>Cradle of Success</em> installation (C&C '26)</span>,
+                    name: <span><name>GenAI Fortune Telling:</name> Research & Art Series on AI Divination</span>,
                     roles: ["#Research Lead", "#Qualitative Research", "#Art Installation"],
                     link: [
                         <a
@@ -138,8 +138,8 @@ export default function Internship() {
                         </a>
                     ]
                 },
-                { name: <span><name>Sketchar:</name> Generative AI for character design</span>, roles: ["#Research Lead","#Full-stack Development", "#UI/UX Design"] },
-                { name: <span><name>Carbon Copy:</name> Dating platform</span>, roles: ["#Concept Design","#Full-stack Development"] }
+                { name: <span><name>Sketchar:</name> Generative Tool for Character Design</span>, roles: ["#Research Lead","#Full-stack Development", "#UI/UX Design"] },
+                { name: <span><name>Carbon Copy:</name> Dating Platform</span>, roles: ["#Concept Design","#Full-stack Development"] }
             ]
         },
         {
@@ -153,9 +153,9 @@ export default function Internship() {
             role: <span>Advisor: <a href={"https://nancao.org/"}>Nan Cao</a>, Tongji University</span>,
             location: "Shanghai, China",
             projects: [
-                {   name: <span><name>Capace:</name> Head-mounted haptic system for ADHD attention regulation</span>,
+                {   name: <span><name>Capace:</name> Attention Reminder Hat for ADHD</span>,
                     roles: ["#Research Lead", "#Hardware Prototyping","#System Development"] },
-                { name: <span><name>Emoticrafter:</name> Emotion-controllable image generation (ICCV '25)</span>, roles: ["#Data Collection","#Algorithm Design"] }
+                { name: <span><name>Emoticrafter:</name> Algorithm for Generating Emotional Images</span>, roles: ["#Data Collection","#Algorithm Design"] }
             ]
         },
         {
@@ -169,7 +169,7 @@ export default function Internship() {
             role: <span>Advisor: <a href={"https://www.milab.design/"}>Haipeng Mi</a>, Tsinghua University</span>,
             location: "Beijing, China",
             projects: [
-                { name: <span><name>OZ Bot:</name> Agent workflow platform</span>, roles: ["#System Architecture", "#Development"] }
+                { name: <span><name>OZ Bot:</name> Agent Workflow Platform</span>, roles: ["#Front-end Development", "#System Architecture"] }
             ]
         },
         {
@@ -185,8 +185,8 @@ export default function Internship() {
             projects: [
                 { name: <span>
                         <name>Gamma:</name>
-                        AI-assisted programming plugin
-                    </span>, roles: ["#Tool Design", "#Development"],
+                        AI-assisted Programming Plugin
+                    </span>, roles: ["#Development", "#Tool Design",],
                     link: [
                         <a
                             href="https://github.com/soney/gamma"
@@ -213,8 +213,8 @@ export default function Internship() {
             projects: [
                 { name: <span>
                         <name>DBS:</name>
-                        Digital-twin system for deep brain stimulation surgery
-                    </span>, roles: ["#3D Visualization", "#Development"],
+                        Deep Brain Stimulation Surgeries Digital-twin System
+                    </span>, roles: ["#Frontend Development", "#3D Visualization"],
                     link: [<a
                         href="https://github.com/LucyLing24/deep-brain-stimulation-surgeries-digital-twin-system"
                         target="_blank"
@@ -228,7 +228,7 @@ export default function Internship() {
                 {
                     name: <span>
                         <name>Digital Human:</name>
-                        Remote diagnosis with doctor digital humans
+                        Doctor Digital Human Remote Diagnosis System
                     </span>, roles: ["#UI/UX Design", "#Prototyping"] ,
                 link: [<a
                     href="https://github.com/LucyLing24/digital-human-face-and-body-management-system"
