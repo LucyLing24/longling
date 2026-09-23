@@ -4,6 +4,10 @@ import "../css/All.css"
 function News() {
     const news =[
         {
+            time: "2026.09",
+            content: <>Started my Ph.D. as a joint student of <strong className="news-ref">Tongji University</strong> and <strong className="news-ref">Shanghai Innovation Institute</strong>, advised by Prof. Tao Gui at the Fudan NLP Group!</>
+        },
+        {
             time: "2026.07",
             content: <>Started an internship at <strong className="news-ref">Tencent Hunyuan Foundation Model Team</strong>, working on post-training for coding agents and exploring aesthetic intelligence in AI-generated frontend and backend development. Excited to contribute to <strong className="news-ref">Hy3 & Hy4</strong> model～</>
         },

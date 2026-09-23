@@ -4,6 +4,13 @@ import "../css/All.css"; // 确保你的 CSS 路径正确
 export default function Education() {
     const education = [
         {
+            university: "Tongji University & Shanghai Innovation Institute",
+            degree: "Ph.D. (Joint Program)",
+            period: "2026.09 - present",
+            location: "Shanghai, China",
+            advisor: { name: "Prof. Tao Gui", link: "https://guitaowufeng.github.io/" }
+        },
+        {
             university: "Tongji University",
             degree: "Master of Interaction Design",
             college: "College of Design and Innovation",
@@ -16,7 +23,7 @@ export default function Education() {
                 { name: "Open Design", grade: 97 },
                 { name: "Algorithm Design", grade: 98 }
             ],
-            advisor: { name: "Prof. Nan Cao", link: null } // 可选：如果导师有个人主页，可以在link中添加
+            advisor: null
         },
         {
             university: "Soochow University",

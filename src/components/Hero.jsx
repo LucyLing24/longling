@@ -27,7 +27,7 @@ function Hero() {
                 />
                 <div className="hero-meta">
                     <div className="meta-name">Long Ling 凌珑</div>
-                    Master of Interaction Design
+                    Ph.D. Student @ Tongji & SII
                     <div className="meta-description">
                         <div>🔮 AI & HCI Researcher</div>
                         <div>👩🏻‍💻 Full-stack Developer</div>
@@ -61,7 +61,7 @@ function Hero() {
                             </a>
                         ))}
                     </div>
-                    <div className="small-text">Last Updated Date: 2026/08/06</div>
+                    <div className="small-text">Last Updated Date: 2026/09/23</div>
                 </div>
             </div>
         </div>
