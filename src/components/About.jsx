@@ -29,12 +29,9 @@ function About() {
                 generating contents that align with human intention, emotion, and cognition. */}
 
                 My research focuses on <strong>human–AI alignment</strong>, exploring how AI systems can acquire and represent <strong>human expertise</strong> to better support <strong>creative work</strong>. Specifically, I study how tacit and subjective forms of human knowledge, such as aesthetic judgment, design principles, and creative reasoning, can be incorporated into <strong>large language models and agentic systems</strong>.
-                {" "}I bring this to frontier models in industry, post-training coding agents
-                at <strong>Tencent Hunyuan</strong> and building the open-source <strong>Huabu</strong> at
-                <strong> Microsoft Research Asia</strong>. My work appears at CHI, CSCW (Honorable Mention), ICCV, DIS,
-                and C&C.
 
-                <div className="callout">Open to research collaborations. Feel free to reach out <strong>: )</strong></div>
+
+                <div className="callout">I am always open to research collaborations and coffee chats. Please feel free to contact me about any potential opportunities <strong>: )</strong></div>
             </div>
         </div>
     );
