@@ -24,9 +24,12 @@ function About() {
                 Prof. Toby Jia-Jun Li
             </a> (<a href="https://www.nd.edu/" target="_blank" rel="noopener noreferrer">Notre Dame</a>).
                 <br/><br/>
-                My research centers on <strong>human–AI alignment</strong>: teaching <strong>LLMs and agents</strong> to
-                capture the tacit expertise behind creative work, such as aesthetic judgment, design principles, and
-                creative reasoning. I bring this to frontier models in industry, post-training coding agents
+                {/* My research interests focus on <strong>human–AI interaction for supporting human creativity</strong> to
+                achieve better cognitive support and creative collaboration, by designing interaction forms and
+                generating contents that align with human intention, emotion, and cognition. */}
+
+                My research focuses on <strong>human–AI alignment</strong>, exploring how AI systems can acquire and represent <strong>human expertise</strong> to better support <strong>creative work</strong>. Specifically, I study how tacit and subjective forms of human knowledge, such as aesthetic judgment, design principles, and creative reasoning, can be incorporated into <strong>large language models and agentic systems</strong>.
+                {" "}I bring this to frontier models in industry, post-training coding agents
                 at <strong>Tencent Hunyuan</strong> and building the open-source <strong>Huabu</strong> at
                 <strong> Microsoft Research Asia</strong>. My work appears at CHI, CSCW (Honorable Mention), ICCV, DIS,
                 and C&C.
