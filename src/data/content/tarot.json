@@ -1,0 +1,103 @@
+{
+  "tldr": "This work asks what happens when people read their own fortunes with GenAI instead of consulting a human seer. In workshops, participants asked chatbots to interpret a tarot spread, summarized the reading in their own words, and generated images of their envisioned futures. Rather than passively accepting predictions, they steered the AI with personal context, believed selectively, and reshaped readings into optimistic self-narratives.",
+  "facts": [
+    {"label": "Status", "value": "In submission (work in progress)"},
+    {"label": "Method", "value": "Six workshops + semi-structured interviews"},
+    {"label": "Participants", "value": "44, aged 18–55"},
+    {"label": "Workshop sites", "value": "Hong Kong, Seoul, Shanghai, Rome, New York, Delft (online)"},
+    {"label": "Tarot layout", "value": "Romany Spread (7 × 3 cards: past, present, future)"},
+    {"label": "GenAI tools", "value": "ChatGPT, Gemini, Poe; Stable Diffusion, MidJourney, DALL-E"}
+  ],
+  "contributions": [
+    "An empirical account of GenAI divination as an active practice, in which participants countered generic readings by sharing personal context and reframing their questions.",
+    "Evidence that belief in AI readings is co-constructed through selective acceptance and the Barnum effect, and that readings scaffold reflection and, in some cases, real decisions.",
+    "An analysis of how participants expressed their futures visually, through playful rejection, metaphorical generation and identity-driven personalization, together with a tendency toward optimistic bias that carries risks of self-deception.",
+    "Design implications for emotionally sensitive agents, including six roles GenAI takes in divination and strategies for ritual, transparency and co-created narratives."
+  ],
+  "sections": [
+    {
+      "heading": "Motivation",
+      "paragraphs": [
+        "Divination has always depended on human interpretation of symbols such as tarot cards, traditionally through face-to-face dialogue with a seer. Large language models can now derive coherent meaning from abstract symbols and hold attentive, contextual conversations, which has fueled GenAI divination apps such as Quin and Tarotoo.",
+        "HCI research has studied how people seek emotional support, companionship or therapy-like conversations from GenAI. Divination is different: it centers on projective meaning-making from ambiguous cues. Little is known about how people engage with GenAI during this process, how they decide what to accept or dismiss, and how readings become part of their self-narratives."
+      ],
+      "bullets": [
+        "RQ1 (Process & Practice): How do people engage in divination practices using GenAI?",
+        "RQ2 (Perception & Belief): How do people perceive and evaluate predictions from GenAI?",
+        "RQ3 (Visual & Verbal): How do people represent and express the predictions generated through GenAI?"
+      ]
+    },
+    {
+      "heading": "Workshop Method",
+      "paragraphs": [
+        "The team ran six workshops with 44 self-selected participants recruited through university campuses, workplaces and an art museum; prior tarot experience was not required. Each workshop lasted 60–90 minutes. Researchers first introduced the Romany Spread, a 7 × 3 card matrix for past, present and future. Participants then formulated a personal question, picked one column of cards, and prompted an LLM (such as ChatGPT, Gemini or Poe) until they were satisfied with their understanding of the reading.",
+        "Next, participants wrote a conclusion and used text-to-image models (Stable Diffusion, MidJourney or DALL-E) to visualize their envisioned future, followed by a 10-minute semi-structured interview. Three researchers independently coded the divination chats, written conclusions, generated artifacts and interview transcripts with inductive thematic analysis."
+      ],
+      "figures": [
+        {"file": "fig2.jpg", "caption": "Study procedure: recruitment, workshop introduction, choosing a Romany Spread column, GenAI fortune-telling, visualizing the conclusion, and an interview."}
+      ]
+    },
+    {
+      "heading": "Findings at a Glance",
+      "paragraphs": [
+        "Participants' questions echoed those of traditional divination, such as whether to keep working abroad or whether a career path would bring happiness. GenAI's replies, however, were often vague and impersonal. Participants responded by personalizing the dialogue, believing selectively the parts that fit their past experiences, current emotions or hoped-for future, and turning the outputs into self-narratives that often carried an optimistic bias."
+      ],
+      "figures": [
+        {"file": "fig5.jpg", "caption": "Main findings: participants countered GenAI's impersonality by adding personal information, selectively accepted what fit their experiences or expectations, and created artifacts expressing optimistic belief, reflection or humorous dismissal."}
+      ]
+    },
+    {
+      "heading": "Steering an Impersonal Oracle",
+      "paragraphs": [
+        "Participants experienced the AI as generic. It lacked the emotional attunement, follow-up questions and ritual presence of a human reader, and one participant described it as a “vending machine for answers” (P30). Newcomers struggled without procedural guidance: “So do I just ask a question? Is there something I'm supposed to choose first?” (P42). Views on impersonality diverged. Some hesitated to share personal matters, while others valued that GenAI passes no moral judgment and answers any question at any time.",
+        "To counter generic outputs, participants actively shaped the conversation. Some supplied detailed personal context, treating the AI as “more like a database—the more detailed my questions, the more detailed the responses” (P10). Others reframed their questions: P34 kept stressing “uncertainty” and “discord” until the reading reflected her relationship struggles. Unlike in therapy-oriented chatbots, this self-disclosure was often non-linear, jumping across unrelated topics within a single reading."
+      ]
+    },
+    {
+      "heading": "Selective Belief and the Barnum Effect",
+      "paragraphs": [
+        "Participants accepted readings that resonated with their lives and dismissed those that did not. P32 found a reading about communication with her supervisor strikingly accurate and photographed it to show friends. P29, however, laughed off a reading about “missed opportunities” he had never had: “It's just AI, just for fun.” Selectivity even happened within one reading. P10 embraced her optimistic cards but rejected one suggesting indecision: “I know exactly what I want. The answer is already in my mind.”",
+        "Vague outputs also triggered the Barnum effect. P5 turned a general reading about change into a confident story about finding a rewarding job. P33 applied the word “obstacles” to his relationship, and later admitted that the real issue was his own hesitation about marriage. Accepted or not, readings scaffolded reflection. P24 reframed a messy relationship as a path of personal growth, and P32 scheduled a meeting with her supervisor about her graduation plan. Months later, P32 reported that her doctoral project had been approved and credited the workshop. The authors observed no signs of over-reliance."
+      ],
+      "figures": [
+        {"file": "fig8.jpg", "caption": "Readings that surprised P32 and P17 and were quickly accepted."},
+        {"file": "fig9.jpg", "caption": "P29 and P22 did not accept their readings and responded with playful humor."}
+      ]
+    },
+    {
+      "heading": "Visualizing Optimistic Futures",
+      "paragraphs": [
+        "When turning readings into images, participants treated AI visuals as material to reshape. The authors identify three strategies. In playful rejection, P43, told he was becoming “robotic”, asked for an image of himself as a robot. In metaphorical generation, P42 visualized two diverging paths while deciding whether to return to China or stay in the Netherlands. In identity-driven personalization, P34 turned the King of Wands into a queen in a pink gown: “By changing the image, I wasn't just fixing the prediction. I was making it mine.”",
+        "Many summaries were also overly positive, amplifying encouraging elements and leaving out warnings. P23 reduced a conditional reading about leaving his job to the single word “rebirth”. P33 condensed a reading that mentioned obstacles into “happiness, joy, light, high potential, and wealth.” This optimism appeared in the summaries and images rather than during the sessions or interviews. It supported self-encouragement, but it could also lead users to overlook challenges or warning signs."
+      ],
+      "figures": [
+        {"file": "fig12.jpg", "caption": "Three strategies for presenting divination results, by P43, P42 and P34: playful rejection, metaphorical generation and identity-driven personalization."},
+        {"file": "fig13.jpg", "caption": "Positive and optimistic images generated by P18, P25, P24 and P33."}
+      ]
+    },
+    {
+      "heading": "Design Implications",
+      "paragraphs": [
+        "In these workshops, GenAI did not act as a fortune-teller in the usual sense. Based on how participants engaged, the authors identify six roles that could shape a divination agent's tone and interaction logic, and that could coexist in a multi-agent configuration.",
+        "Participants also wanted more ritual: “It would be better if it could mimic the ritual of turning over tarot cards on a real table” (P35). Designers could support this with symbolic visual language and hybrid physical–digital formats. At the same time, systems should explain the reasoning behind readings, offer basic divination knowledge, frame unfavorable predictions empathetically, and gently point out over-optimistic patterns. The authors caution that GenAI predictions are not checked by human judgment, and they call for safeguards that keep users reflective and critical."
+      ],
+      "bullets": [
+        "Mirror: reflects interpretations that match users' existing self-perceptions.",
+        "Co-creator: supports collaborative meaning-making and symbolic remixing.",
+        "Friend: receives detailed self-disclosure that jumps across topics.",
+        "Playmate: invites playful disbelief and humorous reframing.",
+        "Mentor: prompts deeper reflection on ambiguous readings.",
+        "Counselor: scaffolds decisions under uncertainty."
+      ],
+      "figures": [
+        {"file": "fig14.jpg", "caption": "Six roles GenAI takes in divination: Mirror, Co-creator, Friend, Playmate, Mentor and Counselor (illustrations generated by the authors with Gemini)."}
+      ]
+    },
+    {
+      "heading": "Limitations",
+      "paragraphs": [
+        "The study focused on tarot and on visual expression, leaving other practices and modalities such as sound or embodied ritual for future work. Most participants were in their twenties, and more workshops took place in Asia than in Europe or North America. The workshop setting lacked the ritual atmosphere of everyday divination and may have introduced peer influence. Letting participants choose models introduced inconsistency, and single sessions could not show how trust and interpretation change over time."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "tldr": "Making Chinese ceramics involves many demanding steps, and bringing in digital fabrication usually requires CAD and CAM skills that most craftspeople lack. ClayScape combines generative AI with clay 3D printing: a creator sketches and describes a piece, the tool generates a textured 3D model, and the printed vessel carries engraved patterns that guide hand glazing. Working with four ceramic creators, the study shows how this hybrid workflow opens entry points for beginners while raising questions about authenticity and craft for experienced artists.",
+  "facts": [
+    {"label": "Venue", "value": "DIS '26, Singapore"},
+    {"label": "Method", "value": "Two-phase participatory design and research through design"},
+    {"label": "Phase 1", "value": "Collaborative creation by a GenAI designer and a ceramic artist"},
+    {"label": "Phase 2", "value": "4 ceramic creators (2 beginners, 2 experienced artists)"},
+    {"label": "Tool", "value": "Prompt area, 3D design preview, and clay print preview with G-code export"},
+    {"label": "Outcome", "value": "Four fired ceramic artifacts"}
+  ],
+  "contributions": [
+    "A hybrid fabrication workflow that integrates generative AI, clay 3D printing, and traditional glazing, lowering CAD/CAM barriers in culturally grounded ceramic practice.",
+    "ClayScape, a design tool that operationalizes the workflow by combining AI-driven previews, textured 3D models, and clay print simulation.",
+    "Empirical insights from a collaborative creation study between a GenAI designer and a ceramic artist, and from a participatory study with four ceramic practitioners that surfaced both opportunities (efficiency, creativity, accessibility) and tensions (authenticity, authorship, craft values)."
+  ],
+  "sections": [
+    {
+      "heading": "Motivation",
+      "paragraphs": [
+        "Chinese ceramics carry a long tradition of symbolic forms, textures, and glazes, but making them involves complex, interdependent steps such as shaping, carving, painting, and glazing. This segmented production makes certain styles difficult for an individual maker to reproduce. Digital fabrication and CAD/CAM tools can reduce manual steps, yet they demand substantial training, and most craftspeople lack computational manufacturing skills.",
+        "Generative AI can turn concepts and rough sketches into visual prototypes and, increasingly, into 3D models. The authors explore whether GenAI can bridge the gap between a craftsperson's idea and a printable, decorated ceramic piece, supporting both design and fabrication."
+      ],
+      "figures": [
+        {"file": "fig1.jpg", "caption": "Hybrid fabrication workflow: (A) ClayScape generates a 3D design from a sketch and text prompt, (B) the piece is clay 3D-printed, (C) glazed by hand, and (D) fired into the final ceramic work."}
+      ]
+    },
+    {
+      "heading": "Phase 1: Collaborative Creation",
+      "paragraphs": [
+        "The workflow emerged from a collaboration between the two co-first authors: a design researcher specializing in GenAI workflows and a ceramic artist specializing in clay 3D printing. After exchanging expertise, they designed a process that follows the conventional ceramic sequence but substitutes AI-supported design, 3D clay printing, and texture-guided glazing for sketching, hand construction, and freehand decoration.",
+        "The designer used text-to-image multimodal LLMs with minimal sketches, short text prompts, and Chinese ceramic references such as Qinghua brush motifs, black-and-white ink patterns, and Tang sancai glaze palettes, then turned the images into 3D models and UV textures with Tripo and Meshy. She produced five designs, ranging from a traditional Qing Hua vase to a checkerboard jar. The ceramic artist engraved the textures onto the models in Rhino and Grasshopper and printed them in clay; after multiple trials, the Qing Hua vase was printed at two engraving depths and glazed by filling glaze into the engraved lines. Printability was the main obstacle: steep overhangs and thin structures often collapsed, so not every generated model could be printed, and some patterns were too vague to engrave cleanly."
+      ],
+      "bullets": [
+        "Combine sketches and visual references of shapes and patterns with text prompts to guide GenAI.",
+        "Warn users about risky shapes; keep slopes under 45° and avoid thin structures.",
+        "Use an engraving depth of 1–1.5 mm to guide glaze, taking wall thickness into account.",
+        "Prefer UV textures and patterns with clean, clear outlines for surface decoration."
+      ],
+      "figures": [
+        {"file": "fig5.jpg", "caption": "Traditional ceramic techniques (sketching, hand construction, hand decoration, firing) compared with the proposed workflow (AI-assisted image generation, AI-generated 3D model and clay print, texture-guided glazing, firing)."},
+        {"file": "fig7.jpg", "caption": "AI-generated UV textures (top) and the corresponding patterns engraved onto the surfaces of AI-generated models (bottom)."}
+      ]
+    },
+    {
+      "heading": "The ClayScape Tool",
+      "paragraphs": [
+        "Drawing on these insights, the team built ClayScape with three connected workspaces. The AI prompt area accepts text prompts, drawn or uploaded sketches, and quick-select templates, along with preferences for decorative style, primary color, and level of detail. Shape templates are simplified from classic Chinese vessels such as jars, vases, bowls, and bottles and adjusted for safe clay printing; pattern options include black-and-white porcelain, Tang tri-color (Sancai), and Qinghua styles. All templates are optional starting points rather than fixed molds.",
+        "The 3D design preview lets creators rotate the generated model 360°, inspect details, and regenerate textures. The clay print preview exposes parameters such as Pattern Depth, Line Thickness, and Print Speed, shows estimated print time and clay usage, and exports the G-code file needed for printing."
+      ],
+      "figures": [
+        {"file": "fig10.jpg", "caption": "ClayScape interface: (a) prompt area with shape templates, sketch board, text prompt, and style preferences; (b) 3D design preview for inspecting and re-texturing the model; (c) clay print preview for print parameters and export."}
+      ]
+    },
+    {
+      "heading": "Phase 2: Study with Ceramic Creators",
+      "paragraphs": [
+        "Four creators took part: two beginners with less than a year of ceramic experience (a graduate student and a product designer) and two advanced artists with more than five years (a pottery tutor and an assistant professor). All were Chinese and familiar with Chinese ceramic aesthetics; all had some prior exposure to GenAI, but none had combined it with ceramics or clay printing.",
+        "The study had two sessions. In a co-design session, each creator used ClayScape to generate designs and 3D models while thinking aloud. After the prints dried, creators glazed or painted their pieces in the ceramic artist's studio using their preferred techniques. Each session was followed by a semi-structured interview of about 30 minutes, and the authors analyzed notes, think-aloud data, and transcripts through inductive thematic analysis."
+      ]
+    },
+    {
+      "heading": "Four Creations",
+      "bullets": [
+        "A01, Ice Crackle Glaze Bowl — a beginner used engraved textures to imitate crackle glaze; the glaze did not produce a true crackle, but the engraved textures worked convincingly.",
+        "A02, Floral Vase — a beginner regenerated rounded, square, and octagonal variants, chose the octagonal form for its resonance with Chinese aesthetics, and glazed a blue-and-white gradient with golden floral motifs by following the engravings.",
+        "A03, Candle Warmer — an experienced artist started from a sculptural sketch and, inspired by the first generated result, transformed it into a Chinese-style candle warmer.",
+        "A04, Vase as a Money Jar — an experienced artist turned a family story about a vase used as a coin container into a piece that, after hand glazing, resembled an aged ceramic object."
+      ],
+      "figures": [
+        {"file": "fig14.jpg", "caption": "A02's process: (A) sketch and prompt, (B) generated rounded, quadrilateral, and octagonal variants, (C) printed piece, (D) glazing guided by engraved floral textures, and (E) final fired vase."},
+        {"file": "fig16.jpg", "caption": "A04's process: (A) sketch and prompt inspired by a family money jar, (B) generated design, (C) printed piece, (D) hand-glazing, and (E) final piece resembling an aged ceramic object."}
+      ]
+    },
+    {
+      "heading": "Opportunities",
+      "paragraphs": [
+        "Creators saw clear gains in efficiency. Beginners no longer had to sketch and transfer patterns by hand; as A02 put it, they finished all the glazing \"in less than two hours.\" For A04, moving directly from a sketch to an STL file bypassed many intermediate modeling steps, streamlining technical preparation without necessarily changing his creative direction.",
+        "The workflow also opened new directions and built confidence. GenAI's unpredictability inspired A03's candle warmer, and A01 found that the tool preserved the irregularity of her shaky hand-drawn lines as a lively effect rather than a standard form. Beginners attempted patterns they could not paint themselves and described a strong sense of achievement, while A04 experimented with hand-glazing on the printed textures and saw teaching potential. Reflecting on her role, A01 said that in traditional craft she shaped a work \"from 0 to 1,\" whereas now it felt like influencing it \"from 1 to 2.\""
+      ]
+    },
+    {
+      "heading": "Tensions",
+      "paragraphs": [
+        "Printed surfaces were uneven and hard to glaze evenly, and despite templates and print previews some pieces still printed with defects, such as minor collapses and an unexpected hole in A01's bowl. Experienced artists deliberately pursued complex forms that required the ceramic artist's intervention, like removing a lid or adding handle support, leading A04 to note that creators would still need CAM skills and knowledge of structural feasibility.",
+        "Creators also felt their creative freedom constrained at times. A03 could not control fine details such as the size of her candle warmer's hollow, beginners felt template-based forms looked too regular, \"like something for mass production,\" and engraved guides sometimes limited spontaneous decoration; A04 described tracing generated motifs as \"a secondary painting.\" Participants suggested variable engraving depths and removable stickers as glazing guides to regain flexibility."
+      ],
+      "figures": [
+        {"file": "fig17.jpg", "caption": "Structural feasibility issues: (A) collapsed or irregular layering, (B) an unexpected hole in A01's bowl, (C) added support for A04's handle, and (D) the sharp lid removed from A03's candle warmer to reduce failure risk."}
+      ]
+    },
+    {
+      "heading": "Discussion & Limitations",
+      "paragraphs": [
+        "The authors argue that GenAI and clay printing support each other: GenAI lowers the entry barrier to digital fabrication for handcraft-based creators, while printing turns AI-generated designs into tangible objects, which sustained participants' engagement. Sketch-based, non-parametric input and optional cultural parameters let creators design freely while drawing on Chinese glaze palettes, motifs, and shapes. The findings position these technologies as assistive tools rather than replacements for traditional steps.",
+        "Clay printing still limits quality through visible layer lines, overhang constraints, and air pockets, and users need basic knowledge of prompting, printer operation, and glazing. GenAI trades granular control for speed. Future work includes better extrusion hardware and clay compositions, and fine-tuning generative models on traditional Chinese ceramics to improve cultural fidelity and controllability."
+      ]
+    }
+  ]
+}

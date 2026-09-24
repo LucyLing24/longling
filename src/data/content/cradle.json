@@ -1,0 +1,92 @@
+{
+  "tldr": "Cradle of Success is an interactive installation that turns GenAI into a fortune-teller for babies. Visitors pair a baby photo with a toy, and GenAI returns a printed fortune and a life-trajectory video. The outputs often reproduce racial and gender stereotypes, which visitors can then tie to a shrine-like plank, as with a bad omikuji.",
+  "facts": [
+    {"label": "Venue", "value": "C&C '26 (artwork paper)"},
+    {"label": "Format", "value": "Interactive installation"},
+    {"label": "GenAI tools", "value": "Tencent Yuanbao, DeepSeek, Stable Diffusion (Deforum plugin)"},
+    {"label": "Rituals", "value": "Chinese zhuazhou and Japanese omikuji"},
+    {"label": "Exhibition support", "value": "Hong Kong Arts Development Council Project Grant"},
+    {"label": "Long Ling's role", "value": "Artist and designer"}
+  ],
+  "contributions": [
+    "An interactive artwork that places GenAI inside two fortune-telling rituals: the Chinese zhuazhou object-grabbing ceremony and Japanese omikuji fortune slips.",
+    "A multi-model pipeline that generates baby portraits with Tencent Yuanbao, fortunes with DeepSeek, and age-based life videos with Stable Diffusion and Deforum.",
+    "Exhibition observations: visitors often chose identities unlike their own, received stereotyped futures, and responded by relinquishing the “bad fortune”.",
+    "A framing of GenAI, when it deals with destiny or race, as “high-fidelity, unfiltered ‘bias amplifiers’”, whose outputs become material for reflection."
+  ],
+  "sections": [
+    {
+      "heading": "Concept",
+      "paragraphs": [
+        "Fortune-telling reflects the wish to predict and control the future, and people often see in a prediction what they already wish to see. The artists argue that GenAI does not change these motives but reframes them through the authority and opacity of technology, amplifying stereotypes behind a promise of algorithmic objectivity.",
+        "The work was created alongside the CSCW '26 study of GenAI fortune-telling in China. In the studio’s words, it “shows the consequences of relying on AI as a source of spiritualized fortune telling.”"
+      ],
+      "figures": [
+        {"file": "fig1.jpg", "caption": "The Cradle of Success installation."}
+      ]
+    },
+    {
+      "heading": "Creative Process",
+      "paragraphs": [
+        "Each interaction stage is based on a traditional ritual, and a different GenAI model produces its content. The fortunes follow the Chinese idea that “fortune and misfortune coexist”: in one example, a white Silicon Valley programmer builds a globally influential AI framework and is later replaced by the optimization systems he created."
+      ],
+      "bullets": [
+        "Tencent Yuanbao: baby portraits across four racial groups with no obvious gender characteristics, deliberately prompted with stereotypical details such as black hair for Asian babies.",
+        "DeepSeek: for each toy, a life narrative, a rhymed seven-character quatrain in the style of temple fortune slips, and four ironic keywords.",
+        "Stable Diffusion with Deforum: a video covering ten life stages from age 1 to 100, prompted only with age, race and a few profession-related words."
+      ],
+      "figures": [
+        {"file": "fig2.jpg", "caption": "AI-generated baby portraits for identity selection."},
+        {"file": "fig3.jpg", "caption": "Fortune generation with DeepSeek: fate narrative, seven-character quatrain, and keywords such as “Code Prophet” for the printed fortune paper."},
+        {"file": "fig4.jpg", "caption": "Age-based Deforum prompts and generated frames at age 1 and age 100."}
+      ]
+    },
+    {
+      "heading": "The Installation",
+      "paragraphs": [
+        "A cradle holds toys, referencing the zhuazhou ritual in which the object a child picks predicts their future, along with an album of AI-generated baby photos. An interactive station contains an NFC-enabled photo frame, an NFC toy platform and a fortune printer. Screens play the generated videos above a Shinto-style plank.",
+        "The second exhibition, at the Hong Kong Arts Centre in February 2026, added more screens and introduced the Deforum videos. The authors describe this version as the finalized setup."
+      ],
+      "figures": [
+        {"file": "fig8.jpg", "caption": "Installation layout: ten mini LED screens above the posted fortunes, an interactive photo frame and base on a stand, and a cradle with the photo album and selectable objects."}
+      ]
+    },
+    {
+      "heading": "Visitor Experience",
+      "paragraphs": [
+        "A visit moves from selection and prediction to reflection and release."
+      ],
+      "bullets": [
+        "Select an identity: place a baby photo in the photo frame.",
+        "Indicate a potential future: place a toy on the platform to suggest a career.",
+        "Receive the AI-predicted future: a fortune is printed on a paper slip, and videos of the baby’s predicted life play on the screens.",
+        "Reflect through a ritual gesture: tie the slip to the plank, leaving the “bad fortune” there for cleansing, as with unfavorable omikuji at Japanese shrines."
+      ],
+      "figures": [
+        {"file": "fig6.jpg", "caption": "Interaction flow: select a baby photo, indicate a potential future, receive the AI-predicted future, and reflect through a ritual gesture."}
+      ]
+    },
+    {
+      "heading": "What the AI Revealed",
+      "paragraphs": [
+        "Visitors often chose babies or toys that differed from their own lived experience, seemingly to resist predetermined trajectories. Yet even a “better” starting point could lead to undesirable or limiting futures. Many visitors then tied their slips to the plank, and the authors suggest that this relinquishment, rather than the prediction, became the moment of reflection.",
+        "Generated futures often assigned medical or technical professions to Asian babies and professional athletics to African American babies, and kept female subjects in roles such as nursing or fashion even when a screwdriver or fire truck toy was chosen. The work does not correct these predictions; it surfaces them so visitors can see how easily hope, bias and technological authority become entangled."
+      ],
+      "figures": [
+        {"file": "fig9.jpg", "caption": "AI-generated futures: an Asian baby becomes a “technical guy” (left), and an African baby grows up as an athlete (right)."}
+      ]
+    },
+    {
+      "heading": "Team",
+      "paragraphs": [
+        "Made by members of the Studio for Narrative Spaces at City University of Hong Kong, with Long Ling from Tongji University."
+      ],
+      "bullets": [
+        "RAY LC: artistic director",
+        "Bowen Liu: artist and technical lead",
+        "Long Ling: artist and designer",
+        "Sijia (Star) Liu: curator and producer"
+      ]
+    }
+  ]
+}

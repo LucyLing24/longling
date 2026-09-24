@@ -1,0 +1,112 @@
+{
+  "tldr": "Writers often imagine stories in pictures, yet most writing tools only let them work with text. Vistoria is a canvas-based system where images, sketches, and text are edited together: one operation, such as cropping part of an image or changing its mood, updates both the picture and the matching story passage. The work shows how such image–text co-editing can make fiction writing more expressive and exploratory while keeping writers in control of their stories.",
+  "facts": [
+    {"label": "Venue", "value": "CHI '26, Barcelona"},
+    {"label": "Formative study", "value": "Wizard-of-Oz co-design with 10 writers"},
+    {"label": "Instruments", "value": "Lasso, Collage, Filter, Perspective Shift"},
+    {"label": "Evaluation", "value": "Within-subjects study, 12 participants vs. GPT-4o baseline"},
+    {"label": "Measures", "value": "NASA-TLX, Creativity Support Index, interviews, interaction logs"},
+    {"label": "Key result", "value": "Higher expressiveness, immersion, and collaboration ratings"}
+  ],
+  "contributions": [
+    "A Wizard-of-Oz co-design study with 10 writers that examines how sketches, images, and text are used to externalize ideas and develop narratives during the planning and translating phases of fiction writing.",
+    "Vistoria, a multimodal co-editing system for experienced, LLM-literate writers that unifies text and images through instrumental operations and a synchronized editing loop.",
+    "A controlled usability study with 12 participants suggesting that multimodal co-editing can enhance expressiveness, idea generation, and narrative development, while revealing trade-offs in workload."
+  ],
+  "sections": [
+    {
+      "heading": "Motivation",
+      "paragraphs": [
+        "Story writing is multimodal by nature. When planning, writers visualize spatial layouts, character interactions, and scene dynamics while using textual notes to label and sequence events; when translating ideas into prose, visual details anchor narrative detail and emotional tone. Dual Coding Theory frames this coupling, positing that people draw on both verbal and nonverbal channels to reason and communicate.",
+        "Current writing tools remain overwhelmingly text-centric. Even LLM-powered systems that generate or retrieve images treat them as prompts, static references, or organizational diagrams rather than as manipulable narrative material. Because the story state is defined only through text, writers must repeatedly translate visual ideas back into words for any change to take effect, which adds cognitive load and keeps images outside the planning–translating loop."
+      ]
+    },
+    {
+      "heading": "Formative Study",
+      "paragraphs": [
+        "The team ran a Wizard-of-Oz co-design study with 10 writers, each with at least two years of creative writing experience. Participants worked on a shared Figma or Miro canvas, communicating intents through voice, sticky notes, or sketches, while two researchers acting as the backend generated text and images with Claude, ChatGPT (GPT-4o), and Midjourney. Each participant developed a story of about 300 words, followed by a 30-minute interview."
+      ],
+      "bullets": [
+        "Multimodal input reifies vague ideas: sketches externalized spatial imagination, text linked ideas to the existing story, and images communicated style and mood.",
+        "Image and text are complementary: images \"set the vibe\" and sparked inspiration through randomness, while text preserved open-ended imagination; participants cycled between the two, and four wanted changes synchronized across modalities.",
+        "Writers want direct manipulation: they collaged elements across outputs and asked for localized operations such as regenerating regions or extracting circled image elements.",
+        "Fragments are hard to organize: canvases quickly became \"messy,\" and participants requested clustering by character, object, or setting and reusable \"setting cards.\""
+      ],
+      "figures": [
+        {"file": "fig2.jpg", "caption": "Wizard-of-Oz setup (example of P4): the participant edits text and communicates intents via writing, sketching, and speech; two wizards feed these inputs into AI tools and paste results back onto the canvas."}
+      ]
+    },
+    {
+      "heading": "Design Goals",
+      "paragraphs": [
+        "Drawing on the formative findings, prior multimodal LLM tools, and theories of Structural Mapping and Instrumental Interaction, the authors derived four design goals for supporting the planning and translating phases of fiction writing."
+      ],
+      "bullets": [
+        "DG1 — Support the expression of ideas through multimodality, turning imprecise sketches, text, and images into concrete narrative materials.",
+        "DG2 — Align text and images for iterative exploration, so that textual edits are re-visualized and image refinements inform the text.",
+        "DG3 — Enable polymorphic cross-modal manipulation, where the same instrument edits both text and images to reduce switching costs.",
+        "DG4 — Organize and reuse fragments into coherent narratives by clustering ideas and surfacing latent connections."
+      ]
+    },
+    {
+      "heading": "System Overview",
+      "paragraphs": [
+        "Vistoria's interface has three parts: a Text Editor on the left holding the current draft, a collapsible Cluster panel in the middle, and a free-form Canvas on the right for sketching, typing, and generating. Writers select a region of the Canvas, and the system infers their intention from all sketches, text, and images inside it, together with the story context, to produce image–text cards that pair a representative image with a matching narrative segment. Exact Craft mode generates a single card that closely follows the writer's intent, while Creative Spark generates three cards that deliberately vary characters, settings, or objects to suggest new directions.",
+        "To keep scattered ideas usable, writers can highlight story objects and text segments on cards and add inline comments. The Cluster panel aggregates highlights by character, object, or scene, shows all linked images, text, and comments for a selected object, and can generate structured summaries of plot, setting, and description to guide final writing.",
+        "Under the hood, a React front end talks to a Flask back end organized as a multi-agent pipeline: a Narrative Construction Agent (o4-mini and GPT-4o) turns canvas selections into story segments, a Visual Synthesis Agent (GPT-4o or FLUX) produces images, and a Memory Agent stores image–text pairs for reuse."
+      ],
+      "figures": [
+        {"file": "fig3.jpg", "caption": "Vistoria's interface: a Text Editor (left), a collapsible Cluster panel (center), and a free-form Canvas with drawing, generation, and editing tools (right)."},
+        {"file": "fig6.jpg", "caption": "Highlight and Cluster: writers highlight objects and text on cards; the Cluster panel groups them by object and summarizes plot, setting, and description, and selecting a card reveals its earlier highlights and comments."}
+      ]
+    },
+    {
+      "heading": "Instrumental Operations",
+      "paragraphs": [
+        "The core of Vistoria is a set of instruments built on three principles: reification, which turns abstract co-editing actions into familiar image-editing tools; polymorphism, which lets the same instrument act on both text and images; and Dual Coding, which keeps verbal and visual changes aligned. Every operation therefore updates the image and its story passage together."
+      ],
+      "bullets": [
+        "Lasso — selecting a region of an image or a span of text creates a new card that focuses on that element with enriched visual and narrative detail, letting writers move between narrative scales.",
+        "Collage — image fragments, sketches, and text excerpts are composed within a collage frame; the system reads their spatial arrangement as intent and generates an aligned image and story segment.",
+        "Filter — applying a mood such as \"melancholic\" or \"dreamy\" changes the image's visual style and rewrites the accompanying prose to match the emotional tone.",
+        "Perspective Shift — changing the visual viewpoint regenerates the passage in first-, second-, or third-person voice, so a new camera angle corresponds to a new narrative voice."
+      ],
+      "figures": [
+        {"file": "fig5.jpg", "caption": "Instrumental operations for image–text co-editing: (a) Lasso extracts an element from an image or text, (b) Collage composes multimodal fragments into a new card, (c) Filter aligns visual style and textual tone, and (d) Perspective Shift changes viewpoint and narrative voice together."}
+      ]
+    },
+    {
+      "heading": "User Study",
+      "paragraphs": [
+        "The authors conducted a within-subjects lab study with 12 participants (6 male, 6 female, aged 21–32), all with creative writing experience and familiarity with LLMs. Each participant extended two given story openings into 300–500-word drafts, once with Vistoria and once with a baseline combining a text editor and a GPT-4o conversational panel, with condition order counterbalanced. Each condition included 20 minutes of world-building and exploration followed by 20 minutes of refinement.",
+        "After each condition, participants completed the NASA Task Load Index and the Creativity Support Index on 7-point scales, followed by a semi-structured interview at the end. Given the sample size, the authors treat survey results as descriptive signals that triangulate the qualitative themes."
+      ],
+      "bullets": [
+        "Expressiveness (CSI): 6.08 with Vistoria vs. 4.33 with baseline (p = .023).",
+        "Immersion (CSI): 4.92 vs. 2.75 (p = .0006).",
+        "Collaboration (CSI): 5.50 vs. 4.58 (p = .0418).",
+        "Mental demand (NASA-TLX): 5.16 vs. 3.17; physical demand: 4.67 vs. 2.08; frustration: 2.75 vs. 1.75 — all significantly higher with Vistoria.",
+        "No significant differences in exploration, enjoyment, results worth effort, temporal demand, effort, or performance."
+      ]
+    },
+    {
+      "heading": "Findings",
+      "paragraphs": [
+        "Participants used each instrument differently: the Lasso acted as a narrative \"zoom\" for local rewriting, Collage recombined sketches and extracted elements into new scenes, Perspective Shift surfaced new emotional framings, and Filters made tone visible when choosing between directions. Eight participants stressed that combining sketches with text and images brought outputs closer to their intentions.",
+        "The canvas encouraged bottom-up, parallel exploration rather than a single linear storyline. In descriptive statistics of exploration behavior, participants explored a mean of 6.92 story directions with Vistoria versus 1.42 with the baseline, with 3.00 versus 1.92 branches per direction. Seeing images alongside text also helped participants describe unfamiliar actions and settings in more concrete, sensory detail.",
+        "Nine participants reported a higher sense of agency, and most described stronger ownership, contrasting Vistoria with the baseline, where they felt like editors of GPT-generated text. The trade-off was effort: Vistoria required writers to supply and elaborate their own ideas, and some noted that a concrete image could fix their imagination and narrow exploration, making the system better at validating and expanding partially formed ideas than at open-ended ideation."
+      ],
+      "figures": [
+        {"file": "fig9.jpg", "caption": "Multimodal expression: participants' rough sketches and text are turned into image–text cards (via Creative Spark or Exact Craft) that were then adopted into their stories."},
+        {"file": "fig12.jpg", "caption": "Behavioral diagrams for P8–P12 contrasting Vistoria with the baseline: with Vistoria, participants explored more directions with more branches, cycling through generation, collage, and coupled image–text editing."}
+      ]
+    },
+    {
+      "heading": "Discussion & Limitations",
+      "paragraphs": [
+        "Instrument-driven workflows give writers fine control but demand clearer intentions, which conflicts with the ambiguity of early ideation. The authors suggest adapting how agency is distributed across creative phases, for example by suggesting operations from natural-language intent for newcomers, and by turning rejection into an operation that generates alternatives diverging from what the writer wants to avoid.",
+        "The short writing task does not reflect long-form fiction, evaluation relied on self-reports rather than objective story-quality measures, and the sample had limited cultural and age diversity. Future work includes longitudinal field deployments, validated co-creativity measures, and additional modalities such as audio."
+      ]
+    }
+  ]
+}
