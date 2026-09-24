@@ -40,17 +40,33 @@
 }
 
 .publication-title {
+    display: block;
     margin-top: 4px;
     font-size: 1rem;
     font-weight: 800;
+    color: #242424;
     cursor: pointer;
 }
 
 .publication-title:hover {
     font-weight: 800;
-    /*text-decoration:underline wavy #F42E7A;*/
-    /* color: #ff9cb7; */
+    color: #F42E7A;
     cursor: pointer;
+}
+
+.publication-image-link {
+    display: block;
+    flex-shrink: 0;
+    line-height: 0;
+}
+
+.publication-image-link .publication-image {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.publication-image-link:hover .publication-image {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(244, 46, 122, 0.12);
 }
 
 
@@ -139,7 +155,8 @@
 
 
 .publication-links a {
-    color: #F42E7A;
+    color: #242424;
+    font-weight: 700;
     text-decoration: none;
     font-size: 0.8rem;
 }
