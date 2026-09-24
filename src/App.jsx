@@ -1,46 +1,43 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Publications from './components/Publications';
-import Internship from './components/Internship';
-import Footer from './components/Footer';
+import Home from "./pages/Home.jsx";
+import ProjectPage from "./pages/ProjectPage.jsx";
 import './App.css';
 import "./css/All.css"
-import News from "./components/News.jsx";
-import SelectedAwards from "./components/SelectedAwards.jsx";
-import Visitor from "./components/Visitor.jsx";
-import Education from "./components/Education.jsx";
-import More from "./components/More.jsx";
-import { useEffect } from "react";
 
 function App() {
+    const location = useLocation();
+    const isFirstPage = useRef(true);
 
     useEffect(() => {
         window.gtag && window.gtag("config", "G-F053REKZP6", {
         });
     }, []);
 
+    useEffect(() => {
+        if (!location.hash) window.scrollTo(0, 0);
+    }, [location.pathname, location.hash]);
+
+    useEffect(() => {
+        if (isFirstPage.current) {
+            isFirstPage.current = false;
+            return;
+        }
+        window.gtag && window.gtag("event", "page_view", {
+            page_path: location.pathname,
+            page_title: document.title,
+        });
+    }, [location.pathname]);
+
     return (
         <div className="App">
             <Header />
-            <div className="main-layout">
-                <div className="left-hero">
-                    <Hero />
-                </div>
-                <div className="right-content">
-                    <div style={{margin: "2rem"}}>
-                        <About />
-                        <News />
-                        <Publications />
-                        <Internship />
-                        <Education />
-                        <SelectedAwards />
-                        <More />
-                    </div>
-                    <Visitor />
-                </div>
-            </div>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/projects/:id" element={<ProjectPage />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
             {/*<Footer />*/}
         </div>
     );
