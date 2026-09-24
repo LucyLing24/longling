@@ -1,108 +1,99 @@
 {
-  "tldr": "This paper studies how people in China use generative AI chatbots and apps for fortune-telling. Interviews and an online ethnography show that trust in an AI reading depends on why people asked, and that communities validate readings together while users re-ask until the answer feels right. Authority shifts from human diviners to algorithms and peers, while the practice keeps its long-standing goals.",
-  "facts": [
-    {"label": "Venue", "value": "CSCW '26"},
-    {"label": "Award", "value": "Honorable Mention (top 3% of submissions)"},
-    {"label": "Method", "value": "Semi-structured interviews + digital ethnography"},
-    {"label": "Participants", "value": "22 GenAI fortune-telling users, aged 18–52"},
-    {"label": "Community data", "value": "1,842 posts from RedNote, WeChat and Cece over three weeks"},
-    {"label": "Main platforms", "value": "ChatGPT, DeepSeek and Cece"}
+  "hook": "The oracle never sleeps, never refuses a question, and will answer again until you like what it says.",
+  "lede": "For centuries, Chinese communities have turned to diviners, reading BaZi birth charts, faces and Feng Shui, to steady themselves against an uncertain future. Today the diviner is increasingly a chatbot. We sat down with 22 people who habitually ask GenAI to tell their fortunes, and followed their communities online for three weeks, to answer a simple question: when the fortune-teller is a machine, where does belief come from?",
+  "stats": [
+    {"value": "22", "label": "habitual users of GenAI fortune-telling, interviewed in depth"},
+    {"value": "1,842", "label": "community posts followed on RedNote, WeChat and Cece"},
+    {"value": "2M+", "label": "WeChat posts mentioning “DeepSeek Divination” in February 2025 alone"},
+    {"value": "Top 3%", "label": "CSCW 2026 Honorable Mention Award"}
   ],
-  "contributions": [
-    "An account of why and how Chinese users consult GenAI for divination, showing that motivation shapes how readily they accept readings.",
-    "An analysis of trust: users value GenAI's accessibility, low cost, perceived objectivity and privacy, but find its readings templated, lacking spiritual mystique, and free of the ethical limits human diviners observe.",
-    "A characterization of how sharing, collective validation and identity performance on WeChat, RedNote and Cece move interpretive authority from a single diviner to the community.",
-    "A four-stage model of the GenAI fortune-telling process (Start, Process, Result and Feedback), including the habit of re-asking until a result feels right.",
-    "Design implications for GenAI divination that is culturally adapted, restores a sense of ritual, and includes ethical safeguards."
-  ],
-  "sections": [
+  "chapters": [
     {
-      "heading": "Motivation",
+      "title": "Ask again, until it feels right",
       "paragraphs": [
-        "Fortune-telling has deep roots in Chinese communities, from Shang Dynasty oracle bones to BaZi (the Four Pillars of Destiny), Ziwei Doushu and Feng Shui. It helps people navigate uncertainty in relationships and careers, and it maintains social bonds. GenAI is now localized for these practices: language models deliver BaZi, palm and face readings, and platforms such as Cece let users exchange and debate their results.",
-        "Traditionally, authority rests with the practitioner and is reinforced by communal norms. GenAI moves that trust onto models that lack moral judgment and community accountability. Prior work has mostly studied individual–agent pairs, leaving open how users in culturally specific contexts like China engage with, trust and share GenAI readings."
+        "Why people ask turned out to shape what they believe. Participants who came for entertainment or emotional comfort embraced AI readings most readily; those facing big life decisions stayed wary, treating the AI as a second opinion rather than an authority.",
+        "For comfort-seekers, accuracy was almost beside the point. A reading was something to be negotiated, and the machine made negotiation effortless. Rephrase the question, regenerate the answer, and try again."
       ],
-      "bullets": [
-        "RQ1: What are the key motivations and interaction practices when Chinese users engage with GenAI-based fortune-telling?",
-        "RQ2: How do users build trust in GenAI prediction apps and share their belief in these predictions with their community?",
-        "RQ3: How do users' social relationships with others who use these tools affect how they perceive and use them?"
+      "quote": {
+        "text": "When I’m not satisfied with the divination result, I just make it tell again and again until I’m happy with it.",
+        "by": "P22, business owner"
+      },
+      "points": [
+        "Entertainment: light, casual engagement",
+        "Psychological comfort: readings shift mood, and questions are repeated for reassurance",
+        "Small decisions: playful guidance, such as a “lucky food” for the day",
+        "Major decisions: a different perspective, not a verdict",
+        "Learning and comparison: the most skeptical group, who felt AI lacks a human diviner’s depth"
       ]
     },
     {
-      "heading": "Method",
+      "title": "More objective than a person, less magical than a ritual",
       "paragraphs": [
-        "The team interviewed 22 people (14 female, 8 male; mean age 27.2) who had used GenAI for divination such as astrology, BaZi, tarot, face reading and Feng Shui. Interviews lasted 30–60 minutes, were held in Chinese, and covered seven topics, including workflow, ethics, psychological impact and social interaction.",
-        "A three-week digital ethnography (4–25 March 2025) followed on RedNote, WeChat and Cece's in-app community. Three researchers coded the interviews and screenshots, arriving at three core topics: effectiveness and trust, social interactions in online communities, and the common fortune-telling process."
+        "Users praised GenAI for being convenient, cheap and, surprisingly, fair. Several trusted its apparent neutrality more than a human practitioner’s, and many saw the absence of human judgment as a privacy advantage, feeling safer sharing intimate details with a machine.",
+        "Yet the same qualities drained the experience of its magic. Readings felt templated, relentlessly positive and too logical to carry the aura of divination."
       ],
-      "bullets": [
-        "Usage frequency: 6 frequent (weekly), 13 occasional (1–3 times a month) and 3 one-time users.",
-        "Interview modes: 4 in person and 18 online.",
-        "Ethnography corpus: 803 RedNote notes, 112 WeChat articles, 589 Cece forum posts and 338 comment threads."
+      "quote": {
+        "text": "The results calculated by GenAI are too ’normal’. It always says ’stay hopeful’, ’you are worthy of love’...which is of course good, but it doesn’t really arouse my real emotions.",
+        "by": "P19"
+      },
+      "figures": [
+        {"file": "fig4.jpg", "caption": "What users valued (convenience, low cost, straightforward guidance, objectivity, customization) and what they missed (personalization, mystery, technical depth)."}
       ]
     },
     {
-      "heading": "Why People Ask Shapes What They Believe",
+      "title": "An oracle without boundaries",
       "paragraphs": [
-        "Motivation shaped how participants received AI readings. Those seeking entertainment or psychological comfort embraced the tools most readily, while those facing major decisions stayed cautious. Comfort-seekers valued reassurance over accuracy, and some rephrased until they got it: “When I'm not satisfied with the divination result, I just make it tell again and again until I'm happy with it.” (P22)"
+        "Human fortune-tellers work within limits: some refuse to read for the young or for people in fragile mental health. A chatbot answers anyone, about anything, including high-stakes questions such as medical decisions, where a reading can leave a negative psychological impression.",
+        "At the same time, local models made the practice feel closer to home. Participants felt Chinese models understood systems such as Ziwei Doushu better, and some used Doubao to turn a BaZi chart into images of the person it describes."
       ],
-      "bullets": [
-        "Entertainment: casual engagement without deeper involvement.",
-        "Psychological comfort: readings affect mood, and some users repeat questions for reassurance.",
-        "Small decisions: playful guidance, such as a “lucky food” for the day.",
-        "Major decisions: a different perspective rather than an authority, sometimes used to reconfirm a choice.",
-        "Learning and comparison: a more skeptical group, who felt AI lacks the depth of a real human fortune-teller."
+      "quote": {
+        "text": "Some older fortune-tellers won’t read for people under 20, but AI doesn’t have these ethical considerations.",
+        "by": "P17"
+      },
+      "figures": [
+        {"file": "fig5.jpg", "caption": "Images Doubao generated from nothing but the BaZi of a person’s birth chart."}
       ]
     },
     {
-      "heading": "Accessible and Objective, but Lacking Mystique",
+      "title": "Belief becomes a group project",
       "paragraphs": [
-        "Participants valued GenAI readings as convenient, cheap and good enough for simple questions. Some saw them as more objective than human diviners, who “might try to appeal to what clients want to hear” (P5). Yet many found the results templated, too logical to carry the atmosphere of divination, and uniformly positive: “The results calculated by GenAI are too ‘normal’” (P19). Some noted technical limits, such as ChatGPT failing at intricate BaZi calculations.",
-        "Many felt safer sharing personal details with an AI. But human fortune-tellers observe limits that AI lacks: “Some older fortune-tellers won't read for people under 20, but AI doesn't have these ethical considerations” (P17). GenAI answers anyway, which can leave negative psychological impressions in high-stakes situations such as medical decisions.",
-        "Localized models mattered. More than 2 million WeChat posts mentioned “DeepSeek Divination” in February 2025 alone. Some participants felt Chinese models better understood systems such as Ziwei Doushu, and some used Doubao to turn a BaZi chart into images."
+        "AI readings rarely stay private. Couples share compatibility readings on WeChat, strangers trade natal charts under RedNote tags, and Cece’s built-in social features turn horoscopes into conversation starters. Often the connection matters more than the content.",
+        "Under a hopeful horoscope, one user posted “I will pass the exam and advance!”, and replies like “I’ll pass the exam next week!” followed. Under a difficult one, others chimed in that it was “incredibly accurate” for them too. We call this networked belief: convictions that are collectively endorsed, nuanced and sustained, with authority moving from a single diviner to the crowd."
       ],
       "figures": [
-        {"file": "fig4.jpg", "caption": "Perceived advantages (convenience, low cost, straightforward guidance, objectivity, customization) and disadvantages (lack of personalization, lack of mystery, technical bottlenecks) of GenAI divination."},
-        {"file": "fig5.jpg", "caption": "Images that Doubao AI generated based solely on the BaZi of a person's birth chart."}
+        {"file": "fig6.jpg", "caption": "Sharing practices across RedNote, WeChat and Cece, from posting AI natal-chart readings to making friends through astrology."},
+        {"file": "fig7.jpg", "caption": "Community rituals: making wishes under a positive horoscope, sharing emotional experiences, and debating ChatGPT’s fortune-telling."}
       ]
     },
     {
-      "heading": "Communities That Validate Belief",
+      "title": "The new ritual, in four steps",
       "paragraphs": [
-        "GenAI readings rarely stay private. Users share synastry (compatibility) readings with partners on WeChat, post results on RedNote under tags such as “fortune”, where the algorithm shows them to strangers, and use Cece's built-in social features. They shared to seek validation, hear other interpretations and build relationships, and the connection often mattered more than the content.",
-        "Belief is reinforced collectively. Under a positive horoscope post, one user wrote “I will pass the exam and advance!” and others replied with similar affirmations. Under a difficult reading, users said it was “incredibly accurate” for them too. Even joking about ChatGPT refusing to tell fortunes became a way to perform an identity that fits community norms. The authors call this “networked belief”: convictions that the community collectively endorses and sustains."
+        "Across participants’ screenshots and online posts, a shared choreography emerged: Start, Process, Result, Feedback. Users pick a method and a platform to match their mood, then either perform a small digital ritual, such as drawing cards, or hand over personal data such as a birth time or a face photo.",
+        "Then the paths diverge. Some people adjust their behavior, others shrug the reading off as fun, and some simply re-ask with slightly different words until the answer feels right."
       ],
       "figures": [
-        {"file": "fig6.jpg", "caption": "Sharing practices on RedNote, WeChat and Cece, from posting AI natal chart readings to making friends through astrology."},
-        {"file": "fig7.jpg", "caption": "Community interactions: making wishes under a positive horoscope post, sharing emotional experiences, and discussing ChatGPT's fortune-telling."}
+        {"file": "fig9.jpg", "caption": "Two flows: question-driven (question, ritual, AI interpretation) and personal-information-driven (personal data, visualized fortune, AI interpretation)."}
       ]
     },
     {
-      "heading": "A Four-Stage Fortune-Telling Process",
+      "title": "Designing oracles that know their limits",
       "paragraphs": [
-        "From the accounts and screenshots of 18 participants and from online posts, the authors describe four stages: Start, Process, Result and Feedback. Users begin with a motivation and choose a method and platform to match it; one participant used Cece because it was available late at night.",
-        "In the question-oriented flow, users ask a question and perform a digital ritual, such as drawing cards, before the AI interprets the result. In the personal-information flow, they enter data such as their birth time or a face photo and usually see visual aids instead of a ritual. Results tend to be long and comforting. Afterwards, some users adjust their behavior, others dismiss the reading as entertainment, and some re-ask with slightly changed questions until the answer feels “right”."
-      ],
-      "figures": [
-        {"file": "fig9.jpg", "caption": "Two flows: problem-oriented (question, ritual, AI interpretation) and personal-information-oriented (personal information, visualized fortune, AI interpretation)."}
-      ]
-    },
-    {
-      "heading": "Discussion & Design Implications",
-      "paragraphs": [
-        "The authors frame GenAI divination as something the user and the AI build together, not the use of a passive tool. Many participants trusted the AI's apparent neutrality more than human practitioners, which the authors relate to automation bias. Users gained control over topics and interpretation, and introverted or socially anxious users found a psychologically safe space. But this agency can also reinforce confirmation bias and bypass the ethical limits of traditional practice.",
-        "In communities, the authority once held by a single diviner moves to the group. Members add context to generic AI outputs, reframe predictions of “misfortune” as constructive advice, and debate prompts to correct miscalculated BaZi charts."
-      ],
-      "bullets": [
-        "Adapt to cultural beliefs: ground models in sources such as the I Ching or BaZi rules, and replace the neutral assistant with culturally fitting personas.",
-        "Balance objectivity and mysticism: add “meaningful inefficiency”, such as a short star-blink animation before a reading, and offer both rational and spiritual modes.",
-        "Support emotional well-being: instead of endless regeneration, help users reframe negative readings, and give ethical hints on high-stakes topics such as health crises."
-      ]
-    },
-    {
-      "heading": "Limitations",
-      "paragraphs": [
-        "Most participants were young and educated, more were female than male, and only six were frequent users, so seniors and long-term use are underrepresented. The study focused mainly on ChatGPT, DeepSeek and Cece, and it relied largely on self-reports because older interaction logs were often unavailable."
+        "If divination is something users and AI build together, then good design is less about faster answers and more about restoring what was lost. We argue for “meaningful inefficiency”: digital rituals created through deliberate latency, such as a ten-second star-blink animation before a reading, meant not to make users think harder, but to induce a sense of solemnity: a pause in which they can suspend disbelief.",
+        "Beyond ritual, systems should ground readings in cultural sources such as the I Ching or BaZi rules, let users switch between a Rational Analysis Mode and a Spiritual Guidance Mode, help people reframe negative readings instead of regenerating them endlessly, and surface ethical hints when questions touch health or other high-stakes decisions."
       ]
     }
+  ],
+  "takeaways": [
+    "Authority in fortune-telling is shifting from a single human practitioner to a partnership of user, algorithm and community.",
+    "“Objectivity” cuts both ways: users trust the AI’s neutrality, yet steer it toward the answers they want, which reinforces confirmation bias.",
+    "For spiritual and emotional use, AI may need friction, ritual and ethical restraint rather than speed alone."
+  ],
+  "facts": [
+    {"label": "Venue", "value": "CSCW ’26 (PACM HCI), Honorable Mention Award"},
+    {"label": "Method", "value": "Semi-structured interviews and a three-week digital ethnography (4–25 March 2025)"},
+    {"label": "Participants", "value": "22 GenAI fortune-telling users (14 female, 8 male; mean age 27.2)"},
+    {"label": "Community data", "value": "803 RedNote notes, 112 WeChat articles, 589 Cece posts, 338 comment threads"},
+    {"label": "Main platforms", "value": "ChatGPT, DeepSeek and Cece"},
+    {"label": "Limitations", "value": "Mostly young, educated participants; few long-term users; findings rely largely on self-reports"}
   ]
 }

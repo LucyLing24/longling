@@ -61,12 +61,7 @@
 }
 
 .publication-image-link .publication-image {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.publication-image-link:hover .publication-image {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(244, 46, 122, 0.12);
+    cursor: pointer;
 }
 
 
