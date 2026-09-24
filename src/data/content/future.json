@@ -1,95 +1,103 @@
 {
-  "tldr": "Young people choosing a career often struggle to picture what different paths would actually look like years from now. Future Calling pairs an AI career advisor chatbot with a \"Future Envisioner\" that turns a chosen occupation into illustrated stories of the user's life 1, 5, 10, and 20 years ahead, complete with step-by-step career paths and face-swapped future-self images. The work explores how generative AI can make long-term career options concrete enough to reflect on and compare.",
+  "hook": "An image generator can show you twenty years from now, but first you have to describe who you will be.",
+  "lede": "Young people choosing a career weigh desirability, money and personal interest, often with little information, and the tools they are given rarely show what a path might look like over time. When we asked students to picture their future selves with GenAI, many were unsure what they wanted, and the images they did get felt impersonal. Future Calling turns the prompt into a conversation: a career advisor chatbot gets to know the user, and an envisioner writes four linked chapters of a possible working life, one, five, ten and twenty years ahead, each with a story, a career path and an image carrying the user’s own face. We watched 20 young adults use it to explore, compare and question their futures.",
+  "stats": [
+    {"value": "4", "label": "stages in every envisioned future: one, five, ten and twenty years ahead"},
+    {"value": "20", "label": "young adults, aged 18–25, who explored their career futures with Future Calling"},
+    {"value": "0.652", "label": "effect size (d) of the significant rise in career self-efficacy after use (paired t-test, p = .009)"}
+  ],
+  "chapters": [
+    {
+      "title": "Pictures without a story",
+      "paragraphs": [
+        "We began with individual workshops with 19 university students aged 18–23. After a 10-minute demonstration of Stable Diffusion WebUI with Faceswaplab, each generated images of their own appearance, lifestyle and career one year and twenty years ahead, thinking aloud as they worked.",
+        "Many were unsure of their long-term goals and found it hard to write detailed prompts. The images that came back were described as “lacking a story” or “feeling impersonal”; one participant compared them to subway ads. Yet many said that seeing a future self reduced their anxiety and raised their confidence, and some played with unconventional careers, becoming superheroes or national leaders. Those findings shaped three features: guided prompt generation, narrative-driven visualizations and interactive chatbot support."
+      ],
+      "quote": {
+        "text": "I don’t even know what I want to do next year, let alone in 20 years.",
+        "by": "Formative workshop participant"
+      },
+      "figures": [
+        {"file": "fig2.jpg", "caption": "What the workshops surfaced: difficulty envisioning future selves and a need for stories behind the images, alongside reduced anxiety and imaginative play."}
+      ]
+    },
+    {
+      "title": "An advisor who writes the prompt",
+      "paragraphs": [
+        "Future Calling is a web application built on GPT-4, DALL-E 3 and the Baidu FaceSwap API. Users upload a photo and basic details, then talk with the Career Advisor, a GPT-4 chatbot prompted to draw out their interests and experiences in a gentle, encouraging and professional tone, suggesting occupations along the way. From the conversation it keeps refining a user profile, so users no longer have to write image prompts themselves.",
+        "When a user types in an occupation, the Future Envisioner combines it with the profile and writes three interrelated elements for each of four stages: a future story, a career path and a description for a future image. A first chapter might begin, “Year 1: You start as a digital content creator, focusing on historical topics.” DALL-E 3 renders each image and the face-swap service replaces the generated face with the user’s own. Any image, story or path can be regenerated with feedback, and users can return to try another occupation."
+      ],
+      "figures": [
+        {"file": "fig3.jpg", "caption": "Two modules: the Career Advisor concludes a user profile from conversation, and the Future Envisioner uses it to generate images, stories and career paths that users can regenerate with new prompts."}
+      ]
+    },
+    {
+      "title": "Four careers, side by side",
+      "paragraphs": [
+        "Twenty participants recruited from universities in China, 10 undergraduates, 6 graduate students and 4 early-career professionals, each used Future Calling for around 30 minutes while thinking aloud, with surveys before and after and an interview at the end.",
+        "P8 had a political science background and an interest in design. The advisor suggested several paths; she chose illustrator, then went on to generate three more careers and compare them side by side. Along the way she asked how to balance realistic expectations with ideals, and put a harder question to the advisor: “If I don’t like the job of a political science teacher in real work, do I need to compromise for practical economic reasons?” She finished by asking how the careers’ incomes differed.",
+        "Participants still exploring behaved like P8: she and P3 each generated four career plans. Those with an established direction usually generated one and asked specific questions instead, about salaries or exam requirements. “I’m only interested in my current research field and want to know how I can develop in this area,” said P6."
+      ],
+      "quote": {
+        "text": "I love to use the Future Envisioner to search and generate different careers. In this way, I can compare how they develop.",
+        "by": "P8"
+      },
+      "figures": [
+        {"file": "fig6.jpg", "caption": "P8 moved back and forth between four envisioned careers (illustrator, florist, fashion designer and political teacher) and the Career Advisor, asking which suited her and what each would earn."}
+      ]
+    },
+    {
+      "title": "Correcting a future that is not yours",
+      "paragraphs": [
+        "Much of the reflection happened in the edits. When a story showed P6 conducting daily lab experiments, he objected, “That’s not possible; it’s not like me,” and rewrote what he wanted to do. He also added a contingency: “What if I lose the job?” P2 wrote a master’s degree into her five-year story, and P10 aligned his path with policies such as the Belt and Road Initiative.",
+        "P11, an engineering student, refined two careers in depth. He corrected and extended the generated career paths, asked for “more details,” worked in networking advice the advisor had given him earlier, and regenerated the image of himself ten years on, until the plan reflected his own information and goals."
+      ],
+      "quote": {
+        "text": "It’s like I’m starting to understand myself, what I like and don’t like, and the choices I’m going to make.",
+        "by": "P3"
+      },
+      "figures": [
+        {"file": "fig7.jpg", "caption": "P11 refined two pathways, “Institute members of central enterprises” and “Tech entrepreneur and self-media blogger on technology,” by conversing with the advisor and regenerating stories, paths and images with new prompts."}
+      ]
+    },
+    {
+      "title": "A goal, and the steps toward it",
+      "paragraphs": [
+        "Pairing each goal with concrete advice changed how reachable it felt. P2, who wants to be an algorithm engineer, saw a ten-year goal of becoming a senior engineer in machine learning and leading a multinational team, paired with steps: attend international conferences, join multinational projects, expand her network, lead small projects. For P10, a one-year suggestion to look for internships at internet companies lined up with a five-year goal of working at a leading gaming company.",
+        "Distance cut both ways. “AI can create a very long-term career plan and make the final goal seem less distant,” said P1. But P10, whose story began with him teaching dance within a year, found the far end harder to accept: “I feel that the 20-year vision is a bit unreasonable, and I doubt this career will achieve such milestones in 20 years.”",
+        "Across all 20 participants, career self-efficacy rose significantly after using Future Calling (d = 0.652, p = .009). Career maturity, which also depends on outside factors such as career education and real-world experience, improved only marginally (d = 0.447, p = .06)."
+      ],
+      "quote": {
+        "text": "If I only looked at the career goal, it would just be an imagination for me, but effective career advice makes it seem achievable!",
+        "by": "P2"
+      },
+      "figures": [
+        {"file": "fig10.jpg", "caption": "P2’s ten-year story and the career advice beneath it: the goal alone felt like imagination, the steps made it seem achievable."}
+      ]
+    },
+    {
+      "title": "Too successful to believe",
+      "paragraphs": [
+        "The envisioned futures leaned bright. A user who mentioned wanting to work at a tech company would often appear, twenty years on, as a highly prominent figure. For P3 that was fuel: “It might be a little too positive, but it’s not bad—it gives me confidence. When I think of this kind of life, I want to start studying right now!” For others it bred doubt about whether such idealized futures were reachable. Some images also reinforced stereotypes, such as professionals always dressed in suits, and some participants found the information of limited use: “The information was all searchable on the internet and of little value,” said P5.",
+        "Some participants asked for less idealized, even negative, scenarios as a heads-up for what lies ahead; P3 wanted the AI to be “like a senior telling you about the pitfalls and challenges you might face at different stages of your career.” That points to next steps: retrieval of specific career information for users with clear goals, stricter prompting or fine-tuning to keep futures closer to where users are now, and an AI that asks, “What kind of impact do you hope to make through your work?” rather than declaring which career fits."
+      ],
+      "quote": {
+        "text": "It’s too successful. It sounds so simple, but every step can be unsuccessful, every step takes chance and luck.",
+        "by": "P4"
+      }
+    }
+  ],
+  "takeaways": [
+    "An image of a future self felt impersonal on its own; paired with a story and step-by-step advice, it made career goals feel achievable.",
+    "Reflection happened in the corrections: editing futures that did not fit pushed participants to say what they actually wanted.",
+    "Overly positive futures motivated some participants and raised doubts in others, so career tools may need balanced scenarios and questions rather than verdicts."
+  ],
   "facts": [
     {"label": "Status", "value": "Work in progress"},
-    {"label": "Formative study", "value": "Individual workshops with 19 participants aged 18–23"},
-    {"label": "System", "value": "GPT-4 Career Advisor + DALL-E 3 and face-swap Future Envisioner"},
-    {"label": "User study", "value": "Within-group study with 20 young adults; pre/post surveys, think-aloud, interviews"},
-    {"label": "Key result", "value": "Career self-efficacy increased after use (d = 0.652, p = .009)"}
-  ],
-  "contributions": [
-    "Future Calling, a GenAI-based system for career exploration that visualizes future career paths for young users through personalized conversation, stories, and images.",
-    "A qualitative exploration of how users explore and refine career options through personalized visualizations and contextual storytelling.",
-    "Design insights for career planning systems that use AI-generated personas, with recommendations for extending GenAI to other contexts and audiences.",
-    "A demonstration of how GenAI tools can be integrated into social systems to support personal development."
-  ],
-  "sections": [
-    {
-      "heading": "Motivation",
-      "paragraphs": [
-        "Students and new graduates face career decisions involving many variables, such as job desirability, financial rewards, and personal interest, often with limited access to comprehensive career information. Traditional tools like personality assessments and skills inventories offer a brief view based on past data, and newer machine learning and chatbot approaches still fall short of fully customized plans. Crucially, they rarely provide a visualized career trajectory that users can act on.",
-        "Large language models can generate tailored guidance, and text-to-image models combined with face-swap tools can create realistic images of a person's future self. Future Calling brings these together to help young people discover possible career directions and see what those futures might look like."
-      ],
-      "figures": [
-        {"file": "fig1.jpg", "caption": "Users chat with the Career Advisor, which builds a user profile; the Future Envisioner then generates images, stories, and career paths for different occupations that users can customize."}
-      ]
-    },
-    {
-      "heading": "Formative Workshops",
-      "paragraphs": [
-        "To understand how people envision their future selves with GenAI, the team ran individual 30-minute workshops with 19 university participants aged 18–23. After a short demonstration of Stable Diffusion WebUI with Faceswaplab, participants generated images of their appearance, lifestyle, and career one year and twenty years ahead while thinking aloud, followed by a reflective interview analyzed through inductive thematic analysis."
-      ],
-      "bullets": [
-        "Difficulty envisioning future selves: participants were unsure of long-term goals and found it hard to write detailed prompts — \"I don't even know what I want to do next year, let alone in 20 years.\"",
-        "Lack of narrative depth: images felt impersonal, like \"subway ads with no purpose or connection to me.\"",
-        "Positive and creative experiences: seeing future selves reduced some participants' anxiety, and some playfully explored unconventional careers such as superheroes or national leaders."
-      ],
-      "figures": [
-        {"file": "fig2.jpg", "caption": "Formative workshop themes: difficulty envisioning future selves and a need for storytelling in GenAI images, alongside reduced anxiety through positivity and imaginative exploration."}
-      ]
-    },
-    {
-      "heading": "System Design",
-      "paragraphs": [
-        "The workshop insights led to three design responses: guided prompt generation, narrative-driven visualizations, and interactive chatbot support. Future Calling is a React web application with a multi-agent design built on GPT-4, DALL-E 3, and the Baidu FaceSwap API. Users upload a photo and basic information, then move between two modules.",
-        "The Career Advisor is a GPT-4 chatbot prompted to keep a gentle, encouraging, and professional tone while gradually eliciting the user's interests and experiences, suggesting occupations along the way. It compiles this into a user profile that is refined as the conversation continues, so users do not have to write image prompts themselves.",
-        "The Future Envisioner takes an occupation and the current profile and generates three linked elements for four time points — 1, 5, 10, and 20 years: a future story, a career path with actionable advice, and a future image. Images are generated with DALL-E 3 and face-swapped with the user's photo. Users can give feedback to regenerate any image, story, or career path, and return to explore other occupations."
-      ],
-      "figures": [
-        {"file": "fig3.jpg", "caption": "System design: the Career Advisor (conversational AI) concludes a user profile that the Future Envisioner (text-to-image AI) uses to generate images, stories, and career paths, which users can regenerate with new prompts."}
-      ]
-    },
-    {
-      "heading": "User Study",
-      "paragraphs": [
-        "The team conducted a within-group study with 20 participants (10 male, 10 female, aged 18–25) recruited from universities in China: 10 undergraduates, 6 graduate students, and 4 early-career professionals. Participants completed a pre-survey, and about a week later used Future Calling for around 30 minutes while thinking aloud, then completed a post-survey and a semi-structured interview. Surveys measured career maturity and career self-efficacy using established scales, and qualitative data were coded thematically by two researchers."
-      ],
-      "bullets": [
-        "Career self-efficacy increased significantly after using Future Calling (paired t-test, d = 0.652, p = .009).",
-        "Career maturity showed a marginal, non-significant improvement (d = 0.447, p = .06)."
-      ]
-    },
-    {
-      "heading": "Use Cases",
-      "paragraphs": [
-        "P8, a student with a political science background and an interest in design, used the Career Advisor to discuss how to connect her background with design work and generated four different career futures, including illustrator and fashion designer. She compared them side by side and asked the advisor about balancing realistic expectations with ideals, handling dissatisfaction in a job she might not like, and income differences.",
-        "P11, an engineering student, refined two career plans in depth. He edited the generated career paths to add details and correct inaccuracies, requested more detail, incorporated networking advice from the advisor, and regenerated the 10-year image, so that the plan increasingly reflected his own information and goals."
-      ],
-      "figures": [
-        {"file": "fig5.jpg", "caption": "P8's user flow: conversations with the Career Advisor lead to four envisioned careers, which she compares while asking about realistic expectations, potential dissatisfaction, and income differences."},
-        {"file": "fig7.jpg", "caption": "P11's user flow: refining two career pathways by conversing with the advisor, envisioning futures, and editing prompts and career details through iterative regeneration."}
-      ]
-    },
-    {
-      "heading": "Findings",
-      "bullets": [
-        "Organizing career information: participants valued how the advisor synthesized information faster than a search engine, and some discovered careers they had not considered; others found the information too general or easily searchable.",
-        "Reflection through iteration: editing generated stories to fit themselves — correcting unrealistic scenes, adding risks such as losing a job, or adding plans like a master's degree — prompted self-reflection; as P3 said, \"It's like I'm starting to understand myself.\"",
-        "Achievable, step-by-step futures: pairing future stories with concrete career advice made goals feel achievable, although some felt 20-year visions were too general and unrealistic compared with specific short-term plans.",
-        "Storytelling and images: contextual stories made images feel more meaningful and immersive, though some images reinforced stereotypes such as professionals always wearing suits.",
-        "Different needs at different stages: participants still exploring asked broad questions and generated several career plans, while those with clear directions asked specific questions and usually generated only one.",
-        "Overly positive futures: optimistic scenarios boosted some participants' confidence and motivation but raised doubts for others, who asked for more balanced or even negative scenarios."
-      ],
-      "figures": [
-        {"file": "fig13.jpg", "caption": "Participants' reactions to highly positive 20-year scenarios: some were skeptical, while others felt the content increased motivation and confidence."}
-      ]
-    },
-    {
-      "heading": "Discussion & Limitations",
-      "paragraphs": [
-        "The authors relate the gain in self-efficacy to future self-continuity: vivid, connected depictions of a future self may strengthen the link between present actions and long-term goals. Career maturity, however, depends on external factors like career education and experience, suggesting the system could integrate mentorship and experiential learning. They also propose retrieval-augmented generation to give users with clear goals more specific information, stricter prompting to reduce overly positive outputs, and AI-framed questions that encourage reflection instead of recommending careers outright, while noting privacy concerns around uploading personal data and photos.",
-        "GPT-4 often produced general and positive content, and DALL-E 3 images reflected narrow professional stereotypes. Outcomes were measured only immediately after use, and the study focused on young adults. Future work includes deeper and more specific guidance, broader age and cultural groups, more balanced scenarios, and localized job-market data."
-      ]
-    }
+    {"label": "Formative study", "value": "Individual workshops with 19 university participants aged 18–23"},
+    {"label": "System", "value": "React web app; GPT-4 Career Advisor; DALL-E 3 and Baidu FaceSwap API for the Future Envisioner"},
+    {"label": "User study", "value": "20 participants aged 18–25; pre- and post-surveys, a ~30-minute session with think-aloud, and interviews"},
+    {"label": "Measures", "value": "Career Maturity Inventory and Career Self-Efficacy Scale, compared with paired t-tests"},
+    {"label": "Limitations", "value": "Outcomes measured only immediately after use; young adults only; GPT-4 content often general and positive; DALL-E 3 images reflected narrow professional stereotypes"}
   ]
 }

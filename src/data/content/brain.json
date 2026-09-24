@@ -1,73 +1,69 @@
 {
-  "tldr": "Brain Cache is a position paper that envisions generative AI as a \"second brain\". In this vision, a cognitive exoskeleton captures what a person thinks and learns, organizes it into an evolving knowledge graph, and brings relevant knowledge back when it is needed. The paper frames this as human–AI cognitive symbiosis and discusses the risks it raises, from neuroprivacy to over-reliance.",
-  "facts": [
-    { "label": "Venue", "value": "GenAICHI: CHI 2025 Workshop on Generative AI and HCI" },
-    { "label": "Type", "value": "Single-author position paper" },
-    { "label": "Core idea", "value": "GenAI as a cognitive exoskeleton for knowledge" },
-    { "label": "Mechanisms", "value": "Externalization · Structuring · Activation" },
-    { "label": "Key techniques", "value": "Dual-channel capture, RAG-built cognitive graphs, Chain-of-Thought analysis, proactive retrieval" }
+  "hook": "We save more than ever, yet what we saved rarely resurfaces at the moment it could help.",
+  "lede": "We encounter too much fragmented information, save the useful parts across different platforms, and then struggle to find them again. Notebooks and note-taking apps store it all and do little with it, and today’s generative AI tools, however capable, each work inside their own silo. Brain Cache is a position paper that asks what would change if generative AI acted not as another assistant but as a cognitive exoskeleton: a second brain that externalizes, structures and activates what we know.",
+  "stats": [
+    {"value": "3", "label": "interlocked crises: overloaded memory, fragmented thinking, inert knowledge"},
+    {"value": "2", "label": "capture channels: conscious outputs and subconscious interaction"},
+    {"value": "3", "label": "mechanisms in one loop: externalize, structure, activate"}
   ],
-  "contributions": [
-    "Proposes Brain Cache, a framework that positions generative AI as an active cognitive partner rather than a task-specific assistant or passive store.",
-    "Defines three synergistic mechanisms, externalization, structuring, and activation, and links them in a continuous feedback loop.",
-    "Formalizes principles of cognitive symbiosis, in which human intuition and machine processing jointly overcome biological limitations.",
-    "Examines the implementation challenges and risks of long-term use, including neuroprivacy and algorithmic dependency."
-  ],
-  "sections": [
+  "chapters": [
     {
-      "heading": "Motivation",
+      "title": "Saved somewhere, found nowhere",
       "paragraphs": [
-        "The paper describes \"cognitive entropy\" as three interlocked problems: memory overwhelmed by information, thinking fragmented across digital contexts, and knowledge that is stored but inert when needed. Note-taking tools act as passive storage. Current generative AI tools excel within single tasks such as writing, design, or research, but remain isolated from one another.",
-        "In the paper's terms, these systems support doing-for-thinking by automating cognitive labor, but neglect thinking-for-thinking, which means proactively restructuring a user's knowledge. They prioritize atomic tasks over lifelong scaffolding, rely on static organizing metaphors such as folders and tags, and retrieve knowledge only reactively."
+        "The paper calls the condition cognitive entropy: biological memory overwhelmed by a deluge of data, thinking fragmented across discontinuous digital contexts, and critical knowledge that stays inert despite being technically stored. Traditional tools, from notebooks to note-taking apps, work as passive storage rather than active partners.",
+        "Generative AI looks like a remedy, but today it arrives as islands: writing assistants, design tools that synthesize mood boards, research accelerators, each confined to its own application. These systems excel at doing-for-thinking, automating cognitive labor, but neglect thinking-for-thinking: proactively restructuring what a person knows."
+      ],
+      "quote": {
+        "text": "This gap between information availability and actionable knowledge creates a paradoxical “cognitive poverty in the age of abundance”.",
+        "by": "From the paper"
+      },
+      "figures": [
+        {"file": "slide3.jpg", "caption": "From the talk: fragmented information, scattered across platforms, saved somewhere but hard to find again."}
+      ]
+    },
+    {
+      "title": "Capture the thinking, not just the notes",
+      "paragraphs": [
+        "The idea builds on extended cognition. Sparrow et al. found that people prioritize remembering where information is stored over what it contains, suggesting the brain already treats external repositories as memory. Brain Cache takes this further with two capture channels. The explicit channel records deliberate outputs such as research notes, annotated diagrams and lecture recordings, gathered through phones, augmented reality glasses and neural-textile sensors and tagged with location, collaboration session and timestamp.",
+        "The implicit channel continuously follows spontaneous cognitive activity: interaction records, eye-tracking heatmaps and EEG patterns from non-invasive biosensors. Merged, the two channels form a vector space meant to preserve the continuity of thought, linking deliberate intellectual work with subconscious activity."
       ],
       "figures": [
-        { "file": "slide5.jpg", "caption": "Talk slide: framing generative AI's role (cognitive exoskeleton), purpose (externalizing, structuring, and activating knowledge), and scenario (cognitive augmentation)." }
+        {"file": "slide8.jpg", "caption": "Externalization: an explicit channel of conscious outputs and an implicit channel of subconscious interaction, merged into one vector space."}
       ]
     },
     {
-      "heading": "Externalization",
+      "title": "Knowledge that finds you first",
       "paragraphs": [
-        "Externalization uses a dual-channel architecture. The explicit channel captures deliberate outputs such as research notes, annotated diagrams, and lecture recordings, with contextual metadata such as location, collaboration session, and timestamp. The implicit channel monitors spontaneous cognitive activity through interaction records, eye-tracking heatmaps, and EEG patterns from non-invasive biosensors. Merging the two channels yields a vector space intended to preserve the continuity of thought."
+        "Structuring turns these traces into a cognitive graph that keeps evolving. Rather than grouping concepts by semantic proximity, RAG-enhanced construction links them by the causal and temporal relationships in the user’s own decision history. Chain-of-Thought analysis then uncovers implicit reasoning paths, and an error-correction protocol flags inconsistencies such as circular reasoning or flawed experimental designs, offering scaffolding prompts and alternative frameworks.",
+        "Activation is where the graph pays off. Predictive models map current cognitive-load patterns to likely needs and surface related memories before the user searches for them, and retrieval adapts to each person’s cognitive style. The system does not only answer: it offers hints and suggestions that challenge the user’s thinking. Knowledge gains weight as it proves useful, and when the user hits a barrier, both channels are searched just in time."
       ],
       "figures": [
-        { "file": "slide8.jpg", "caption": "Talk slide: externalization merges explicit (conscious outputs) and implicit (subconscious interaction) channels into one vector space." }
+        {"file": "slide9.jpg", "caption": "Structuring: RAG construction, Chain-of-Thought analysis and error correction iterate around a graph database, organizing chaotic nodes into a causal chain."}
       ]
     },
     {
-      "heading": "Structuring",
+      "title": "A second brain, and its price",
       "paragraphs": [
-        "Structuring organizes the externalized traces into an adaptive knowledge graph through three iterative layers. The layers balance structure with flexibility, and each cycle strengthens causal links and refines conceptual connections."
+        "The three mechanisms form a loop. Externalized traces feed the graph, the graph informs activation, and applying knowledge creates new experiences that are captured again. The paper likens this cycle to biological neuroplasticity and calls it “cognitive metabolism”: raw experience digested into structured knowledge that shapes how new information is taken in.",
+        "The same intimacy creates the risks. Continuous capture of implicit memory opens uncharted territory in neuroprivacy and demands new frameworks for cognitive data ownership. Prolonged use could gradually reshape a person’s native reasoning patterns, enhancing or constraining cognitive diversity, and reliance on wearable sensors ties the vision to progress in miniaturizing neural interfaces."
       ],
-      "bullets": [
-        "RAG-enhanced graph construction links concepts by causal-temporal relationships drawn from the user's own decision history, not only by semantic proximity.",
-        "A cognitive distillation engine applies Chain-of-Thought analysis to uncover implicit reasoning paths and turn fragmented insights into connected nodes.",
-        "An error-correction protocol detects inconsistencies, such as circular reasoning or flawed experimental designs, and offers scaffolding prompts and alternative frameworks to counter cognitive biases."
-      ],
-      "figures": [
-        { "file": "slide9.jpg", "caption": "Talk slide: iterative cognitive graphs built through RAG construction, Chain-of-Thought analysis, and error correction around a graph database." }
-      ]
-    },
-    {
-      "heading": "Activation",
-      "paragraphs": [
-        "An associative priming engine makes the structured knowledge actionable. Predictive models map current cognitive-load patterns to likely future needs and surface related memories before the user searches for them. \"Synesthetic retrieval\" adapts to each user's cognitive style rather than relying on semantic similarity alone. The system also intervenes actively, offering hints, external information, and suggestions that challenge the user's thinking.",
-        "A neuroplastic reinforcement loop reweights knowledge by how often it is accessed and how useful it proves in context. When users hit a barrier in applying knowledge, the system triggers just-in-time retrieval from both channels."
-      ]
-    },
-    {
-      "heading": "Cognitive Feedback Loop",
-      "paragraphs": [
-        "The three mechanisms form a cycle. Externalized traces feed structuring, structured insights inform activation, and applying knowledge creates new experiences that are encoded back into memory. The paper likens this to biological neuroplasticity, with pattern recognition and conceptual synthesis improving over each Observe-Orient-Decide-Act (OODA) cycle, and calls the resulting process \"cognitive metabolism\"."
-      ]
-    },
-    {
-      "heading": "Challenges & Open Questions",
-      "bullets": [
-        "Neuroprivacy: continuously capturing implicit memory calls for new frameworks of cognitive data ownership.",
-        "Dependency: prolonged use could gradually reshape users' native reasoning patterns, which could either enhance or constrain cognitive diversity.",
-        "Hardware dependency: reliance on wearable sensors ties real-world use to progress in miniaturizing neural interfaces.",
-        "Design tension: should augmentation integrate seamlessly, or keep deliberate friction to preserve metacognitive awareness? How should ownership be defined when insights emerge from continuous human–AI interaction?"
-      ]
+      "quote": {
+        "text": "Does optimal augmentation require seamless integration with biological processes, or should deliberate friction be maintained to preserve metacognitive awareness?",
+        "by": "From the paper"
+      }
     }
+  ],
+  "takeaways": [
+    "Personal knowledge tools could move from passive storage to active partners that structure and resurface what we know.",
+    "Organizing knowledge by a person’s own causal and temporal history, rather than folders and tags, would bring a second brain closer to how memory associates.",
+    "The closer AI gets to our thinking, the more pressing questions of neuroprivacy, dependency and cognitive ownership become."
+  ],
+  "facts": [
+    {"label": "Venue", "value": "GenAICHI: CHI 2025 Workshop on Generative AI and HCI"},
+    {"label": "Type", "value": "Single-author position paper"},
+    {"label": "Core idea", "value": "GenAI as a cognitive exoskeleton for knowledge"},
+    {"label": "Mechanisms", "value": "Externalization · Structuring · Activation"},
+    {"label": "Key techniques", "value": "Dual-channel capture, RAG-built cognitive graphs, Chain-of-Thought analysis, proactive retrieval"},
+    {"label": "Open questions", "value": "Neuroprivacy, dependency on external systems, and who owns knowledge generated with AI"}
   ]
 }

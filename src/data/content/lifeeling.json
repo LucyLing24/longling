@@ -1,84 +1,77 @@
 {
-  "tldr": "LIFEELING is a bracelet-style fitness tracker for older adults in China that replaces charts and small screens with light and gentle vibration. It draws on the jade bracelet, believed to mirror its wearer's health, and the popular idea of 'detox' through exercise: the bracelet brightens as the wearer stays active and warns them when they overexert.",
-  "facts": [
-    {"label": "Type", "value": "Poster paper, CSCW Companion '24"},
-    {"label": "Target users", "value": "Older adults in China"},
-    {"label": "Form factor", "value": "Jade-inspired bracelet, about 35 g"},
-    {"label": "Components", "value": "ECG sensor, vibration engine, light bar, FPCB, solar power"},
-    {"label": "Formative study", "value": "8-hour park field study, 5 interviews"},
-    {"label": "User feedback", "value": "20 adults aged 60+"}
+  "hook": "Many older adults find smartwatch charts baffling, yet they already trust a jade bracelet to tell them how their health is doing.",
+  "lede": "In the Shanghai parks where the team studied older adults at exercise, wrists carried bangles and bracelets, even a red band printed with “secret text”. Smart wearables are a different story: only 7% of their users are 65 or older, and small screens, dense metrics and well-meant large fonts leave many confused or feeling marked as old. LIFEELING starts from the object older adults already trust and the belief that comes with it: that exercise “detoxes” the body, and a lustrous jade bracelet means health is improving. The result is a bracelet concept that speaks in light and gentle vibration instead of numbers.",
+  "stats": [
+    {"value": "7%", "label": "of wearable-device users are aged 65 or older"},
+    {"value": "8 hours", "label": "of field observation in a park, followed by 5 in-depth interviews"},
+    {"value": "20", "label": "adults aged 60 and over who responded to the prototype"},
+    {"value": "35 g", "label": "approximate weight of the bracelet design"}
   ],
-  "contributions": [
-    "Identifies three key concerns for older adults' fitness wearables: simple and positive signals, psychological reliance on objects, and guidance to prevent over-exercise.",
-    "Introduces LIFEELING, a fitness tracking and reminder bracelet built on the metaphor of 'detoxification'.",
-    "Highlights the role of psychological cues and mimic design in wearable research for older adults."
-  ],
-  "sections": [
+  "chapters": [
     {
-      "heading": "Motivation",
+      "title": "Charts that confuse, fonts that feel old",
       "paragraphs": [
-        "According to one survey, only 7% of wearable-device users are aged 65 or older. Complex charts, small screens and age-related vision decline make the data hard to read, while 'age-friendly' fixes such as larger fonts can leave older users feeling ashamed.",
-        "The authors look to culture instead. In China, exercise is widely believed to 'detox' the body, and many older people wear jade, silver bracelets or bead strings that they believe reflect their health, taking a lustrous jade bracelet as a sign of improving health. LIFEELING builds on this belief to offer emotional support as well as information."
+        "Wearables turn the body into data, and for many older users that is exactly the problem. In experiments with older adults using Sony wristwatches, Nike’s Fuel points alongside steps, distance, sleep, calories and activities left some participants confused. Small buttons, cramped screens and aging eyes make the numbers harder still.",
+        "The usual fix, larger fonts and simplified colors, brings its own cost. Research on these “age-friendly” designs finds a pervasive sense of shame: a big-print display is easier to read, but it overlooks the fear of being seen as old."
+      ],
+      "quote": {
+        "text": "I can’t read much of the data from those smartwatches, I just want to know if I’m exercising enough and if I’m healthy.",
+        "by": "P3, interview participant"
+      }
+    },
+    {
+      "title": "A bracelet that already means something",
+      "paragraphs": [
+        "After eight hours of observation in a park, the team interviewed five older adults, aged 65 to 73, in depth. Alongside a wish for simpler signals, one theme stood out: a relationship with objects. Influenced by Buddhist culture, some older people treat particular items as safeguards for their health, and in China jade bracelets are regarded as talismans: when the jade is smooth and lustrous, its wearer’s health is thought to be improving too.",
+        "That belief sits alongside another widely held idea, that exercise “detoxes” the body, promoting the smooth flow of vital energy and bodily fluids. Together they suggested a different kind of interface: not a screen to be read, but an object whose appearance changes as health does."
+      ],
+      "quote": {
+        "text": "I was in average health before, but when I went to Tibet as a volunteer two years ago, a Buddhist guru gifted me two bracelets, which I have been wearing every day since then, and I feel that my physical health has improved significantly and my athletic vigor has increased.",
+        "by": "Auntie Wang (P1)"
+      },
+      "figures": [
+        {"file": "fig4.jpg", "caption": "In the park: bracelets worn during exercise, the “secret text” on one of them, and a woman attempting a difficult movement."}
       ]
     },
     {
-      "heading": "Formative Interviews",
+      "title": "From dark green to flowing light",
       "paragraphs": [
-        "The team spent eight hours observing exercise in a park and interviewed five participants aged 65 to 73 about exercise, existing monitoring devices and preferred interactions. Thematic analysis surfaced three needs:"
+        "The interviews also showed that these exercisers value a challenge: they felt difficult exercise built confidence and health. Auntie Wang recalled straining her shoulder when she first practiced one hard movement, then practicing until it gradually got better and she could do many more. What they wanted was guidance that keeps a challenge from turning into an injury.",
+        "LIFEELING answers with three functions: “Detox” reminds wearers to move, “Flow of life” rewards them while they exercise, and “Alarm” steps in with breathing guidance. Shaped to mimic the aura of jade, the ring would carry an ECG sensor facing the hand, a band of light and a vibration engine, all planned around a flexible circuit board. Four states tell the story:"
       ],
-      "bullets": [
-        "Simple, positive signals: 'I just want to know if I'm exercising enough and if I'm healthy.' (P3)",
-        "Psychological reliance on objects: one participant credited two bracelets gifted by a Buddhist guru with improving her health and vigour.",
-        "Guidance to prevent over-exercise: participants valued challenging exercise, and one described straining her shoulder when first learning a movement."
+      "points": [
+        "Too little exercise: after a long inactive stretch the ring turns dark green, “toxins” waiting to be cleared",
+        "Healthy: a flowing light green",
+        "Exercising: orange-yellow, pulsing with heart rate and breathing",
+        "Over-exercising: deep red, a vibration every three seconds and a breathing light that pulses twenty times a minute, fading back to light green once breathing settles"
       ],
       "figures": [
-        {"file": "fig4.jpg", "caption": "Objects worn by older adults during exercise, including a bracelet with 'secret text', and a woman attempting a difficult movement."}
+        {"file": "fig3.jpg", "caption": "The ring’s four states, from dark green through flowing light green and orange to twinkling red."}
       ]
     },
     {
-      "heading": "System Design",
+      "title": "Room for a little mystery",
       "paragraphs": [
-        "LIFEELING combines three functions: 'Detox' reminds users to exercise, 'Flow of life' gives positive feedback during exercise, and 'Alarm' provides breathing guidance. The bracelet mimics the shape and aura of jade and is designed as a ring about 70 mm in outer diameter, weighing about 35 g.",
-        "A flexible printed circuit board forms the technical base, with a flexible power supply around the periphery. An ECG sensor facing the hand monitors heart rate, a vibration engine alerts the wearer and paces their breathing, and a surrounding light strip shows their state."
-      ]
-    },
-    {
-      "heading": "Light & Vibration Feedback",
-      "paragraphs": [
-        "Three visualisations encode the wearer's state. 'Detox Metaphor' uses colour intensity to distinguish regular from irregular exercise, 'Health Feedback' maps heart-rate changes from light green to red, and 'Rhythm of Life' uses flowing or flickering light to signal safety."
+        "In a second park, 20 people aged 60 and over, 11 of whom already wore a bracelet, saw a prototype alongside images and a concept video. Most accepted the idea and the form. “The design of this device is very intuitive; I quickly learned how to use it,” said two of them; others called it modern and practical. The jade look was particularly popular with older women.",
+        "The detox metaphor was the part people wanted more of. Some hoped different colors could show the body’s detox state; P4 said seeing their health status made them “feel more at ease”. Others asked for exercise records over months so they could adjust their routines. And some wanted the opposite of a clear readout."
       ],
-      "bullets": [
-        "Lack of exercise: after a long inactive period the band turns dark green, signalling 'toxins' to be cleared through exercise.",
-        "Normal and healthy: flowing light green.",
-        "Normal exercise: orange-yellow, adapting to heart rate from the ECG sensor.",
-        "Over-exercise: deep red, a vibration every three seconds and a breathing light pulsing 20 times per minute, returning to light green once breathing normalises."
-      ],
-      "figures": [
-        {"file": "fig3.jpg", "caption": "The three visualisations (detox, fluid, twinkle) across four states: lack of exercise, normal healthy, exercise and over-exercise."}
-      ]
-    },
-    {
-      "heading": "User Feedback",
-      "paragraphs": [
-        "In a second park, 20 people aged 60 to 75, 11 of whom already wore a bracelet, saw a prototype with images and a concept video and were interviewed. Most accepted the concept and form, describing the device as intuitive, modern, practical and portable.",
-        "Participants liked the detox metaphor and wanted it developed further, for example with colours showing the body's detox state or ambiguous symbols that make them 'feel more empowered'. Several asked for exercise records over months to adjust their routines."
-      ]
-    },
-    {
-      "heading": "Discussion & Limitations",
-      "paragraphs": [
-        "The preliminary results suggest that most participants accepted the detox metaphor and found colour-based feedback easy to understand, and that older women especially liked the jade-bracelet look. The authors propose that culturally grounded metaphors could inform other health, smart-home and education devices.",
-        "The study was limited to a small sample in Shanghai. Future work will involve participants across East Asia, examine privacy and data sharing, compare shapes and materials for comfort, and test the device in real-world use."
-      ]
-    },
-    {
-      "heading": "Poster",
-      "paragraphs": [
-        "The poster condenses the project onto one page. It covers the cultural background, interview findings, design and user feedback."
-      ],
-      "figures": [
-        {"file": "poster.jpg", "caption": "LIFEELING poster, CSCW Companion '24."}
-      ]
+      "quote": {
+        "text": "I would like some symbols with ambiguous meanings; they make me feel more empowered.",
+        "by": "P5, P20"
+      }
     }
+  ],
+  "takeaways": [
+    "For older users, a familiar belief can carry health information without a chart: color on a bracelet they already trust needs no decoding.",
+    "Designing from cultural meaning, rather than bigger fonts, offers a way around the stigma that “age-friendly” interfaces can carry.",
+    "The authors see room to extend metaphor design to other health, smart-home and education devices, drawing on local concepts such as yin-yang balance and qigong."
+  ],
+  "facts": [
+    {"label": "Type", "value": "Poster paper, CSCW Companion ’24"},
+    {"label": "Form factor", "value": "Jade-inspired bracelet, about 70 mm across and 35 g"},
+    {"label": "Planned components", "value": "ECG sensor, vibration engine, light bar, flexible circuit board, solar power"},
+    {"label": "Formative study", "value": "8-hour park field study; 5 interviews with adults aged 65–73"},
+    {"label": "User feedback", "value": "20 adults aged 60+, shown a prototype, images and a concept video"},
+    {"label": "Limitations", "value": "Small sample from the Shanghai area; concept feedback rather than real-world use"}
   ]
 }

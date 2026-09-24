@@ -1,100 +1,105 @@
 {
-  "tldr": "In game studios, designers write character concepts and illustrators turn them into art, but ideas often get lost between the two. Sketchar is a web tool that lets designers without drawing skills turn a few keywords into a structured character profile and reference images, which they can hand to illustrators. Studies with game designers and illustrators show how generative AI can help people communicate visual ideas beyond their own expertise.",
-  "facts": [
-    {"label": "Venue", "value": "CHI PLAY '24 (PACM HCI)"},
-    {"label": "Formative study", "value": "Interviews with 10 game design professionals"},
-    {"label": "System", "value": "Web tool built on GPT-3.5 and DALL-E 2"},
-    {"label": "Evaluation", "value": "Qualitative study (13 designers) and CSI study (17 participants)"},
-    {"label": "Expert review", "value": "5 illustrators judged 6.84 of 10 images per set usable as references"},
-    {"label": "Key result", "value": "CSI 73.00 with Sketchar vs. 64.82 baseline (p = .028)"}
+  "hook": "In game studios, the person who imagines a character is often not the person who can draw it.",
+  "lede": "Game designers write the character; illustrators draw it. The hand-off is usually a written brief, and the details that matter most, such as a character’s looks and expressive personality, are exactly what words lose. Each misreading can set off another cycle of changes that costs time and resources. Sketchar lets designers turn a few keywords into a structured character profile and a set of reference images, so the conversation with the illustrator can begin from a picture.",
+  "stats": [
+    {"value": "73.00", "label": "Creativity Support Index with Sketchar, vs. 64.82 without it (p = .028)"},
+    {"value": "8.5", "label": "Collaboration score out of 10, the widest gap, vs. 5.4 without Sketchar"},
+    {"value": "78.54", "label": "CSI from designers without art skills, vs. 68.07 from those with them (p = .011)"},
+    {"value": "6.84", "label": "of every ten generated images judged usable as references by five illustrators"}
   ],
-  "contributions": [
-    "Formative interviews with 10 game design professionals that map designers' and illustrators' character design workflows and identify communication and innovation challenges.",
-    "Sketchar, a web-based GenAI tool that uses ChatGPT and DALL-E to turn designers' conceptual input into structured character profiles and reference images, with character chat and relationship mapping.",
-    "A mixed-method evaluation combining a qualitative study with 13 game designers and a Creativity Support Index comparison with 17 participants against a sketching-only baseline.",
-    "An expert evaluation with five illustrators assessing whether co-created images could serve as references in real-world game development."
-  ],
-  "sections": [
+  "chapters": [
     {
-      "heading": "Motivation",
+      "title": "A character only the designer can see",
       "paragraphs": [
-        "Game character design brings together two stages and two kinds of expertise: designers develop the character concept and narrative, and illustrators realize it visually. Designers typically express ideas in written explanations, using visuals only as supplements, and illustrators must convert these into concrete prototypes. Misinterpretation between the two domains can lead to repeated cycles of revision that cost significant time and resources.",
-        "The authors asked two questions: what challenges affect collaboration between designers and illustrators, and how can GenAI support both the narrative and artistic sides of character design in one workflow? Their answer is a tool that lets designers prototype characters conceptually and visually before handing them off to illustrators."
+        "We began by interviewing 10 game design professionals, from designers at large companies to a lead artist and an art professor. Their accounts traced a relay. Designers settle the narrative framework, the art style and a set of character keywords; illustrators take those keywords to sites such as Pixiv, Pinterest and ArtStation to find reference images, then sketch and send drafts back for another round.",
+        "Divergent backgrounds and vocabularies were the biggest challenge. A designer might ask for “a character with a cool demeanor, serving as a hacker, and sharing a classmate relationship with our protagonist,” leaving the looks and expressive personality, the details hardest to put into words, to the art team’s interpretation. “Only if they are experienced can they quickly grasp what you couldn’t convey,” said R3. Reference images help, but the character a designer wants is often not available online, so designers ask artists to combine several similar designs."
+      ],
+      "quote": {
+        "text": "I have an awesome image of a character in my head, but I don’t know how to express it",
+        "by": "R2, game designer"
+      },
+      "figures": [
+        {"file": "fig2.jpg", "caption": "The relay we heard in interviews: designers create the profile, choose the art style and distill keywords; illustrators search for references, sketch and send drafts back to iterate."}
       ]
     },
     {
-      "heading": "Formative Study",
+      "title": "From a handful of keywords to a character",
       "paragraphs": [
-        "The team interviewed 10 game design professionals (3 female, 7 male), including game designers, illustrators, lead artists, and an art professor, about their workflows, challenges, collaboration practices, and attitudes toward GenAI. Designers described creating a character profile, deciding the game's art style, and refining character keywords; illustrators described receiving those keywords, searching sites such as Pixiv, Pinterest, and ArtStation for reference images, and sending sketches back for iteration."
+        "Sketchar builds on the shorthand practitioners already use, keywords in the form “Art style+characteristic.” A designer enters a name, role details, game type, render style and background story. ChatGPT condenses these into an integrated summary and extracts keywords, which DALL-E turns into five reference images, returned alongside detailed attributes and a summary.",
+        "When P4 entered a character named Ahab (one-eye, blindfold, head injury, lineup, phantom pain), chose a “Neon Dreams” render style and left the background story empty, Sketchar returned a dressing style, “a unique lineup of weapons specifically chosen to compensate for his impairment and harness his phantom pain,” and a backstory to match. Every field stays editable, and designers can regenerate until the profile fits their vision.",
+        "The finished profile is saved as an ID card and shared by link or picture. It can also become a role agent to chat with, and several characters can be linked by dragging lines into a family tree with named relationships."
       ],
-      "bullets": [
-        "Communication gaps: divergent backgrounds and vocabularies were reported as the biggest challenge, with text-based briefs losing subtle details such as looks and expressive personality.",
-        "Innovation problems: designers struggled to find inspiration, avoid overused character personas, and express the image they had in mind.",
-        "Keyword refinement: practitioners distilled design documents into keywords, typically \"art style + characteristic,\" though summarizing them accurately was difficult.",
-        "Reference images: images helped teams build shared understanding, but the desired character often did not exist online, forcing designers to combine several references."
+      "quote": {
+        "text": "That’s awesome, my character is talking to me! Such a surreal feeling!",
+        "by": "P5"
+      },
+      "figures": [
+        {"file": "fig10.jpg", "caption": "P4’s input for Ahab, with no background story, and the name, dressing style, weapon and backstory Sketchar wrote back."}
+      ]
+    },
+    {
+      "title": "Most useful to those who cannot draw",
+      "paragraphs": [
+        "Thirteen game designers from China, six with strong artistic proficiency and seven without, first wrote a character proposal for an illustrator their usual way, then designed a second character with Sketchar. Their backgrounds split their reactions. Designers with art skills had already written comprehensive documents, and they found the images wanting: “a little bit easy and lacks many details compared with the standard of my workflow,” said P12.",
+        "Designers without art skills saw a starting point instead. “Something is better than nothing,” said P2. Many participants also valued how Sketchar sorted early ideas into a coherent design document; P11 praised it for “swiftly organizing appearance, weaponry, and personality details.”"
+      ],
+      "quote": {
+        "text": "Since I don’t know how to represent my design in the form of art, I thought generating some simple reference images would help me communicate my design",
+        "by": "P3"
+      }
+    },
+    {
+      "title": "A picture to point at",
+      "paragraphs": [
+        "Designers could usually form an abstract idea of a character quickly; conveying it to an illustrator was the hard part. “I understand the essence and feeling of the character, but articulating it becomes difficult,” said P2. Searching online rarely closes that gap because, as P5 put it, “many desired characters may not currently exist.”",
+        "The generated images were not flawless, but they gave designers something concrete to point at, a way to say which features to keep and which to change. The design brief could now open with a picture instead of a paragraph."
+      ],
+      "quote": {
+        "text": "I can inform the illustrator that I desire the face and hairstyle depicted in this picture while requesting adjustments regarding hair and clothing coloration. In this manner, the communication document commences with a visual representation to convey my preferences and concerns.",
+        "by": "P5"
+      },
+      "figures": [
+        {"file": "fig11.jpg", "caption": "Mapping an image back to its words: P5 asked for a young girl in a coffee-colored JK short skirt and a white top, with light yellow hair, using a bow as a weapon."}
+      ]
+    },
+    {
+      "title": "What the illustrators would keep",
+      "paragraphs": [
+        "In a second study, 17 participants with team experience as character designers, 9 with artistic experience and 8 without, completed both tasks in counterbalanced order and rated each on the Creativity Support Index. Sketchar scored 73.00 against 64.82 for the baseline (p = .028), and higher on every dimension except Enjoyment, which may reflect how accustomed participants already were to their existing tools and workflows.",
+        "The widest gap was Collaboration, 8.5 against 5.4, even though the collaboration was imagined: participants were asked to picture handing their work to an illustrator. Designers without art skills rated Sketchar 78.54, against 68.07 from those with art skills (p = .011), with gaps of more than two points in Expressiveness and Results Worth Effort.",
+        "Then we asked the people who would receive these images. Five illustrators from the formative study reviewed ten Sketchar images for each of five designer prompts. On average, they judged 6.84 of every ten images to be valuable references for real character development."
       ],
       "figures": [
-        {"file": "fig2.jpg", "caption": "Interview flowchart: pre-interviews with designers and illustrators revealed their respective workflows and where challenges arise in character design collaboration."}
+        {"file": "fig12.jpg", "caption": "Creativity Support Index results: (a) Sketchar vs. baseline, (b) designers with vs. without art skills, (c) dimension scores by condition, with the widest gap in Collaboration, and (d) dimension scores by art skill."},
+        {"file": "fig13.jpg", "caption": "Reference images for the five prompts, from (a) a cool long-haired boy for a 2D anime game and (b) a cute cyberpunk policewoman to (c) a warm-hearted old dwarf, (d) a cool, serious heroine for a reasoning game and (e) a Chinese-ink-style knight."}
       ]
     },
     {
-      "heading": "Design Goals",
-      "bullets": [
-        "DG1 — Enhance keyword-driven character image and profile generation to make concept development more efficient and creative.",
-        "DG2 — Construct character sharing channels as communication bridges between designers and illustrators.",
-        "DG3 — Use GenAI to brainstorm character properties and inspire ideas, helping designers imagine what characters look like and evaluate alternatives."
-      ]
-    },
-    {
-      "heading": "System",
+      "title": "Who draws, who chooses, who gets drawn",
       "paragraphs": [
-        "A designer begins by entering a character name, role details, game type, render style, and background story. Sketchar then generates a profile with four parts: five reference images, keywords, detailed attributes, and a summary. Designers can edit any field and regenerate results in a human-in-the-loop cycle, save the outcome as an ID card, and share it by link or picture.",
-        "Generation is hierarchical. ChatGPT first summarizes the input into integrated character information, then extracts keywords from that summary; the keywords, render style, and role details are passed to DALL-E as prompts to produce reference images. Structured prompts constrain output length and fields such as name, age, dressing style, weapon, and background story.",
-        "Beyond generation, the profile can be turned into a role agent that designers and illustrators chat with for further inspiration, and multiple characters can be linked by dragging lines to form a character family tree with labeled relationships. The front end is built with React and the back end with Flask, integrating GPT-3.5, DALL-E 2, and CLIP."
+        "Tools like Sketchar could change roles in game development. Artists might no longer design entirely by hand from scratch but select and modify the best images designers generate, a choice that still calls for trained aesthetic judgment. Not every artist welcomes the shift, and many worry about their work being used to train models without their knowledge.",
+        "The model also brought its own assumptions. Asked for a brave man from the Maori community in New Zealand, DALL-E 2 produced a white male with indigenous-style tattoos, and a successful Chinese businessperson always came out as a young Chinese man in a suit. We plan to route such designs through cultural counselors from the target community, and to warn users when none is available."
       ],
+      "quote": {
+        "text": "I spent many years mastering the skills of character design, but AI can quickly learn these skills by simply studying existing data, including the data of characters I have designed.",
+        "by": "R6, illustrator"
+      },
       "figures": [
-        {"file": "fig1.jpg", "caption": "Sketchar workflow and pipeline: designers initialize and generate a profile, regenerate and edit it, then save, share, simulate conversations, and map character relationships; hierarchical prompting turns inputs into keywords, images, and a role agent."}
-      ]
-    },
-    {
-      "heading": "User Study",
-      "paragraphs": [
-        "The qualitative study involved 13 game designers from China (5 female, 8 male) from small studios, large companies, indie teams, and game design programs; six had strong artistic proficiency and seven had none. Participants first wrote a character design proposal for an illustrator using their own experience, then received a 5-minute tutorial and completed a second character design task with Sketchar in 25 minutes, followed by a semi-structured interview.",
-        "The quantitative study involved 17 participants (9 male, aged 21–27), 9 with artistic experience and 8 without, all with prior team experience as character designers. They completed the same two tasks in counterbalanced order and filled out the Creativity Support Index (CSI) after each. Because Sketchar supports asynchronous hand-off, participants were asked to imagine collaborating with an illustrator when rating the Collaboration dimension."
-      ],
-      "figures": [
-        {"file": "slide20.jpg", "caption": "Study design: after a baseline design proposal (Task 1) and a Sketchar task (Task 2), 13 participants were interviewed, and 17 respondents rated both conditions with the CSI in randomized order."}
-      ]
-    },
-    {
-      "heading": "Qualitative Findings",
-      "bullets": [
-        "Artistic background raises expectations: participants with art skills wrote more comprehensive proposals and found the generated images lacking in detail, while those without art skills saw them as a useful starting point — \"something is better than nothing.\"",
-        "Structuring concepts supports refinement: participants valued how Sketchar classified and expanded early ideas into a coherent design document, organizing appearance, weaponry, and personality details and suggesting the wider character setting.",
-        "Reference images help express requirements: because many desired characters do not exist online, generated images gave designers a visual basis for telling illustrators which features to keep and which to adjust."
-      ],
-      "figures": [
-        {"file": "fig11.jpg", "caption": "Correspondence between a generated image and its prompt words, using participant P5's result as an example."}
-      ]
-    },
-    {
-      "heading": "Quantitative Results & Expert Review",
-      "paragraphs": [
-        "Overall CSI scores were significantly higher with Sketchar than with the baseline (73.00 vs. 64.82, p = .028, Wilcoxon signed-rank test), with no significant interaction between workflow and art skill. Sketchar scored higher than the baseline on every dimension except Enjoyment, with the largest difference in Collaboration (8.5 vs. 5.4), which the authors interpret as participants seeing the tool as supporting cooperation with illustrators.",
-        "Participants without art skills rated Sketchar significantly higher than those with art skills (78.54 vs. 68.07, p = .011), with the largest gaps in Expressiveness and Results Worth Effort. Artists scored Exploration slightly higher, suggesting they may value its exploratory inspiration more.",
-        "To assess output quality, five illustrators from the formative study reviewed ten Sketchar images for each of five designer prompts. On average they judged 6.84 of the ten images per set to be valuable references for real character development."
-      ],
-      "figures": [
-        {"file": "fig12.jpg", "caption": "CSI results: (a) total scores for Sketchar vs. baseline, (b) Sketchar scores for participants with and without art skills, (c) factor scores by condition, and (d) factor scores by art skill."},
-        {"file": "fig13.jpg", "caption": "Example reference images generated from five designer prompts, ranging from a 2D anime character and a cyberpunk policewoman to a Chinese ink-style knight."}
-      ]
-    },
-    {
-      "heading": "Discussion & Limitations",
-      "paragraphs": [
-        "The authors frame GenAI in three roles: a support tool for expression and inspiration, a facilitator of iterative design through profile editing, character chat, and family trees, and a mediator for team communication through standardized design documents and quick reference images. They also note the potential to batch-generate similar NPC variants, the concern among artists about data use and creative control, and stereotyping in DALL-E 2 outputs — for example, a prompt for a brave Māori man produced a white male with indigenous-style tattoos — proposing cultural review of such content in future versions.",
-        "Image detail was limited because DALL-E 2 favored speed over intricacy. All participants were from mainland China, where ChatGPT and DALL-E were not accessible during the study, and collaboration with illustrators was imagined rather than real. The study also did not compare Sketchar directly with ChatGPT plus DALL-E. Future work includes real-time designer–illustrator collaboration, more diverse participants, and exploring educational benefits."
+        {"file": "fig14.jpg", "caption": "DALL-E 2’s response to “A brave male from the Maori community in New Zealand”: a white male with indigenous-style tattoos."}
       ]
     }
+  ],
+  "takeaways": [
+    "Generative AI can act as a translator between disciplines, letting designers show illustrators what they mean instead of only describing it.",
+    "A tool’s value depends on who holds it: designers without art skills rated Sketchar significantly higher than trained artists, especially for expressiveness and results worth the effort.",
+    "Faster character prototyping can also mean faster stereotypes, so such tools need cultural review and respect for artists’ data."
+  ],
+  "facts": [
+    {"label": "Venue", "value": "CHI PLAY ’24 (PACM HCI)"},
+    {"label": "Formative study", "value": "Interviews with 10 game design professionals"},
+    {"label": "System", "value": "Web tool (React, Flask) built on GPT-3.5, DALL-E 2 and CLIP"},
+    {"label": "Evaluation", "value": "Qualitative study with 13 designers; CSI study with 17 participants"},
+    {"label": "Expert review", "value": "5 illustrators rated ten images for each of five prompts"},
+    {"label": "Limitations", "value": "Participants from mainland China only; collaboration imagined rather than real; no direct comparison with ChatGPT plus DALL-E"}
   ]
 }

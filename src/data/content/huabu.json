@@ -1,75 +1,67 @@
 {
-  "tldr": "Huabu is an open-source desktop workspace from Microsoft that replaces the linear chat window with an infinite canvas shared by a person and their AI agents. Ideas, files and agent results become visible, connected nodes in a Space, so people and agents work from the same organized context. Long Ling helped build it from 0 to 1 during her internship at Microsoft Research Asia.",
-  "facts": [
-    {"label": "Type", "value": "Open-source research software"},
-    {"label": "Developed at", "value": "Microsoft Research Asia"},
-    {"label": "Platform", "value": "Desktop app for macOS (Apple silicon) and Windows (x64)"},
-    {"label": "Built with", "value": "Node.js, Electron, Fastify"},
-    {"label": "License", "value": "MIT (repository materials)"},
-    {"label": "Status", "value": "Released for research and experimental use"}
-  ],
-  "sections": [
+  "hook": "In a chat window you prompt into the void; in Huabu, an agent starts from the context you have already laid out on the canvas.",
+  "lede": "Working with AI usually means working in chat, and chat runs in one direction: ideas, documents and agent outputs pile up in separate sessions, each out of sight of the others. Huabu, an open-source desktop workspace from Microsoft Research Asia, replaces the thread with an infinite surface. Thoughts, files, open questions and agents share one Space as visible, connected nodes that persist across sessions, so a person and their agents work from the same context. Long Ling helped build it from 0 to 1 during her internship, exploring new ways to organize knowledge, maintain shared context and let agents take collaborative actions.",
+  "chapters": [
     {
-      "heading": "What is Huabu",
+      "title": "Prompting into the void",
       "paragraphs": [
-        "Huabu calls itself “an infinite work surface” where you and your agents think together. Instead of a chat thread, it gives you a Space: a canvas where ideas, files, open questions and agents sit side by side. Everything stays visible and connected across sessions, and the stated goal is to turn clearer thinking into work that ships.",
-        "The project site makes a comparison with the desktop. The desktop gave files and programs one surface to meet; Huabu aims to do the same for the agent era, bringing thoughts, sources, tasks and results onto one shared thinking surface. The site sums this up as “the agent era gets its shell.”"
-      ]
-    },
-    {
-      "heading": "Core Ideas",
-      "paragraphs": [
-        "The design starts from a simple observation on the project site: chat is linear, but thinking is not. Three ideas follow from it."
+        "The project site starts from a plain observation about working with AI in chat: a conversation runs in a single line, and thinking rarely does. The useful pieces, a note here, a document there, an answer from an earlier session, end up scattered across chat histories and sources, each one visible only from inside its own thread.",
+        "Huabu’s answer borrows from an older shift. The desktop gave files and programs one surface to meet; Huabu aims to do the same for thoughts, sources, tasks and results in the agent era, bringing them onto one shared thinking surface."
       ],
-      "bullets": [
-        "Externalize anything: scattered ideas get one place where they become visible and connected, instead of staying buried in separate conversations.",
-        "Position is part of the thinking: where a node sits on the canvas carries meaning. Arranging research by time or direction is part of making sense of it, not decoration.",
-        "Shared context for people and agents: connected materials become readable context for both the user and their agents. Agents start their work from what is already in the Space."
+      "quote": {
+        "text": "Chat is linear, but your thinking is not.",
+        "by": "Huabu project site"
+      }
+    },
+    {
+      "title": "Everything you bring becomes a node",
+      "paragraphs": [
+        "Work in Huabu happens in a Space, an infinite canvas. You can pull a thought out of a conversation, or drop in a PDF, a website, an image, a video or a file, and each arrives as a visible node that can be placed, revisited and connected to the others. Ideas, notes, documents and outputs from different chat sessions end up side by side instead of in separate windows.",
+        "The Space also outlasts the session. Materials stay visible and connected from one session to the next, and each Space lives in a local folder that the user chooses as their Home when Huabu first launches."
       ]
     },
     {
-      "heading": "Key Features",
+      "title": "Where a note sits is part of the thought",
       "paragraphs": [
-        "The README lists three core features, and the project site walks through the same workflow step by step."
+        "On a canvas, layout carries meaning. Research can be arranged by time or by direction, then connected into readable context for both the person and their agents, so the structure itself becomes part of what gets communicated.",
+        "AI can take part in that work, arranging information, uncovering relationships and clarifying ideas. The person stays in charge of the canvas, reviewing and controlling every change the AI proposes."
       ],
-      "bullets": [
-        "Bring scattered information together: drag ideas, notes, documents and outputs from different chat sessions and sources into one Space.",
-        "Bring in anything: pull a thought from a conversation, or drop in a PDF, website, image, video or file. Each one becomes a node that can be placed, revisited and connected.",
-        "Organize your thinking with AI: arrange information, uncover relationships and clarify ideas with AI, while reviewing and controlling every proposed change.",
-        "Let agents work with richer context: bring your own agents into a Space. There they can see not only the materials you provide but also how those materials relate, which helps them grasp your intent and do more relevant work.",
-        "Put agents to work: give agents a brief, run tasks in parallel, and bring every result back to the Space."
+      "quote": {
+        "text": "Position is part of the thinking, not decoration.",
+        "by": "Huabu project site"
+      }
+    },
+    {
+      "title": "Agents that begin with your context",
+      "paragraphs": [
+        "Users bring their own agents into a Space. There, an agent can understand not only the materials it has been given but also how those materials relate to one another, which helps it grasp what the person intends and do more relevant work.",
+        "That changes what a request looks like. Agents begin with the context already in the Space, so you give them a brief rather than a blank-page prompt. Several tasks can run in parallel, and every result comes back to the Space, where it can be arranged and built on like everything else."
       ]
     },
     {
-      "heading": "How It Works",
+      "title": "Your folder, your models, your review",
       "paragraphs": [
-        "Huabu runs as a desktop application built on Electron. On first launch, the user picks a local folder as their Home, and Spaces and their materials are stored there. The desktop client normally runs with its own local server, but it can also connect to an existing remote Huabu Server. A standalone web mode serves the web app and API from a single Fastify process. By default it only accepts connections from the local machine; opening it to a network requires setting the bind address, the allowed hostnames and HTTP Basic Auth.",
-        "Huabu does not ship its own LLM service. Users configure a model provider of their choice and can connect external coding agents; the User Handbook covers both setups. When an AI feature is used, the provider may receive the prompt and the relevant Space content, and external agents may read or modify files in the working directory configured for them."
+        "Huabu does not bundle an LLM service: people connect a model provider of their choice, which may require a separate account or usage charges, and can connect external coding agents. When an AI feature runs, that provider may receive the prompt and the relevant Space content, and external agents may read or modify files in the working directory configured for them."
       ],
-      "bullets": [
-        "Local storage: Spaces and materials stay in the Home folder the user selects.",
-        "Protected credentials: packaged builds encrypt saved credentials using storage protected by the operating system.",
-        "No telemetry: Huabu does not send telemetry, crash reports, diagnostic logs or usage data to Microsoft."
-      ]
-    },
-    {
-      "heading": "Getting Started",
-      "paragraphs": [
-        "Packaged apps are published on GitHub Releases. Download the package for your platform, open the .dmg on macOS or run the .exe installer on Windows, then launch Huabu and choose a Home folder. The Huabu User Handbook is the official guide to model setup, core concepts and creating a first Space.",
-        "Building from source requires Node.js 20+ and pnpm 10+. After installing dependencies, a single command starts the server, the web client and the shared package in watch mode, then opens Huabu in its own desktop window."
-      ]
-    },
-    {
-      "heading": "Responsible Use",
-      "paragraphs": [
-        "Huabu is released for research and experimental use. The README notes that AI-generated output may be inaccurate, incomplete, biased or unsafe, and that the system has not been evaluated for every language, model or downstream scenario. It should not be used for high-risk or time-critical decisions, or in workflows where output is acted on without qualified human review. Materials in the repository are available under the MIT License."
-      ]
-    },
-    {
-      "heading": "My Role",
-      "paragraphs": [
-        "Long Ling worked on Huabu during her internship at Microsoft Research Asia and helped build the system from 0 to 1. Her work explored new interaction paradigms for organizing knowledge, maintaining shared context, and letting agents take collaborative actions. These threads match the project's aim: a shared workspace where humans and agents can collect what matters, organize it together, and act on shared knowledge."
+      "points": [
+        "Spaces and their materials are stored in the Home folder the user selects.",
+        "Huabu sends no telemetry, crash reports, diagnostic logs or usage data to Microsoft.",
+        "Packaged desktop builds encrypt saved credentials using storage protected by the operating system.",
+        "It is released for research and experimental use: AI output may be inaccurate, incomplete, biased or unsafe, and should not drive high-risk or time-critical decisions without qualified human review."
       ]
     }
+  ],
+  "takeaways": [
+    "Moving from a chat thread to a canvas makes context something you can see and keep: ideas stay where you put them, across sessions.",
+    "Arrangement doubles as communication: how materials relate to one another helps agents grasp intent, not just content.",
+    "Human judgment stays in the loop, from reviewing every AI-proposed change to keeping work in a local folder with the models the user chooses."
+  ],
+  "facts": [
+    {"label": "Type", "value": "Open-source research software, released for research and experimental use"},
+    {"label": "Developed at", "value": "Microsoft Research Asia"},
+    {"label": "Role", "value": "Helped build the system from 0 to 1 during an internship"},
+    {"label": "Platform", "value": "Desktop app for macOS (Apple silicon) and Windows (x64)"},
+    {"label": "Built with", "value": "Node.js, Electron, Fastify"},
+    {"label": "License", "value": "MIT (repository materials)"}
   ]
 }

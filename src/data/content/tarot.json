@@ -1,103 +1,116 @@
 {
-  "tldr": "This work asks what happens when people read their own fortunes with GenAI instead of consulting a human seer. In workshops, participants asked chatbots to interpret a tarot spread, summarized the reading in their own words, and generated images of their envisioned futures. Rather than passively accepting predictions, they steered the AI with personal context, believed selectively, and reshaped readings into optimistic self-narratives.",
-  "facts": [
-    {"label": "Status", "value": "In submission (work in progress)"},
-    {"label": "Method", "value": "Six workshops + semi-structured interviews"},
-    {"label": "Participants", "value": "44, aged 18–55"},
-    {"label": "Workshop sites", "value": "Hong Kong, Seoul, Shanghai, Rome, New York, Delft (online)"},
-    {"label": "Tarot layout", "value": "Romany Spread (7 × 3 cards: past, present, future)"},
-    {"label": "GenAI tools", "value": "ChatGPT, Gemini, Poe; Stable Diffusion, MidJourney, DALL-E"}
+  "hook": "When the tarot reader is a chatbot, the person asking about the future also gets to decide which parts of it to believe.",
+  "lede": "Tarot has always needed an interpreter: a seer across the table who reads the cards, reads the person, and joins the two into a story. We wanted to know what happens when that seer is a chatbot. In six workshops from Hong Kong to New York, 44 people brought a real question, picked a column of tarot cards, asked GenAI to read them, then wrote down and pictured the future it described. What we watched looked less like receiving a fortune than writing one.",
+  "stats": [
+    {"value": "44", "label": "people who read their own tarot with GenAI"},
+    {"value": "6", "label": "workshops in Hong Kong, Seoul, Shanghai, Rome, New York and online from Delft"},
+    {"value": "18–55", "label": "age range of participants, most in their twenties"},
+    {"value": "6", "label": "roles GenAI ended up playing, from Mirror to Counselor"}
   ],
-  "contributions": [
-    "An empirical account of GenAI divination as an active practice, in which participants countered generic readings by sharing personal context and reframing their questions.",
-    "Evidence that belief in AI readings is co-constructed through selective acceptance and the Barnum effect, and that readings scaffold reflection and, in some cases, real decisions.",
-    "An analysis of how participants expressed their futures visually, through playful rejection, metaphorical generation and identity-driven personalization, together with a tendency toward optimistic bias that carries risks of self-deception.",
-    "Design implications for emotionally sensitive agents, including six roles GenAI takes in divination and strategies for ritual, transparency and co-created narratives."
-  ],
-  "sections": [
+  "chapters": [
     {
-      "heading": "Motivation",
+      "title": "Three cards, one question, a chat window",
       "paragraphs": [
-        "Divination has always depended on human interpretation of symbols such as tarot cards, traditionally through face-to-face dialogue with a seer. Large language models can now derive coherent meaning from abstract symbols and hold attentive, contextual conversations, which has fueled GenAI divination apps such as Quin and Tarotoo.",
-        "HCI research has studied how people seek emotional support, companionship or therapy-like conversations from GenAI. Divination is different: it centers on projective meaning-making from ambiguous cues. Little is known about how people engage with GenAI during this process, how they decide what to accept or dismiss, and how readings become part of their self-narratives."
-      ],
-      "bullets": [
-        "RQ1 (Process & Practice): How do people engage in divination practices using GenAI?",
-        "RQ2 (Perception & Belief): How do people perceive and evaluate predictions from GenAI?",
-        "RQ3 (Visual & Verbal): How do people represent and express the predictions generated through GenAI?"
-      ]
-    },
-    {
-      "heading": "Workshop Method",
-      "paragraphs": [
-        "The team ran six workshops with 44 self-selected participants recruited through university campuses, workplaces and an art museum; prior tarot experience was not required. Each workshop lasted 60–90 minutes. Researchers first introduced the Romany Spread, a 7 × 3 card matrix for past, present and future. Participants then formulated a personal question, picked one column of cards, and prompted an LLM (such as ChatGPT, Gemini or Poe) until they were satisfied with their understanding of the reading.",
-        "Next, participants wrote a conclusion and used text-to-image models (Stable Diffusion, MidJourney or DALL-E) to visualize their envisioned future, followed by a 10-minute semi-structured interview. Three researchers independently coded the divination chats, written conclusions, generated artifacts and interview transcripts with inductive thematic analysis."
+        "Each session began with the Romany Spread, tarot cards laid out seven across and three deep, where every column reads as past, present and future. No tarot experience was required. Participants chose one column, framed a personal question, and prompted a chatbot such as ChatGPT or Gemini until the reading made sense to them. Then they summarized it in their own words, turned it into an image with a text-to-image model, and sat down for a short interview.",
+        "The questions were the ones people have always brought to seers, reshaped by modern lives: whether to keep working abroad, whether a career path would bring happiness, when to leave a job for a personal project. Some were heavy (“Should I break up with my boyfriend?”, “Is Retirement the Right Choice?”). Some were not (“Will I be able to dunk this upcoming year?”)."
       ],
       "figures": [
-        {"file": "fig2.jpg", "caption": "Study procedure: recruitment, workshop introduction, choosing a Romany Spread column, GenAI fortune-telling, visualizing the conclusion, and an interview."}
+        {"file": "fig2.jpg", "caption": "The workshop, step by step: recruitment, an introduction to the Romany Spread, choosing a column, a multi-round reading with GenAI, visualizing the conclusion, and a semi-structured interview."}
       ]
     },
     {
-      "heading": "Findings at a Glance",
+      "title": "A reader that cannot look at you",
       "paragraphs": [
-        "Participants' questions echoed those of traditional divination, such as whether to keep working abroad or whether a career path would bring happiness. GenAI's replies, however, were often vague and impersonal. Participants responded by personalizing the dialogue, believing selectively the parts that fit their past experiences, current emotions or hoped-for future, and turning the outputs into self-narratives that often carried an optimistic bias."
+        "The first thing participants noticed was what was missing. A human reader improvises, attunes to your emotions and, as P30 put it, would “look at you and ask follow-up questions.” The chatbot, she said, felt like a “vending machine for answers”. Newcomers were unsure how to even begin, and some hesitated to confide in a system that felt so impersonal. Others saw the same coldness as freedom: “Some tarot readers refuse sensitive topics, but GenAI answers anytime,” said P35.",
+        "So people did the seer’s work themselves. They fed the AI personal context and reframed their questions: when an upbeat reading missed her relationship struggles, P34 kept stressing “uncertainty” and “discord” until the output matched how she felt. P28 began with “When will my next serious relationship happen?”, was struck when the AI named “unresolved emotional baggage”, asked whether her ex might get in touch, then mentioned she was on dating apps and asked again. By the end she had decided to let go of her ex and explore new opportunities in dating.",
+        "The disclosure was often intimate, and strikingly scattered. Within a single reading, P13 moved from emotional stress to career decisions. Where people talking to therapy-style chatbots tend to stay anchored to one topic, divination invited leaps across a whole life."
+      ],
+      "quote": {
+        "text": "I feel it’s more like a database—the more detailed my questions, the more detailed the responses.",
+        "by": "P10"
+      }
+    },
+    {
+      "title": "Belief, one card at a time",
+      "paragraphs": [
+        "When a reading landed, it landed hard. P32, who asked how to communicate with her supervisor so she could graduate, called hers “strikingly accurate” and photographed it to show her friends. P17 heard “repetitive patterns in relationships” and immediately thought of the recurring arguments with her partner.",
+        "When a reading missed, people laughed. Told that his past held “missed opportunities” for entrepreneurship, P29, who had never had any, shrugged it off: “It’s just AI, just for fun.” P22’s career reading warned of instability, and he joked, “Maybe the AI’s trying to make me quit my job so it can take over!” The same reading from a human fortune-teller, he said, might have discouraged him more. With AI, disbelief was cheap, and we saw no signs of over-reliance.",
+        "Most revealing, belief could split a single reading in two. P10 embraced the optimism of her future card and the wisdom of her past card, then flatly rejected the Two of Swords, which suggested indecision in the present."
+      ],
+      "quote": {
+        "text": "That doesn’t apply to me, I know exactly what I want. The answer is already in my mind.",
+        "by": "P10"
+      },
+      "figures": [
+        {"file": "fig8.jpg", "caption": "Two readings that hit home: P32 on communicating with her supervisor, P17 on the patterns in her relationship."},
+        {"file": "fig9.jpg", "caption": "Two that missed: P29 laughs off “missed opportunities”, and P22 jokes his way past The Tower."}
+      ]
+    },
+    {
+      "title": "Vague enough to fit, useful anyway",
+      "paragraphs": [
+        "Many participants complained that the readings were vague, yet vagueness is exactly what let them see themselves. The AI told P5 that her cards pointed to self-reflection, breaking free of past constraints, and a coming change in fortune. She heard something far more specific: “I have to stay true and keep pursuing my interests, and I will find a rewarding job as a communication graduate.”",
+        "P33 was told his relationship might face recurring arguments and external challenges, like family or financial issues, and found it highly accurate. In the interview, he admitted that neither was present; the real issue was his own hesitation about marriage. A human seer’s vagueness usually sounds assertive. The AI’s came from hedging, repetition and a softer tone, and it worked all the same.",
+        "Accurate or not, the readings gave people a structure to think with. Weighing a return to China against staying in the Netherlands, P42 found the AI’s talk of balancing “logic” and “intuition” unconvincing as a prediction but useful for weighing family against career. P32, unsettled by a card read as “unresolved planning”, scheduled a meeting with her supervisor about her graduation plan. Months later, she wrote to tell us her doctoral project had been approved, and credited the workshop."
+      ],
+      "quote": {
+        "text": "It’s a path I can walk alone, of letting go of closure, moving on with my inner strength, remaining true to my values, and setting my boundaries.",
+        "by": "P24, concluding a reading about “this messy relationship”"
+      },
+      "figures": [
+        {"file": "fig10.jpg", "caption": "The Barnum effect at work: a general reading about change becomes, for P5, the promise of a good job."}
+      ]
+    },
+    {
+      "title": "Redrawing the future in a kinder light",
+      "paragraphs": [
+        "The images were where participants took the most control. Told he was becoming “robotic”, P43 found the conclusion absurd and asked for a picture of himself literally turning into a robot, a joke that undercut the AI’s authority. Torn between two countries, P42 asked for two diverging paths and read his comfortable life abroad in one and the opportunities back home in the other. P34 felt alienated by the masculine King of Wands, so she turned him into a queen in a flowing pink gown, holding a diamond-encrusted wand.",
+        "The written summaries leaned the same way, only brighter. P18, weighing a move to a new department, boiled her reading down to “Believe in my abilities and have confidence in myself to take on new paths.” P33, whose reading had mentioned resistance, summed up his future as “happiness, joy, light, high potential, and wealth.” Curiously, this optimism did not show up during the readings or interviews. It surfaced when people sat down to write and picture their futures, turning conditional advice into affirmations and leaving the warnings out.",
+        "That optimism cuts both ways. It fueled self-encouragement and resilience, but it can also hide the challenges and warning signs a person most needs to see."
+      ],
+      "quote": {
+        "text": "By changing the image, I wasn’t just fixing the prediction. I was making it mine.",
+        "by": "P34"
+      },
+      "figures": [
+        {"file": "fig12.jpg", "caption": "Three ways to answer a reading with an image: P43’s playful rejection, P42’s metaphorical paths, and P34’s King of Wands redrawn as a queen."},
+        {"file": "fig13.jpg", "caption": "Futures as participants chose to picture them: optimistic images by P18, P25, P24 and P33."}
+      ]
+    },
+    {
+      "title": "A better reader knows when to push back",
+      "paragraphs": [
+        "In these workshops, the AI never quite acted as a fortune-teller. Depending on the moment it was a mirror, a playmate or a counselor. We identify six such roles that could shape a divination agent’s tone and logic, and could even coexist as personas a user calls on as their needs shift.",
+        "Participants also missed the ceremony; P40 imagined “seeing the future through a crystal-ball lens.” Symbolic visuals and hybrid physical–digital formats could bring some of that atmosphere back. Yet GenAI’s readings are not vetted by any human judgment, so the same systems should also demystify: explain the reasoning behind a reading, offer basic tarot knowledge, frame unfavorable predictions with empathy, and gently point out over-optimistic patterns. The aim is a practice that keeps its mystery and still leaves room for doubt."
+      ],
+      "quote": {
+        "text": "It would be better if it could mimic the ritual of turning over tarot cards on a real table.",
+        "by": "P35"
+      },
+      "points": [
+        "Mirror: reflects back the readings people already agree with",
+        "Co-creator: remixes symbols and meanings together with the user",
+        "Friend: receives detailed disclosure that leaps across topics",
+        "Playmate: invites jokes and playful disbelief",
+        "Mentor: turns ambiguous readings into prompts for deeper reflection",
+        "Counselor: scaffolds decisions under uncertainty"
       ],
       "figures": [
-        {"file": "fig5.jpg", "caption": "Main findings: participants countered GenAI's impersonality by adding personal information, selectively accepted what fit their experiences or expectations, and created artifacts expressing optimistic belief, reflection or humorous dismissal."}
-      ]
-    },
-    {
-      "heading": "Steering an Impersonal Oracle",
-      "paragraphs": [
-        "Participants experienced the AI as generic. It lacked the emotional attunement, follow-up questions and ritual presence of a human reader, and one participant described it as a “vending machine for answers” (P30). Newcomers struggled without procedural guidance: “So do I just ask a question? Is there something I'm supposed to choose first?” (P42). Views on impersonality diverged. Some hesitated to share personal matters, while others valued that GenAI passes no moral judgment and answers any question at any time.",
-        "To counter generic outputs, participants actively shaped the conversation. Some supplied detailed personal context, treating the AI as “more like a database—the more detailed my questions, the more detailed the responses” (P10). Others reframed their questions: P34 kept stressing “uncertainty” and “discord” until the reading reflected her relationship struggles. Unlike in therapy-oriented chatbots, this self-disclosure was often non-linear, jumping across unrelated topics within a single reading."
-      ]
-    },
-    {
-      "heading": "Selective Belief and the Barnum Effect",
-      "paragraphs": [
-        "Participants accepted readings that resonated with their lives and dismissed those that did not. P32 found a reading about communication with her supervisor strikingly accurate and photographed it to show friends. P29, however, laughed off a reading about “missed opportunities” he had never had: “It's just AI, just for fun.” Selectivity even happened within one reading. P10 embraced her optimistic cards but rejected one suggesting indecision: “I know exactly what I want. The answer is already in my mind.”",
-        "Vague outputs also triggered the Barnum effect. P5 turned a general reading about change into a confident story about finding a rewarding job. P33 applied the word “obstacles” to his relationship, and later admitted that the real issue was his own hesitation about marriage. Accepted or not, readings scaffolded reflection. P24 reframed a messy relationship as a path of personal growth, and P32 scheduled a meeting with her supervisor about her graduation plan. Months later, P32 reported that her doctoral project had been approved and credited the workshop. The authors observed no signs of over-reliance."
-      ],
-      "figures": [
-        {"file": "fig8.jpg", "caption": "Readings that surprised P32 and P17 and were quickly accepted."},
-        {"file": "fig9.jpg", "caption": "P29 and P22 did not accept their readings and responded with playful humor."}
-      ]
-    },
-    {
-      "heading": "Visualizing Optimistic Futures",
-      "paragraphs": [
-        "When turning readings into images, participants treated AI visuals as material to reshape. The authors identify three strategies. In playful rejection, P43, told he was becoming “robotic”, asked for an image of himself as a robot. In metaphorical generation, P42 visualized two diverging paths while deciding whether to return to China or stay in the Netherlands. In identity-driven personalization, P34 turned the King of Wands into a queen in a pink gown: “By changing the image, I wasn't just fixing the prediction. I was making it mine.”",
-        "Many summaries were also overly positive, amplifying encouraging elements and leaving out warnings. P23 reduced a conditional reading about leaving his job to the single word “rebirth”. P33 condensed a reading that mentioned obstacles into “happiness, joy, light, high potential, and wealth.” This optimism appeared in the summaries and images rather than during the sessions or interviews. It supported self-encouragement, but it could also lead users to overlook challenges or warning signs."
-      ],
-      "figures": [
-        {"file": "fig12.jpg", "caption": "Three strategies for presenting divination results, by P43, P42 and P34: playful rejection, metaphorical generation and identity-driven personalization."},
-        {"file": "fig13.jpg", "caption": "Positive and optimistic images generated by P18, P25, P24 and P33."}
-      ]
-    },
-    {
-      "heading": "Design Implications",
-      "paragraphs": [
-        "In these workshops, GenAI did not act as a fortune-teller in the usual sense. Based on how participants engaged, the authors identify six roles that could shape a divination agent's tone and interaction logic, and that could coexist in a multi-agent configuration.",
-        "Participants also wanted more ritual: “It would be better if it could mimic the ritual of turning over tarot cards on a real table” (P35). Designers could support this with symbolic visual language and hybrid physical–digital formats. At the same time, systems should explain the reasoning behind readings, offer basic divination knowledge, frame unfavorable predictions empathetically, and gently point out over-optimistic patterns. The authors caution that GenAI predictions are not checked by human judgment, and they call for safeguards that keep users reflective and critical."
-      ],
-      "bullets": [
-        "Mirror: reflects interpretations that match users' existing self-perceptions.",
-        "Co-creator: supports collaborative meaning-making and symbolic remixing.",
-        "Friend: receives detailed self-disclosure that jumps across topics.",
-        "Playmate: invites playful disbelief and humorous reframing.",
-        "Mentor: prompts deeper reflection on ambiguous readings.",
-        "Counselor: scaffolds decisions under uncertainty."
-      ],
-      "figures": [
-        {"file": "fig14.jpg", "caption": "Six roles GenAI takes in divination: Mirror, Co-creator, Friend, Playmate, Mentor and Counselor (illustrations generated by the authors with Gemini)."}
-      ]
-    },
-    {
-      "heading": "Limitations",
-      "paragraphs": [
-        "The study focused on tarot and on visual expression, leaving other practices and modalities such as sound or embodied ritual for future work. Most participants were in their twenties, and more workshops took place in Asia than in Europe or North America. The workshop setting lacked the ritual atmosphere of everyday divination and may have introduced peer influence. Letting participants choose models introduced inconsistency, and single sessions could not show how trust and interpretation change over time."
+        {"file": "fig14.jpg", "caption": "Six roles GenAI took on in divination, illustrated by the authors with Gemini."}
       ]
     }
+  ],
+  "takeaways": [
+    "With GenAI, interpretive authority moves from the seer to the seeker: people steer, filter and rewrite readings instead of simply receiving them.",
+    "Vagueness cuts both ways. It invites reflection and even real decisions, but also optimistic self-narratives that quietly drop the warnings.",
+    "Emotionally sensitive agents need presence and ritual, but also transparency and gentle checks that keep users reflective and critical."
+  ],
+  "facts": [
+    {"label": "Status", "value": "Work in progress, under review"},
+    {"label": "Method", "value": "Six 60–90 minute workshops: GenAI tarot reading, written conclusion, image generation, then a semi-structured interview"},
+    {"label": "Participants", "value": "44 self-selected volunteers, aged 18–55, mostly in their twenties"},
+    {"label": "Workshop sites", "value": "Hong Kong, Seoul, Shanghai, Rome, New York, and Delft (online)"},
+    {"label": "GenAI tools", "value": "Chatbots such as ChatGPT and Gemini; text-to-image models such as DALL-E, Stable Diffusion and MidJourney"},
+    {"label": "Limitations", "value": "Tarot only; more workshops in Asia than in Europe or North America; single sessions without long-term follow-up"}
   ]
 }

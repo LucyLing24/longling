@@ -1,97 +1,98 @@
 {
-  "tldr": "A dating profile is the first version of ourselves that strangers see. In this study, 20 experienced dating-app users in China built a profile in front of the researchers and explained each choice. They picked photos to spark curiosity, protect their privacy and signal shared interests, and they shaped profiles to mirror both an idealized self and the partner they hoped to attract.",
-  "facts": [
-    {"label": "Venue", "value": "CSCW '25 · PACM HCI"},
-    {"label": "Method", "value": "Semi-structured interviews with live profile construction"},
-    {"label": "Participants", "value": "20 (11 female, 9 male), aged 22–33"},
-    {"label": "Population", "value": "College-educated young adults in China"},
-    {"label": "Profile template", "value": "Tinder's profile-making interface"},
-    {"label": "Key concept", "value": "A cyclical paradigm of self-presentation"}
+  "hook": "The same people who hid their faces on their own dating profiles judged everyone else’s mostly by the face.",
+  "lede": "A dating profile is a first impression built in advance: six photos and a few lines of text, arranged for a stranger who will decide with a swipe. We asked 20 experienced dating-app users in China to build one in front of us, on a Tinder account we set up and never published, and to think aloud with every choice. What they described was not a record of who they are, but a careful negotiation between privacy, desire and the person they imagine themselves to be.",
+  "stats": [
+    {"value": "20", "label": "experienced dating-app users, each building a profile as we watched"},
+    {"value": "6", "label": "photos each participant chose and ordered, for a profile never uploaded"},
+    {"value": "22–33", "label": "age range of participants, all college-educated"},
+    {"value": "4", "label": "persona strategies, from meeting expectations to crafting intrigue"}
   ],
-  "contributions": [
-    "A step-by-step account of how experienced users build dating profiles, especially how they select and order photos.",
-    "A set of visual strategies: limiting facial display to stimulate imagination, hiding identifying details to protect privacy, choosing the first photo carefully, and using everyday photos as conversation starters.",
-    "Four persona construction strategies, and a cyclical paradigm in which users show the traits they value in a partner to attract people who share them.",
-    "Evidence of an asymmetry between how users present themselves and how they judge others, for example hiding their own faces while judging others mainly by appearance.",
-    "Design implications for dating platforms: two-stage self-presentation, searchable matching attributes such as niche hobbies, and trust built on visible common ground."
-  ],
-  "sections": [
+  "chapters": [
     {
-      "heading": "Motivation",
+      "title": "A face in one of nine squares",
       "paragraphs": [
-        "A dating profile decides how people present themselves to potential partners and what they choose to hide. Prior work has mostly examined the authenticity of dating profiles, but less is known about how users choose text and images, or how concealment and embellishment affect how profiles are perceived.",
-        "The paper defines “strategy” as the deliberate and conscious methods people use to manage self-presentation on dating platforms, mainly by selecting and organizing photos and text. Three research questions guided the study."
+        "Dating photos are usually about appearance and physique. Our participants cared more about atmosphere. They used body language, lighting, negative space and blur to make a stranger want to look closer, and some kept their faces almost out of the picture. P3 never posted clear front-face photos; if she included a flattering one, she put it last, so that only someone interested enough to keep swiping would see her face.",
+        "Hiding was also protection. Some feared being recognized by friends or family on the same app, which they found embarrassing. P4 would not post a graduation picture: “I’d rather share it with friends or family, not strangers.” P8 kept her face near the edge of the frame, and had a precise rule for how much of it to show."
       ],
-      "bullets": [
-        "RQ1: What strategies do people adopt when selecting images for their dating profiles?",
-        "RQ2: How do people use dating profiles to present themselves and for what purpose?",
-        "RQ3: What key factors may influence people’s perception of others’ profiles?"
-      ]
-    },
-    {
-      "heading": "Method",
-      "paragraphs": [
-        "Twenty native Chinese speakers aged 22 to 33 (mean 25.0), each with experience of at least one dating app, were recruited through WeChat and Xiaohongshu. Seventeen identified as heterosexual and three as homosexual. Their education ranged from undergraduate to doctorate, and seven had lived or studied abroad. Interviews lasted 30 to 60 minutes and were held in Mandarin via Tencent Meeting, Feishu, WeChat or in person.",
-        "Participants logged in to a researcher-created Tinder account and built a new profile step by step: text, filters such as gender and relationship intent, and six photos. They were asked to think aloud while researchers probed their reasons, and profiles were never uploaded. As participants focused mainly on photos, the interviews shifted toward photo choices. Four researchers coded the transcripts independently and reached three themes: visual aspects of photo selection, persona construction strategy, and perception of others’ profiles."
-      ],
+      "quote": {
+        "text": "Really, when I took photos, the phone screen had nine grids, and my face could only occupy one grid. That is all the facial exposure I showed in the picture.",
+        "by": "P8"
+      },
       "figures": [
-        {"file": "fig1.jpg", "caption": "Interview process: informed consent and demographics, a semi-structured interview on three topics, then recording results and summarizing insights."}
+        {"file": "fig4.jpg", "caption": "Photos P8 uploaded: (a) no face and plenty of blank space; (b) a swing that conveys body language; (c) her face fills one of the camera’s nine grid cells, a teddy bear the rest."}
       ]
     },
     {
-      "heading": "Photos That Spark Curiosity and Protect Privacy",
+      "title": "The first photo is the facade",
       "paragraphs": [
-        "Many participants cared more about the atmosphere of a photo than about showing their face. They used body language, lighting, negative space and blur to add mystery. P3 avoided clear front-face photos and put any flattering shot at the end, so that only people who swiped through would see her face. P8 limited her face to a small part of the frame: “my face could only occupy one grid.” Others avoided full-face photos for fear of being recognized by friends or family on the same app.",
-        "Photo order was also strategic. Because apps show only the first photo at first (P9), the first photo served as the profile’s “facade”. Some participants followed a striking photo with humorous or quirky ones to reduce the distance that good looks can create. P14 chose sports photos to attract people who share that interest, and several participants preferred everyday photos, such as food, as light conversation starters."
+        "Photo order was strategy. Apps show one person at a time, and only the first photo at first, so that photo became the profile’s “facade”. Some participants followed a striking first photo with humorous or quirky ones, to soften the distance that good looks can create. Others used photos as filters: P14 chose sports photos to draw people who share the interest, and P9 recommended everyday shots, like a favorite food, because they make it easy to start talking about the best places to eat it.",
+        "The most deliberate personas were built from small, odd details. P4 listed astrology as a hobby because it is a little niche and a little mysterious, and people might ask about it. She also wrote “only talk until 10 pm” on her profile, reasoning that most people use dating apps late at night, so someone who sleeps early stands out."
       ],
+      "quote": {
+        "text": "We use “only talk until 10 pm” to create a persona that goes to bed early, which is a very niche persona. Don’t you ever wonder why a person goes to bed so early?",
+        "by": "P4"
+      }
+    },
+    {
+      "title": "A lighter me in my mind",
+      "paragraphs": [
+        "Every profile bent toward someone’s expectations. P1, who had used dating apps in China and in Sweden, left out her body size in China, where she was considered a bit overweight, but listed it in Sweden, where her weight was considered average. Although she described herself as introverted, in Sweden she played up her love of nature and the outdoors, because that seemed to be what people there expected. P4, looking for a serious relationship, chose photos with less skin exposure in China, to avoid signaling that she wanted only a sexual one.",
+        "Other exaggerations came from within. P16 posted photos his friends said were edited too much: “People on online dating didn’t know what you looked like anyway.” P12, unhappy with his weight, wrote down a lower number: “Maybe I have always imagined a lighter me in my mind.” He had attended a university ranked 73 in China, but his profile named one of the country’s top 10, a choice he traced to his own “cult of academic qualifications”. That one, he admitted, he feared being caught out on. The weight, he insisted, was still real: an “unfalsifiable proposition and deviation within a reasonable range”."
+      ],
+      "quote": {
+        "text": "It’s not intentional. It may be subconscious. It’s a habit. I may have lied to myself for too long and have taken it as reality.",
+        "by": "P12"
+      }
+    },
+    {
+      "title": "Showing the partner you hope to find",
+      "paragraphs": [
+        "The most striking pattern was a mirror. Participants built profiles around the partner they wanted, displaying in themselves the traits they hoped to find. P1 wanted someone smart, so she highlighted her education; she wanted someone with similar hobbies and lifestyle, so she showed her cooking and photography, her drinking and smoking.",
+        "We describe this as a cyclical paradigm: “I show what I value; I attract people who like what I show; I discern those I attract whether have traits I value.” Even authenticity was arranged with care. P8 photographed a scene alongside her own sketch of it, because a talent should appear woven into a life rather than demonstrated like a selfie in the gym mirror. P4 preferred landscapes she had shot to posed portraits, because a landscape means “you sincerely think that moment is beautiful, and it touches you.”"
+      ],
+      "quote": {
+        "text": "I like people who are smart, and I also hope that I can show that I am very smart.",
+        "by": "P1"
+      },
       "figures": [
-        {"file": "fig4.jpg", "caption": "Photos uploaded by P8: (a) her face is not shown and much of the frame is blank; (b) a swing photo conveys body language; (c) her face occupies one of nine grid cells."}
+        {"file": "fig5.jpg", "caption": "Authenticity, arranged: (a) scenery with P8’s own sketch of it; (b) a landscape versus a photo with a person, as P4 described; (c) P3’s photos from different periods and styles, which made people curious."}
       ]
     },
     {
-      "heading": "Constructing a Persona",
+      "title": "Reading strangers for signs of truth",
       "paragraphs": [
-        "Participants used four persona strategies: complying with external expectations, idealizing themselves to meet inner needs, expressing themselves authentically through lifestyle, and crafting an engaging persona to capture attention. P1, who had used dating apps in both China and Sweden, avoided mentioning her body size in China but listed it in Sweden, where standards differ. P4, seeking a serious relationship, chose photos with less skin exposure in China to avoid signaling interest in only sexual relationships.",
-        "Idealization was sometimes unconscious. P12 listed a lower weight than his real one and said, “It’s not intentional. It may be subconscious.” He also listed a more prestigious university than the one he attended. Others aimed for authenticity by weaving hobbies into daily life, such as P8 photographing scenery together with her own sketch. To appear intriguing, P4 mentioned niche hobbies like astrology and wrote “only talk until 10 pm”, P10 chose back-view photos, and P3 found that photos with very different styles from different periods made people curious."
+        "Turn the screen around and the same participants became detectives. They distrusted photos that looked “cut out of a magazine”, sets of pictures that were inconsistent with each other, images that were blurry or low-quality, and displays of wealth. P5 had no interest in “a photo taken inside a Lamborghini, wearing Dior and a Rolex watch.” P13 ran suspiciously perfect photos through Baidu image search, and P4 grew wary when a face showed no play of light and shadow.",
+        "First impressions still ran on looks: most participants started with appearance and height. Yet small cues could change everything. P1 loved photos with animals. P3 was drawn to a Swedish man working on sea turtle protection whose first photo showed a baby turtle on his face; she felt she had to talk to him. Words were contested. P3 found “photos are more believable than words”, yet also felt that words can reveal whether someone is a misanthrope."
       ],
-      "figures": [
-        {"file": "fig5.jpg", "caption": "Example photos from participants’ statements: (a) scenery and one’s own sketch, showing a talent indirectly (P8); (b) a landscape photo versus a photo with people (P4); (c) photos with very different appearances from different periods, which aroused curiosity (P3)."}
-      ]
+      "quote": {
+        "text": "If the face looks good, I continue browsing; if not, I stop.",
+        "by": "P2"
+      }
     },
     {
-      "heading": "Judging Others’ Profiles",
+      "title": "Backstage, but already on stage",
       "paragraphs": [
-        "When viewing others’ profiles, participants looked for authenticity. They distrusted photos that looked “cut out of a magazine”, sets of photos that were inconsistent with each other, blurry or low-quality images, and displays of luxury brands and cars. P13 checked such photos with Baidu image search.",
-        "Most participants formed first impressions from physical attributes, especially appearance and height. Small cues also mattered: P1 was drawn to photos with animals, and unique text caught the attention of P2 and P15. Participants disagreed about text. P3 felt that “photos are more believable than words” because they are harder to create, yet also said that words can reveal subtler traits than photos."
-      ]
-    },
-    {
-      "heading": "Discussion: Showing What We Value",
-      "paragraphs": [
-        "Unlike Facebook connections, dating matches rarely share a social network, so participants built common ground through photos of daily life, such as a favorite restaurant a match could visit with them. Participants also built profiles that mirrored both an “ideal self” and an “ideal partner”. The authors conceptualize this as a cyclical paradigm: “I show what I value; I attract people who like what I show; I discern those I attract whether have traits I value.”",
-        "Drawing on Goffman’s “front stage” and “backstage”, the authors suggest a third mode: users believed they were presenting their backstage selves but were already on the front stage, acting as their own audience. The study also found a double standard. Participants hid their own faces yet judged others mainly by appearance, used blurred photos for privacy yet read blur in others’ photos as a sign of falsehood, and demanded authenticity while exaggerating themselves “to an acceptable extent”."
+        "Put the two halves together and a double standard appears. Participants hid their own faces yet judged others mainly by appearance. They used blurred or side-view photos for privacy, yet read blur in others’ photos as a sign of falsehood. They demanded authenticity while exaggerating themselves “to an acceptable extent”. Contradictory at first glance, it reflects a balance between self-protection, platform norms and the quest for authenticity in others.",
+        "Goffman described social life as a performance, with a front stage for the audience and a backstage for the real self. Our participants suggest a third mode: they believed they were presenting their backstage selves, but were already on the front stage, and they were their own audience. For platforms, this points to three design directions."
       ],
-      "figures": [
-        {"file": "fig6.jpg", "caption": "The cyclical paradigm when users create profiles: “I show what I value; I attract people who like what I show; I discern those I attract whether have traits I value.”"}
-      ]
-    },
-    {
-      "heading": "Design Implications",
-      "paragraphs": [
-        "The authors propose three directions for dating platforms that support self-expression while limiting inaccurate information and protecting privacy."
-      ],
-      "bullets": [
-        "Two-stage presentation: show a curated first layer, then reveal more as the relationship progresses (for example, after a certain amount of chat time). This could help users worried about being judged, including people with “invisible” disabilities and transgender users.",
-        "More precise matchmaking: identify matching attributes such as niche hobbies from profiles and make them searchable, while keeping the number of choices manageable.",
-        "Reliable trust: visualize shared cultural connections, for example cities visited, restaurants reviewed or favorite animations drawn from users’ other social media accounts."
-      ]
-    },
-    {
-      "heading": "Limitations & Follow-up Work",
-      "paragraphs": [
-        "All participants were college-educated young Chinese users, so the findings may not generalize to other groups. The data were self-reported and may be affected by social desirability and researcher bias. The study also gave limited attention to profile text, differences between platforms, and image editing.",
-        "The findings later informed Carbon Copy, an interactive installation by the same team. It is a fake dating platform in which ChatGPT writes profile text modeled on the patterns of real users from this study, and Stable Diffusion generates matching images of consistent AI personas."
+      "points": [
+        "Two-stage profiles: a curated first layer, with more revealed as chat time accumulates, easing the pressure on anyone wary of being judged at first sight, including people with “invisible” disabilities and transgender users",
+        "Searchable matching attributes, such as niche hobbies, without overwhelming users with choice",
+        "Visible common ground, such as cities visited, restaurants reviewed or favorite animations, drawn from users’ other social media accounts"
       ]
     }
+  ],
+  "takeaways": [
+    "A dating profile is less a record than a projection: people present the self they imagine, and the partner they hope to attract.",
+    "Hiding and revealing are both strategies. Limiting the face can protect privacy and invite curiosity at the same time.",
+    "Platforms can support honest self-presentation by letting people reveal themselves in stages and by making real common ground visible."
+  ],
+  "facts": [
+    {"label": "Venue", "value": "CSCW ’25 · PACM HCI"},
+    {"label": "Method", "value": "Semi-structured interviews (30–60 minutes) with live, think-aloud profile construction"},
+    {"label": "Participants", "value": "20 college-educated young adults in China (11 female, 9 male), aged 22–33; seven had lived or studied abroad"},
+    {"label": "Profile template", "value": "Tinder’s profile-making interface on a researcher-created account; no profile was uploaded"},
+    {"label": "Limitations", "value": "Chinese college-educated users only; self-reported data; limited attention to text, platform differences and photo editing"},
+    {"label": "Follow-up work", "value": "Informed CARBON COPY, the team’s artwork about a fake dating platform whose AI-written profiles mimic real users’ language"}
   ]
 }

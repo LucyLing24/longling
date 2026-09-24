@@ -1,114 +1,97 @@
 {
-  "tldr": "EmotiCrafter generates an image from a free-text prompt plus a pair of continuous Valence-Arousal (V-A) values, so the same scene can be rendered with finely graded emotions instead of a handful of emotion labels. It works by shifting the prompt's text features toward an emotional version before they condition Stable Diffusion XL. In experiments and user studies it conveys the intended emotion more accurately and more smoothly than existing techniques.",
-  "facts": [
-    { "label": "Venue", "value": "ICCV 2025" },
-    { "label": "Task", "value": "Continuous emotional image content generation (C-EICG)" },
-    { "label": "Inputs", "value": "Free-text prompt + Valence and Arousal values in [-3, 3]" },
-    { "label": "Backbone", "value": "Stable Diffusion XL with a GPT-2-based emotion injection transformer" },
-    { "label": "Training data", "value": "Neutral/emotional prompt pairs built from 39,843 V-A-annotated images" },
-    { "label": "Evaluation", "value": "4 baselines, 3,300 images per method, 2 user studies (20 participants)" }
+  "hook": "Feelings come in degrees, yet the tools that generate emotional images have understood only labels like “happy” or “sad.”",
+  "lede": "Ask a text-to-image model for “a boy is running in the forest” and it will draw one. Ask for the same boy in the same forest, a little less cheerful and a little more tense, and there is no precise way to say it: tools built for emotion work from tags, and struggle to control what the picture actually shows. We built EmotiCrafter so that emotion becomes a coordinate instead of a word. Alongside a free-text prompt, it takes two numbers, valence and arousal, and renders the scene to match.",
+  "stats": [
+    {"value": "39,843", "label": "human-annotated images behind the training prompts"},
+    {"value": "0.2", "label": "finest emotional step, on scales from −3 to 3"},
+    {"value": "0.759", "label": "viewers’ arousal-ranking agreement, vs 0.165 for GPT-4+SDXL"},
+    {"value": "4.240", "label": "smoothness rating out of 5, vs 3.195 for GPT-4+SDXL"}
   ],
-  "contributions": [
-    "Defines the continuous emotional image content generation (C-EICG) task and presents EmotiCrafter, the first model dedicated to it.",
-    "Introduces an emotion-embedding network that fuses continuous V-A values with text-prompt features, which are then injected into Stable Diffusion XL through cross-attention to control both content and emotion.",
-    "Proposes a loss function that amplifies the difference between neutral and emotional text features and weights samples by the V-A distribution to counter data imbalance.",
-    "Builds an emotional prompts dataset in which each neutral prompt is paired with an emotional prompt that keeps the same core meaning but expresses the emotion of a given V-A pair."
-  ],
-  "sections": [
+  "chapters": [
     {
-      "heading": "Motivation",
+      "title": "Emotion as a coordinate, not a label",
       "paragraphs": [
-        "Emotions shape memory and comprehension, so content creators increasingly use them to engage audiences. Yet while visual emotion analysis is extensive, generating emotionally rich images has received far less attention.",
-        "EmoGen pioneered domain-free emotional image generation from an emotion tag such as \"happy\" or \"sad\". This leaves two gaps: content is hard to control without a text prompt, and discrete tags cannot capture nuanced emotions, especially since psychologists have not agreed on a fixed set of emotion categories.",
-        "EmotiCrafter instead adopts the Valence-Arousal model, a well-known continuous emotion model. Valence measures pleasantness (negative to positive) and Arousal measures intensity (calm to excited), each on a [-3, 3] scale. A continuous space supports smooth transitions and subtle shifts, such as moving from \"bored\" to \"tired\", that discrete labels cannot express."
+        "Psychologists have not agreed on a fixed set of emotion categories, and the pioneering system for emotional image generation, EmoGen, works from a single tag without a text prompt. That leaves two gaps: you cannot say what the picture should contain, and you cannot say how much of a feeling it should carry.",
+        "EmotiCrafter uses the Valence-Arousal model instead, a well-known psychological model that places emotions in a two-dimensional space. Valence runs from unpleasant to pleasant, arousal from calm to excited, each on a scale from −3 to 3. In that space a character can drift from “bored” to “tired”, the kind of subtle shift that discrete labels cannot express."
+      ],
+      "quote": {
+        "text": "The limited scope of discrete emotion tags falls short of capturing nuanced emotions.",
+        "by": "From the paper"
+      },
+      "figures": [
+        {"file": "fig2.jpg", "caption": "The Valence-Arousal model. Excited and delighted sit at high arousal and positive valence; bored and tired sit low on both."}
+      ]
+    },
+    {
+      "title": "Emotion enters through the prompt",
+      "paragraphs": [
+        "Instead of injecting emotion into the image generator itself, EmotiCrafter changes what Stable Diffusion XL reads. A prompt first becomes text features, the numerical form in which the generator takes in language. An emotion-embedding network, built on a modified GPT-2, predicts how those features should shift for the requested valence and arousal, and adds that shift to the original. The description stays in place; the emotion arrives as an offset.",
+        "Learning that shift requires the same scene described with and without feeling. GPT-4 wrote such pairs for 39,843 images from OASIS, EMOTIC and FindingEmo, each with valence and arousal annotated by people: a neutral prompt that describes the image objectively, and an emotional one that emphasizes the color, lighting and texture that shape how it feels. Every prompt went through crowd-sourced verification. For an image of a small dog, rated at valence 1.65 and arousal −0.12, the pair reads:"
+      ],
+      "points": [
+        "Neutral: “A small white dog walking down a path.”",
+        "Emotional: “A small white dog joyfully exploring a serene forest path, surrounded by lush greenery and dappled sunlight, evoking a peaceful and content atmosphere.”"
       ],
       "figures": [
-        { "file": "fig2.jpg", "caption": "The Valence-Arousal model: emotions are positioned in a two-dimensional space spanned by valence (negative to positive) and arousal (low to high)." }
+        {"file": "fig4.jpg", "caption": "Inside one of the 12 Emotion Injection Blocks: after self-attention, the valence feature and then the arousal feature are injected into the prompt’s hidden state through two successive cross-attention steps."}
       ]
     },
     {
-      "heading": "Model Architecture",
+      "title": "Two numbers can overrule the words",
       "paragraphs": [
-        "Given a prompt and a pair of V-A values, a prompt encoder first turns the prompt into a neutral prompt feature. An emotion-embedding network then transforms this feature into an emotional prompt feature that reflects the requested V-A values. That feature conditions Stable Diffusion XL through its cross-attention mechanism to produce the final image.",
-        "The network predicts the residual between emotional and neutral prompt features and adds it back to the neutral feature, preserving the original textual context while infusing emotion."
-      ],
-      "bullets": [
-        "V-A Encoder: two separate multilayer perceptrons map the valence and arousal values to a V-feature and an A-feature.",
-        "Emotion Injection Transformer: a modified GPT-2 that projects the neutral prompt feature into its hidden space (with positional embedding) and passes it through 12 Emotion Injection Blocks. The causal mask used for next-token prediction is removed.",
-        "Emotion Injection Block: self-attention followed by two cross-attention layers, which inject the V-feature and then the A-feature, and a feed-forward network, each with LayerNorm and a residual connection.",
-        "Output projection: a linear layer and LayerNorm map the final hidden state back to the SDXL prompt feature space as the predicted residual."
+        "Because emotion is its own input, it can contradict the prompt and prevail. Given “a child in the amusement park”, a typically positive concept, together with a valence and arousal of (−2, −2), EmotiCrafter renders the scene as sad.",
+        "It even works without words. From an empty prompt and a valence-arousal pair alone, it generates images that hold a consistent emotion. Named emotions such as amusement, awe or sadness can be requested as points on the plane, and the control is fine-grained: in one example, a surfer’s arousal climbs from 1.8 to 2.6 in increments of 0.2 while valence stays at 1.6."
+      ]
+    },
+    {
+      "title": "Other methods froze, or jumped",
+      "paragraphs": [
+        "To test the idea, we built four alternatives on SDXL. Two fed emotion features into its UNet, through cross-attention based on IP-Adapter or through the time embedding; one embedded them in prompt templates with Textual Inversion; and one had GPT-4 rewrite the prompt to match the valence and arousal values.",
+        "The first three barely responded. Whatever emotion they were given, they produced nearly identical images, and Textual Inversion added a persistent purple tint. Their training aligned low-level image features that follow the prompt’s content closely but struggle to capture subtle emotional cues. GPT-4+SDXL did change the mood, but not smoothly: on a 5 × 5 grid of skiers it shows noticeable discontinuities, most visibly in the V = 3 column.",
+        "On LPIPS-Continuous, a perceptual measure of how continuously images change as the values change, EmotiCrafter scored 0.220 against 0.361 for GPT-4+SDXL, where lower is smoother. Across 3,300 images per method, it also had the lowest arousal and valence errors of the five: 1.828 and 1.510."
       ],
       "figures": [
-        { "file": "fig3.jpg", "caption": "Method overview. (a) Images annotated with V-A values are paired with GPT-4-generated neutral and emotional prompts. (b.1) The emotion-embedding network embeds V-A values into textual features; (b.2) a specialized loss enhances emotional expression. The output conditions the image generator." },
-        { "file": "fig4.jpg", "caption": "Structure of an Emotion Injection Block. The V-feature and A-feature are injected into the hidden state through successive cross-attention modules." }
+        {"file": "fig6.jpg", "caption": "Two prompts at valence and arousal values of −1.5, 0 and 1.5. Cross Attention, Time Embedding and Textual Inversion barely change; only EmotiCrafter and GPT-4+SDXL show clear emotional variation."},
+        {"file": "fig7.jpg", "caption": "“A group of people is skiing in a snow hill” across a 5 × 5 grid from −3 to 3. EmotiCrafter (top) stays continuous at the extremes; GPT-4+SDXL (bottom) shows discontinuities, for example in the V = 3 column."}
       ]
     },
     {
-      "heading": "Loss Function",
+      "title": "Sorting images by feel",
       "paragraphs": [
-        "The network is trained to match a scaled target emotional prompt feature, with a loss that combines two strategies. Together they aim to make emotional changes more pronounced while compensating for the uneven distribution of V-A values in the training data."
-      ],
-      "bullets": [
-        "Scaled residual learning: the target residual between emotional and neutral prompt features is enlarged by a factor α, set to 1.5 based on the ablation study.",
-        "V-A density weighting: each sample's loss is weighted inversely to the density of training samples at its V-A position. The density is estimated with Gaussian kernel density estimation, with bandwidth chosen by Silverman's rule of thumb."
-      ]
-    },
-    {
-      "heading": "Dataset & Training",
-      "paragraphs": [
-        "The training set pairs neutral and emotional prompts with V-A values. GPT-4 generated the pairs from 39,843 images with human-annotated V-A values drawn from the public OASIS, EMOTIC, and FindingEmo datasets. Neutral prompts give objective descriptions of each image, while emotional prompts emphasize affective attributes such as color, lighting, and texture.",
-        "All LLM-generated prompts went through crowd-sourced verification, with disagreements resolved by annotator voting. The emotion-embedding network was trained on two NVIDIA A800 GPUs with AdamW (learning rate 1e-3, weight decay 1e-5) for 200 epochs at batch size 768, which took about 7 to 8 hours."
-      ]
-    },
-    {
-      "heading": "Experiments",
-      "paragraphs": [
-        "Qualitative results show four capabilities. V-A values can override emotional cues in the prompt, for example rendering \"a child in the amusement park\" as sad. Discrete emotion categories can be expressed as points in V-A space. Images can be generated from an empty prompt with emotion as the only condition. Emotion can also be controlled finely, in V-A steps of 0.2.",
-        "Four baselines inject emotion features through SDXL's UNet cross-attention (IP-Adapter-based), its time embedding, or Textual Inversion placeholders, or have GPT-4 rewrite the prompt according to the V-A values (GPT-4+SDXL). The first three tended to produce nearly identical images regardless of the emotion input. Only EmotiCrafter and GPT-4+SDXL showed clear emotional variation, and GPT-4+SDXL had noticeable discontinuities under extreme V-A values."
-      ],
-      "bullets": [
-        "Setup: 3,300 images per method (132 prompts × 5 valence × 5 arousal values).",
-        "Emotion accuracy: EmotiCrafter achieved the lowest A-Error (1.828) and V-Error (1.510), compared with 1.860 and 1.517 for GPT-4+SDXL.",
-        "Prompt fidelity: CLIPScore was 23.067, below the best baseline (26.566, Time Embedding). The authors attribute this to the inherent trade-off between emotional modulation and strict semantic alignment.",
-        "Image quality: CLIP-IQA was 0.881, which the authors report as comparable to the baselines (highest: 0.949, Cross Attention).",
-        "Continuity: LPIPS-Continuous was 0.220, compared with 0.361 for GPT-4+SDXL (lower is smoother)."
+        "Metrics are not perception, so we asked 20 college students. In the first study, they took shuffled sets of five images, put them in order of valence or of arousal, and estimated each image’s values. Kendall’s τb measured how well their order matched the intended one, with 1 meaning perfect alignment.",
+        "The gap was widest for arousal: 0.759 with EmotiCrafter’s images against 0.165 with GPT-4+SDXL’s. Valence ordering reached 0.887, against 0.584, and participants’ estimates landed closer to the target, with errors of 1.327 versus 2.029 for arousal and 0.692 versus 1.229 for valence.",
+        "In a second study, participants rated 25-image sets that moved gradually from −3 to +3. EmotiCrafter averaged 4.215 out of 5 for following the emotional changes and 4.240 for smoothness, against 3.525 and 3.195. Every one of these differences was statistically significant."
       ],
       "figures": [
-        { "file": "fig6.jpg", "caption": "Qualitative comparison with baselines at V-A values of -1.5, 0, and 1.5. Only EmotiCrafter and GPT-4+SDXL clearly reflect emotional variation, and EmotiCrafter's transitions are more continuous." },
-        { "file": "fig7.jpg", "caption": "A 5 × 5 V-A grid (values from -3 to 3) for \"A group of people is skiing in a snow hill\". EmotiCrafter stays continuous even at extreme values, while GPT-4+SDXL shows discontinuities (e.g., in the V=3 column)." }
+        {"file": "fig8.jpg", "caption": "User studies comparing EmotiCrafter (Ours) with GPT-4+SDXL (Baseline): ranking agreement, estimation error, and ratings of emotion consistency and smoothness (***p < 0.001)."}
       ]
     },
     {
-      "heading": "User Study",
+      "title": "What a stronger feeling costs",
       "paragraphs": [
-        "Two studies with 20 college students compared EmotiCrafter with GPT-4+SDXL. In Study I, participants reordered sets of five images by perceived valence or arousal and estimated each image's values. Ordering accuracy was measured with Kendall's τb, alongside the absolute error of the estimates. In Study II, participants rated 25-image sets spanning V-A values from -3 to +3 on 5-point Likert scales for how well the images followed the V-A changes and how smooth the transitions were.",
-        "EmotiCrafter outperformed the baseline on every metric. Wilcoxon signed-rank tests showed statistically significant improvements in ranking, error, consistency, and smoothness."
+        "Emotion is not free. EmotiCrafter’s CLIPScore, which measures how closely an image matches its prompt, was 23.067, below the 26.566 of Time Embedding, a baseline that barely expressed emotion. The training target makes this tension explicit: the shift from neutral to emotional features is deliberately enlarged by a factor α, and as α rises, emotion errors fall while CLIPScore falls with them.",
+        "A second training choice protects rare feelings. Training images are unevenly spread across the valence-arousal plane, so each example’s loss is weighted inversely to how crowded its region is. Without this weighting, valence error rose from 1.510 to 1.546 and CLIPScore dropped from 23.067 to 21.977."
       ],
-      "bullets": [
-        "Ranking consistency (Kendall's τb): arousal 0.759 vs. 0.165; valence 0.887 vs. 0.584.",
-        "Estimation error: arousal 1.327 vs. 2.029; valence 0.692 vs. 1.229.",
-        "Likert ratings: emotion consistency 4.215 vs. 3.525; emotion smoothness 4.240 vs. 3.195."
-      ],
+      "quote": {
+        "text": "Based on these findings, we set α = 1.5 as an optimal trade-off, though users can adjust α to suit their specific needs.",
+        "by": "From the paper"
+      },
       "figures": [
-        { "file": "fig8.jpg", "caption": "User study results comparing EmotiCrafter (Ours) with GPT-4+SDXL (Baseline): V/A ranking, V/A error, and emotion consistency and smoothness (*p<0.05, **p<0.01, ***p<0.001)." }
-      ]
-    },
-    {
-      "heading": "Ablation Study",
-      "paragraphs": [
-        "Increasing the scaling factor α lowers CLIPScore, meaning weaker semantic alignment, but also lowers V/A-Error, meaning more accurate emotion. The authors chose α = 1.5 as a trade-off and note that users can adjust it to suit their needs. Removing the density weighting raised V-Error from 1.510 to 1.546 and lowered CLIPScore from 23.067 to 21.977, with A-Error nearly unchanged."
-      ],
-      "figures": [
-        { "file": "fig9.jpg", "caption": "Ablation on \"An oil painting shows an astronaut.\" As α increases, image-prompt similarity decreases while emotional variation increases; density weighting d(v, a) makes emotional changes more accurate." }
-      ]
-    },
-    {
-      "heading": "Limitations & Future Work",
-      "bullets": [
-        "Arousal is harder to control than valence, consistent with prior findings that arousal has lower inter-annotator agreement.",
-        "The model often adds human activities that the prompt does not mention, likely because non-human scenes are under-represented in the training data. More diverse non-human scenarios could help.",
-        "The model occasionally shifts the prompt's meaning to fit the target emotion. The authors suggest adding a semantic preservation term to the loss."
+        {"file": "fig9.jpg", "caption": "“An oil painting shows an astronaut” at α from 1.0 to 2.0, with and without density weighting. Higher α brings stronger emotional variation and weaker resemblance to the prompt; α = 1.5 is the chosen setting."}
       ]
     }
+  ],
+  "takeaways": [
+    "Placing emotion on a continuous valence-arousal plane lets image generation express degrees of feeling, not only named categories.",
+    "Adding emotion by shifting prompt features lets what an image shows and how it feels be controlled separately.",
+    "Stronger emotion costs some fidelity to the literal prompt, a trade-off EmotiCrafter measures and leaves adjustable rather than hidden."
+  ],
+  "facts": [
+    {"label": "Venue", "value": "ICCV 2025"},
+    {"label": "Inputs", "value": "Free-text prompt + valence and arousal values, each in [−3, 3]"},
+    {"label": "Backbone", "value": "Stable Diffusion XL, conditioned by a GPT-2-based emotion-embedding network"},
+    {"label": "Training data", "value": "Neutral/emotional prompt pairs built from 39,843 V-A-annotated images (OASIS, EMOTIC, FindingEmo)"},
+    {"label": "Evaluation", "value": "4 baselines, 3,300 images per method, 2 user studies with 20 participants"},
+    {"label": "Limitations", "value": "Arousal is harder to control than valence; scenes often gain human activity the prompt never mentioned; prompts occasionally shift in meaning"}
   ]
 }
