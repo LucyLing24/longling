@@ -137,7 +137,7 @@ export const publications = [
     {
         id: "clayscape",
         title:
-            "ClayScape: GenAI-Supported Design to Clay 3D Printing in Fabricating Chinese Textured Ceramics",
+            "ClayScape: A GenAI-Supported Workflow for Designing Chinese Style Ceramics with Clay 3D Printing",
         abstract: "Chinese ceramic-making involves complex and interdependent steps, making it technically demanding and time-consuming. Digital fabrication methods attempt to make the process more efficient, but for craft-creators, technical barriers such as CAD and CAM skills remain major obstacles. To reducing technical barriers for crafts-people, two co-authors first collaboratively designed a workflow that enables craft-artists to sketch out their design, actualize the design by prompting GenAI, then convert the design into ceramic crafts by clay 3D printing and hand glazing. We evaluated the workflow with an empirical study of four ceramic creators using the tool in real-life settings. The findings show that beginner creators benefited from accessible entry points into the creative process, whereas experienced artists reflected critically on the balance between digital fabrication skills and traditional crafts. This work demonstrates how ideas can be transformed into physical forms through human-AI design and digital fabrication hybrid workflows.",
         authors: [
             {name: "Sijia Liu",link: "https://starliusijia.com/"},
@@ -218,7 +218,7 @@ export const publications = [
     {
         id: "vistoria",
         title:
-            "Vistoria: A Multimodal System to Support Fictional Story Writing through Instrumental Text-Image Co-Editing",
+            "Vistoria: A Multimodal System to Support Fictional Story Writing through Instrumental Image-Text Co-Editing",
         abstract: "Humans think visually—we remember in images, dream in pictures, and use visual metaphors to communicate. Yet, most creative writing tools remain text-centric, limiting how authors develop ideas. We present Vistoria, a system for synchronized text-image co-editing in fictional story writing that treats visuals and text as co-equal narrative materials. A formative Wizard-of-Oz co-design study with 10 story writers revealed how sketches, images, and annotations serve as essential instruments for ideation and organization. Drawing on theories of Instrumental Interaction and Structural Mapping, Vistoria introduces multimodal operations-lasso, collage, filters, and perspective shifts that enable seamless narrative exploration across modalities. A controlled study with 12 participants shows co-editing enhances expressiveness, immersion, and collaboration, enabling writers to explore divergent directions, embrace serendipitous randomness, and trace evolving storylines. While multimodality increased cognitive demand, participants reported stronger authorship and agency. These findings demonstrate multimodal co-editing expands creative potential by balancing abstraction and concreteness in narrative development.",
         authors: [
             {name: "Kexue Fu",link:"https://fukexuexue.github.io/", role: "first"},
