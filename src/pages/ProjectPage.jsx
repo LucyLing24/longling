@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import {
-    FaArrowLeft, FaArrowRight, FaBook, FaCode, FaDesktop, FaExternalLinkAlt, FaFileAlt, FaFilePdf,
-    FaGithub, FaGlobe, FaGraduationCap, FaPlay, FaYoutube,
+    FaArrowLeft, FaArrowRight, FaBook, FaCheck, FaCode, FaCopy, FaDesktop, FaExternalLinkAlt, FaFileAlt,
+    FaFilePdf, FaGithub, FaGlobe, FaGraduationCap, FaPlay, FaYoutube,
 } from "react-icons/fa";
 import { SiArxiv } from "react-icons/si";
 import "../css/Publications.css";
 import "../css/Project.css";
 import { publications, getPaperLinks, getPublication, projectPath } from "../data/publications.js";
+import { CITATIONS } from "../data/citations.js";
 import { VenueTags, AuthorList, PaperTag } from "../components/PaperMeta.jsx";
 
 const LINK_ICONS = {
@@ -26,6 +27,9 @@ const LINK_ICONS = {
     video: <FaPlay/>,
 };
 
+const CONTENT = import.meta.glob("../data/content/*.json", { import: "default" });
+const FIGURES = import.meta.glob("../assets/projects/*/*.{jpg,jpeg,png,webp}", { eager: true, import: "default" });
+
 const DEFAULT_TITLE = "Long Ling | Research";
 
 function splitTitle(title) {
@@ -37,9 +41,71 @@ function isLocalVideo(url) {
     return typeof url === "string" && !/^https?:/.test(url) && url.endsWith(".mp4");
 }
 
+function useProjectContent(id) {
+    const [loaded, setLoaded] = useState({ id: null, content: null });
+    useEffect(() => {
+        const load = CONTENT[`../data/content/${id}.json`];
+        if (!load) return;
+        let active = true;
+        load().then((content) => active && setLoaded({ id, content }));
+        return () => { active = false; };
+    }, [id]);
+    return loaded.id === id ? loaded.content : null;
+}
+
+function Figure({ projectId, figure }) {
+    const src = FIGURES[`../assets/projects/${projectId}/${figure.file}`];
+    if (!src) return null;
+    return (
+        <figure className="project-figure">
+            <a href={src} target="_blank" rel="noopener noreferrer">
+                <img src={src} alt={figure.caption} loading="lazy"/>
+            </a>
+            {figure.caption && <figcaption>{figure.caption}</figcaption>}
+        </figure>
+    );
+}
+
+function ContentSection({ projectId, section }) {
+    return (
+        <section className="project-section">
+            <h2 className="project-section-title">{section.heading}</h2>
+            {section.paragraphs?.map((p, i) => <p key={i} className="project-text">{p}</p>)}
+            {section.bullets?.length > 0 && (
+                <ul className="project-bullets">
+                    {section.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                </ul>
+            )}
+            {section.figures?.map((f) => <Figure key={f.file} projectId={projectId} figure={f}/>)}
+        </section>
+    );
+}
+
+function Citation({ bibtex }) {
+    const [copied, setCopied] = useState(false);
+    const copy = () => {
+        navigator.clipboard?.writeText(bibtex).then(() => {
+            setCopied(true);
+            setTimeout(() => setCopied(false), 1600);
+        });
+    };
+    return (
+        <section className="project-section">
+            <div className="project-citation-head">
+                <h2 className="project-section-title">Citation</h2>
+                <button type="button" className="project-copy" onClick={copy}>
+                    {copied ? <><FaCheck/> Copied</> : <><FaCopy/> Copy BibTeX</>}
+                </button>
+            </div>
+            <pre className="project-bibtex"><code>{bibtex}</code></pre>
+        </section>
+    );
+}
+
 export default function ProjectPage() {
     const { id } = useParams();
     const paper = getPublication(id);
+    const content = useProjectContent(id);
 
     useEffect(() => {
         if (paper) document.title = `${splitTitle(paper.title)[0].replace(/"/g, "")} | Long Ling`;
@@ -59,6 +125,7 @@ export default function ProjectPage() {
         paper.authors.some((a) => a.role === "advisor") && "† advising professor",
     ].filter(Boolean);
     const localVideo = isLocalVideo(paper.links.video) ? paper.links.video : null;
+    const bibtex = CITATIONS[paper.id];
 
     return (
         <main className="project-page">
@@ -67,49 +134,77 @@ export default function ProjectPage() {
                     <FaArrowLeft/> Back to Publications
                 </Link>
 
-                <div className="project-meta-row">
-                    <VenueTags venues={paper.venues} />
-                    {paper.award && <span className="project-award-pill">🏆 {paper.award}</span>}
-                </div>
-
-                <h1 className="project-heading">{heading}</h1>
-                {subtitle && <p className="project-subtitle">{subtitle}</p>}
-
-                <div className="project-authors">
-                    <AuthorList authors={paper.authors} />
-                </div>
-                {authorNotes.length > 0 && (
-                    <div className="project-author-note">{authorNotes.join(" · ")}</div>
-                )}
-
-                {(paper.pages?.length > 0 || links.length > 0) && (
-                    <div className="project-links">
-                        {paper.pages?.map((page) => (
-                            <a key={page.url} href={page.url} target="_blank" rel="noopener noreferrer"
-                               className="project-link project-link-primary">
-                                <FaExternalLinkAlt/> {page.label}
-                            </a>
-                        ))}
-                        {links.map((link) => (
-                            <a key={link.key} href={link.url} target="_blank" rel="noopener noreferrer"
-                               className="project-link">
-                                {LINK_ICONS[link.key]} {link.label}
-                            </a>
-                        ))}
+                <div className="project-header">
+                    <div className="project-meta-row">
+                        <VenueTags venues={paper.venues}/>
+                        {paper.award && <span className="project-award-pill">🏆 {paper.award}</span>}
                     </div>
-                )}
-                {paper.links.msg && <div className="project-msg">{paper.links.msg}</div>}
+
+                    <h1 className="project-heading">{heading}</h1>
+                    {subtitle && <p className="project-subtitle">{subtitle}</p>}
+
+                    <div className="project-authors">
+                        <AuthorList authors={paper.authors}/>
+                    </div>
+                    {authorNotes.length > 0 && (
+                        <div className="project-author-note">{authorNotes.join(" · ")}</div>
+                    )}
+
+                    {(paper.pages?.length > 0 || links.length > 0) && (
+                        <div className="project-links">
+                            {paper.pages?.map((page) => (
+                                <a key={page.url} href={page.url} target="_blank" rel="noopener noreferrer"
+                                   className="project-link project-link-primary">
+                                    <FaExternalLinkAlt/> {page.label}
+                                </a>
+                            ))}
+                            {links.map((link) => (
+                                <a key={link.key} href={link.url} target="_blank" rel="noopener noreferrer"
+                                   className="project-link">
+                                    {LINK_ICONS[link.key]} {link.label}
+                                </a>
+                            ))}
+                        </div>
+                    )}
+                    {paper.links.msg && <div className="project-msg">{paper.links.msg}</div>}
+                </div>
 
                 <figure className="project-hero">
                     <img src={paper.image} alt={paper.title}/>
                 </figure>
 
+                {content?.tldr && <p className="project-tldr">{content.tldr}</p>}
+
+                {content?.facts?.length > 0 && (
+                    <dl className="project-facts">
+                        {content.facts.map((f) => (
+                            <div key={f.label} className="project-fact">
+                                <dt>{f.label}</dt>
+                                <dd>{f.value}</dd>
+                            </div>
+                        ))}
+                    </dl>
+                )}
+
                 <section className="project-section">
                     <h2 className="project-section-title">Abstract</h2>
                     {paper.abstract.split(/\n\s*\n/).map((para, i) => (
-                        <p key={i} className="project-abstract">{para.trim()}</p>
+                        <p key={i} className="project-text">{para.trim()}</p>
                     ))}
                 </section>
+
+                {content?.contributions?.length > 0 && (
+                    <section className="project-section">
+                        <h2 className="project-section-title">Contributions</h2>
+                        <ol className="project-contributions">
+                            {content.contributions.map((c, i) => <li key={i}>{c}</li>)}
+                        </ol>
+                    </section>
+                )}
+
+                {content?.sections?.map((section) => (
+                    <ContentSection key={section.heading} projectId={paper.id} section={section}/>
+                ))}
 
                 {(paper.youtube || localVideo) && (
                     <section className="project-section">
@@ -187,6 +282,8 @@ export default function ProjectPage() {
                         </Link>
                     ) : <span/>}
                 </nav>
+
+                {bibtex && <Citation bibtex={bibtex}/>}
             </div>
         </main>
     );

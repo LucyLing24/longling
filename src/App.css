@@ -25,6 +25,10 @@ a:hover {
 }
 
 /* ======== 布局 ======== */
+#root {
+  width: 100%;
+}
+
 .App {
   min-height: 100vh;
 }
