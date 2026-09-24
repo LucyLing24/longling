@@ -24,7 +24,7 @@ export default function Internship() {
             role: "Research Intern, Foundation Model Team",
             location: "Shanghai, China",
             details: [
-                <span>Post-training <strong>Hy3 & Hy4</strong> as <strong>coding agents</strong> for frontend and backend development and <strong>design tasks</strong>, and contributing to <strong>computer-use agent (CUA)</strong> post-training.</span>,
+                <span><name>Highlight:</name> Post-training foundation models as <strong>coding agents</strong> for frontend and backend development and <strong>design tasks</strong>, and contributing to <strong>computer-use agent (CUA)</strong> post-training.</span>,
             ]
         },
         {
@@ -34,14 +34,12 @@ export default function Internship() {
                 link: "https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/",
                 logo: micro
             },
-            period: "2026.02 - 2026.06",
-            role: "Research Intern",
+            period: "2026.01 - 2026.06",
+            role: "Research Intern, System and Engineering Group",
             location: "Shanghai, China",
-            projects: [
-                {
-                    name: <span><name>Huabu:</name> Microsoft's open-source AI-native canvas for human–agent collaboration</span>,
-                    roles: ["#Core Builder (0→1)", "#Agent Harness", "#Interaction Design"],
-                    link: [
+            details: [
+                <span><name>Highlight:</name> Core builder of <strong>Huabu</strong> from 0 to 1, Microsoft's open-source AI-native canvas for human–agent collaboration, spanning <strong>agent harness</strong> and <strong>interaction design</strong>.{" "}
+                    <span className="role-link">
                         <a
                             href="https://github.com/microsoft/Huabu"
                             target="_blank"
@@ -50,8 +48,8 @@ export default function Internship() {
                         >
                             <FaGithub/>
                         </a>
-                    ]
-                },
+                    </span>
+                </span>,
             ]
         },
         {
@@ -65,8 +63,7 @@ export default function Internship() {
             role: "Consumer Product Strategy & Interaction Designer",
             location: "Shanghai, China",
             details: [
-                <span>Shaped AIGC-driven consumer experiences for fintech and Gen Z lifestyle scenarios, from user research to product strategy and interaction design.</span>,
-                <span>Won the <strong>Technical Innovation Award</strong> and <strong>Commercial Potential Award</strong> at both Ant Group and Tongji's College of Design and Innovation.</span>,
+                <span><name>Highlight:</name> Shaped AIGC-driven consumer experiences for fintech and Gen Z lifestyle scenarios, winning the <strong>Technical Innovation Award</strong> and <strong>Commercial Potential Award</strong>.</span>,
             ]
         },
         {
@@ -95,7 +92,6 @@ export default function Internship() {
             location: "Suzhou, China",
             details: [
                 <span><name>Highlight:</name> Built latency and API-health telemetry into an internal monitoring platform for M365 services, traced bottlenecks through live dashboards, and <strong>cut latency by 20%</strong> by optimizing component lifecycles.</span>,
-                <span><name>Stack:</name> React, .NET / C#, SQL Server.</span>,
             ]
         },
         {
@@ -109,7 +105,7 @@ export default function Internship() {
             role: "Software Engineer Intern",
             location: "Suzhou, China",
             details: [
-                <span><name>Highlight:</name> Automated consistency checks for <strong>Azure ARM deployment templates</strong> with a JSON-tree diffing tool that surfaces drift across templates.</span>,
+                <span><name>Highlight:</name> Automated consistency checks for Azure ARM deployment templates with a JSON-tree diffing tool that surfaces drift across templates.</span>,
                 <span>Shipped a <strong>Microsoft Teams</strong> bot on the Bot Framework SDK, giving the <strong>whole engineering team</strong> instant access to service-monitoring data.</span>
             ]
         },
