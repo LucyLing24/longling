@@ -104,6 +104,8 @@ export default function Publications() {
                                 src={paper.image}
                                 alt={paper.title}
                                 className="publication-image"
+                                loading="lazy"
+                                decoding="async"
                             />
                         </Link>
 

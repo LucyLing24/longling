@@ -290,7 +290,7 @@ export default function ProjectPage() {
                         <div className="project-related">
                             {related.map((r) => (
                                 <Link key={r.id} to={projectPath(r.id)} className="project-related-card">
-                                    <img src={r.image} alt={r.title}/>
+                                    <img src={r.image} alt={r.title} loading="lazy"/>
                                     <div>
                                         <div className="project-related-venue">{venueLine(r)}</div>
                                         <div className="project-related-title">{r.title}</div>
