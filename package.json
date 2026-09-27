@@ -11,6 +11,8 @@
     "deploy": "gh-pages -d dist --nojekyll"
   },
   "dependencies": {
+    "@fontsource-variable/newsreader": "^5.3.0",
+    "@fontsource/sigmar-one": "^5.3.0",
     "gsap": "^3.13.0",
     "lucide-react": "^0.577.0",
     "react": "^19.1.1",

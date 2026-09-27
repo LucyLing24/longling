@@ -49,10 +49,13 @@ export default function Visitor() {
         script.src = `https://mapmyvisitors.com/map.js?cl=eee&w=${containerWidth}&t=tt&d=ltd73CyIV7t_kxjcJMTKz-L0vmQL2zhyM_ipGcOEeyA&co=ffffff&cmo=ffbed2&cmn=f42e7a&ct=acacac`;
         script.async = true;
 
-        // D. 注入新脚本
-        container.appendChild(script);
+        // D. 注入新脚本（等页面加载完成后再注入，避免第三方脚本拖慢页面）
+        const inject = () => container.appendChild(script);
+        if (document.readyState === 'complete') inject();
+        else window.addEventListener('load', inject, { once: true });
 
         return () => {
+            window.removeEventListener('load', inject);
             container.innerHTML = '';
         };
 
