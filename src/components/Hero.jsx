@@ -29,9 +29,9 @@ function Hero() {
                     <div className="meta-name">Long Ling 凌珑</div>
                     Ph.D. Student @ Tongji & SII
                     <div className="meta-description">
-                        <div>🔮 AI & HCI Researcher</div>
-                        <div>👩🏻‍💻 Full-stack Developer</div>
-                        <div>🧚🏻‍♀️ UI & UX Designer</div>
+                        <div>🤍 Human-centered AI Researcher</div>
+                        <div>🎐 Design Engineer</div>
+                        <div>💻 Full-stack Developer</div>
                     </div>
                     <div className="meta-link">
                         <a className="meta-linkitem"
