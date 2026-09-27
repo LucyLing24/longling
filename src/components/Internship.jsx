@@ -239,7 +239,17 @@ export default function Internship() {
         },
     ];
 
-    const [selectedTag, setSelectedTag] = useState("Work");
+    const toMonth = (value) => {
+        const match = value.trim().match(/^(\d{4})\.(\d{2})$/);
+        return match ? Number(match[1]) * 12 + Number(match[2]) : Infinity;
+    };
+    const timeline = [...experiences].sort((a, b) => {
+        const [aStart, aEnd] = a.period.split(" - ").map(toMonth);
+        const [bStart, bEnd] = b.period.split(" - ").map(toMonth);
+        return bStart - aStart || bEnd - aEnd;
+    });
+
+    const [selectedTag, setSelectedTag] = useState("");
 
     const handleTagClick = (tag) => {
         setSelectedTag(selectedTag === tag ? "" : tag);
@@ -250,8 +260,8 @@ export default function Internship() {
     };
 
     const filteredExperiences = selectedTag
-        ? experiences.filter(exp => exp.type === selectedTag)
-        : experiences;
+        ? timeline.filter(exp => exp.type === selectedTag)
+        : timeline;
 
     return (
         <div className="card" id="internship" style={{marginTop:"1rem"}}>
