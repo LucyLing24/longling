@@ -97,7 +97,8 @@ a{
     width: 58px !important;
 }
 
-.exp-type.work  {
+.exp-type.work,
+.exp-type.company  {
     background-color: #FFBED2;
     color: #fff;
 }
@@ -105,7 +106,8 @@ a{
     background-color: #bec9ff;
     color: #ffffff;
 }
-.exp-type.research {
+.exp-type.research,
+.exp-type.lab {
     background-color: #ddbeff;
     color: #ffffff;
 }

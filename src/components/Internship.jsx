@@ -14,7 +14,7 @@ import {FaGithub, FaGlobe} from "react-icons/fa";
 export default function Internship() {
     const experiences = [
         {
-            type: "Work",
+            type: "Company",
             organization: {
                 name: "Tencent Hunyuan",
                 link: "https://hunyuan.tencent.com/",
@@ -29,7 +29,7 @@ export default function Internship() {
             ]
         },
         {
-            type: "Work",
+            type: "Company",
             organization: {
                 name: "Microsoft Research Asia (MSRA)",
                 link: "https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/",
@@ -54,7 +54,7 @@ export default function Internship() {
             ]
         },
         {
-            type: "Work",
+            type: "Company",
             organization: {
                 name: "Ant Group Design",
                 link: "https://www.antgroup.com/en",
@@ -68,7 +68,7 @@ export default function Internship() {
             ]
         },
         {
-            type: "Work",
+            type: "Company",
             organization: {
                 name: "ByteDance Ads Infra - ML Infra",
                 link: "https://www.bytedance.com/en/",
@@ -82,7 +82,7 @@ export default function Internship() {
             ]
         },
         {
-            type: "Work",
+            type: "Company",
             organization: {
                 name: "Microsoft M365",
                 link: "https://www.microsoft.com/en-us/microsoft-365",
@@ -96,7 +96,7 @@ export default function Internship() {
             ]
         },
         {
-            type: "Work",
+            type: "Company",
             organization: {
                 name: "Microsoft M365",
                 link: "https://www.microsoft.com/en-us/microsoft-365",
@@ -111,7 +111,7 @@ export default function Internship() {
             ]
         },
         {
-            type: "Research",
+            type: "Lab",
             organization: {
                 name: "Studio for Narrative Spaces",
                 link: 'https://recfro.github.io/',
@@ -140,7 +140,7 @@ export default function Internship() {
             ]
         },
         {
-            type: "Research",
+            type: "Lab",
             organization: {
                 name: "iDVX Lab",
                 link: "https://idvxlab.com/",
@@ -156,7 +156,7 @@ export default function Internship() {
             ]
         },
         {
-            type: "Research",
+            type: "Lab",
             organization: {
                 link:"https://thfl.tsinghua.edu.cn/en/",
                 name:"The Future Laboratory",
@@ -170,7 +170,7 @@ export default function Internship() {
             ]
         },
         {
-            type: "Research",
+            type: "Lab",
             organization: {
                 name: "Spot Research Group",
                 link: "https://from.so/",
@@ -198,7 +198,7 @@ export default function Internship() {
             ]
         },
         {
-            type: "Research",
+            type: "Lab",
             organization: {
                 name: "Center for Digital Innovation",
                 link: "https://tongjicdi.com/",
@@ -274,8 +274,8 @@ export default function Internship() {
                     onChange={handleSelectChange}
                 >
                     <option value="">All</option>
-                    <option key={"Work"} value={"Work"}>Work</option>
-                    <option key={"Research"} value={"Research"}>Research</option>
+                    <option key={"Company"} value={"Company"}>Company</option>
+                    <option key={"Lab"} value={"Lab"}>Lab</option>
                     {/*<option key={"Project"} value={"Project"}>Project</option>*/}
                 </select>
             </div>
