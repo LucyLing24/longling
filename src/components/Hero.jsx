@@ -4,7 +4,7 @@ import "../css/Hero.css"
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaGoogleScholar,FaSquareXTwitter } from "react-icons/fa6";
-import cv from "../assets/longling_cv.pdf"
+// import cv from "../assets/longling_cv.pdf"
 import { BiSolidNote } from "react-icons/bi";
 
 function Hero() {
@@ -33,7 +33,7 @@ function Hero() {
                         <div>🎐 Design Engineer</div>
                         <div>💻 Full-stack Developer</div>
                     </div>
-                    <div className="meta-link">
+                    {/* <div className="meta-link">
                         <a className="meta-linkitem"
                            href="https://lucy-ling.com/"
                            target="_blank"
@@ -47,7 +47,7 @@ function Hero() {
                         >
                             CV
                         </a>
-                    </div>
+                    </div> */}
                     <div className="contact-small">
                         {links.map((item, index) => (
                             <a
