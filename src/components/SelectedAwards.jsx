@@ -24,14 +24,14 @@ export default function SelectedAwards() {
             highlight: "(Meritorious Winner, Top 7.5%)",
         },
 
-        {
-            text: "[2021] Academic Excellence Scholarship in Soochow University ",
-            highlight: "(Top 4%)",
-        },
-        {
-            text: "[2020] Academic Pacesetter in Turing Class in Soochow University ",
-            highlight: "(Top 3%)",
-        },
+        // {
+        //     text: "[2021] Academic Excellence Scholarship in Soochow University ",
+        //     highlight: "(Top 4%)",
+        // },
+        // {
+        //     text: "[2020] Academic Pacesetter in Turing Class in Soochow University ",
+        //     highlight: "(Top 3%)",
+        // },
     ];
 
 
