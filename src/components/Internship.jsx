@@ -25,6 +25,7 @@ export default function Internship() {
             location: "Shanghai, China",
             details: [
                 <span><name>Highlight:</name> Post-training foundation models as <strong>coding agents</strong> for frontend and backend development and <strong>design tasks</strong>, and contributing to <strong>computer-use agent (CUA)</strong> post-training.</span>,
+                <span>Selected for Tencent's <strong>Qingyun Talent Program (Project Up)</strong>.</span>,
             ]
         },
         {
