@@ -21,7 +21,7 @@ function News() {
         },
         {
             time: "2026.07",
-            content: <>Started an internship at <strong className="news-ref">Tencent Hunyuan Foundation Model Team</strong>, working on post-training for coding agents and exploring aesthetic intelligence in AI-generated frontend and backend development. Excited to contribute to <strong className="news-ref">Hy3 & Hy4</strong> model～</>
+            content: <>Started an internship at <strong className="news-ref">Tencent Hunyuan Foundation Model Team</strong>, working on post-training for coding agents as part of the <strong className="news-ref">Qingyun Talent Program (Project Up)</strong>.</>
         },
         {
             time: "2026.07",
