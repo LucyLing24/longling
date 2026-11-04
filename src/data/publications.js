@@ -68,6 +68,7 @@ export const publications = [
             },
         ],
         links: {
+            arxiv: "https://arxiv.org/pdf/2610.30893",
             github: "https://github.com/microsoft/Huabu",
             page: "https://microsoft.github.io/Huabu/",
         },
