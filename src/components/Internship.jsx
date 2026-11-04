@@ -293,7 +293,7 @@ export default function Internship() {
 
                             <div className="org-logo-container">
                                 <img src={exp.organization.logo} alt={`${exp.organization.name} Logo`}
-                                     className="org-logo"/>
+                                     className={`org-logo ${exp.organization.name === "Tencent Hunyuan" ? "org-logo-wide" : ""}`}/>
                             </div>
 
                             <div className="exp-container">

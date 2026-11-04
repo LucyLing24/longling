@@ -198,6 +198,9 @@ a{
 }
 
 @media (max-width: 1000px) {
+    .org-logo-wide {
+        width: 5.5rem;
+    }
     .exp-projects li{
         display: flex;
         flex-direction: column;
