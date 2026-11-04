@@ -5,7 +5,7 @@ import About from "../components/About";
 import News from "../components/News.jsx";
 import Publications from "../components/Publications";
 import Internship from "../components/Internship";
-import Education from "../components/Education.jsx";
+// import Education from "../components/Education.jsx";
 import SelectedAwards from "../components/SelectedAwards.jsx";
 import More from "../components/More.jsx";
 import Visitor from "../components/Visitor.jsx";
@@ -33,7 +33,7 @@ export default function Home() {
                     <News />
                     <Publications />
                     <Internship />
-                    <Education />
+                    {/* <Education /> */}
                     <SelectedAwards />
                     <More />
                 </div>
