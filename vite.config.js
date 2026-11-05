@@ -28,6 +28,22 @@ function projectRoutePages() {
         fs.writeFileSync(path.join(outDir, 'projects', id, 'index.html'), page)
       }
       fs.writeFileSync(path.join(outDir, '404.html'), html)
+
+      // Keep previous entry bundle filenames as aliases so browsers/proxies with a cached index.html never 404.
+      const assetsDir = path.join(outDir, 'assets')
+      const files = fs.readdirSync(assetsDir)
+      const mainJs = files.find((f) => /^index-[^.]+\.js$/.test(f))
+      const mainCss = files.find((f) => /^index-[^.]+\.css$/.test(f))
+      if (mainJs) {
+        for (const alias of ['index-DUN2phgm.js', 'index-OPpbut6F.js', 'index-jkoloN5t.js']) {
+          if (alias !== mainJs) fs.copyFileSync(path.join(assetsDir, mainJs), path.join(assetsDir, alias))
+        }
+      }
+      if (mainCss) {
+        for (const alias of ['index-BSpIeg69.css', 'index-CVId9_7N.css', 'index-CuqFuctN.css']) {
+          if (alias !== mainCss) fs.copyFileSync(path.join(assetsDir, mainCss), path.join(assetsDir, alias))
+        }
+      }
     },
   }
 }

@@ -50,11 +50,15 @@ export default function Visitor() {
         script.async = true;
 
         // D. 注入新脚本（等页面加载完成后再注入，避免第三方脚本拖慢页面）
-        const inject = () => container.appendChild(script);
+        let timer;
+        const inject = () => {
+            timer = setTimeout(() => container.appendChild(script), 1500);
+        };
         if (document.readyState === 'complete') inject();
         else window.addEventListener('load', inject, { once: true });
 
         return () => {
+            clearTimeout(timer);
             window.removeEventListener('load', inject);
             container.innerHTML = '';
         };

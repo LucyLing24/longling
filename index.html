@@ -13,10 +13,12 @@
 
       gtag('config', 'G-F053REKZP6');
       window.addEventListener('load', function () {
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-F053REKZP6';
-        document.head.appendChild(s);
+        setTimeout(function () {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-F053REKZP6';
+          document.head.appendChild(s);
+        }, 1500);
       });
     </script>
   </head>
